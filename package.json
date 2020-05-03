@@ -58,7 +58,7 @@
     "@nrwl/eslint-plugin-nx": "9.2.3",
     "@nrwl/linter": "9.2.3",
     "@nrwl/workspace": "9.2.3",
-    "@types/node": "~13.13.4",
+    "@types/node": "13.13.4",
     "@typescript-eslint/eslint-plugin": "2.30.0",
     "@typescript-eslint/parser": "2.30.0",
     "commitizen": "4.0.5",
@@ -71,8 +71,8 @@
     "eslint-plugin-jest-formatting": "1.2.0",
     "eslint-plugin-unicorn": "19.0.1",
     "husky": "4.2.5",
-    "ts-node": "~8.10.0",
-    "tslint": "~6.1.2",
-    "typescript": "~3.8.3"
+    "ts-node": "8.10.0",
+    "tslint": "6.1.2",
+    "typescript": "3.8.3"
   }
 }
