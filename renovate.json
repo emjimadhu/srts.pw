@@ -1,0 +1,20 @@
+{
+  "extends": ["config:base"],
+  "assignAutomerge": true,
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "packagePatterns": ["^eslint"],
+      "groupName": "eslint packages"
+    },
+    {
+      "packagePatterns": ["^@nrwl"],
+      "groupName": "nrwl packages"
+    },
+    {
+      "packagePatterns": ["^@types"],
+      "groupName": "type definition packages"
+    }
+  ],
+  "separateMultipleMajor": true
+}
