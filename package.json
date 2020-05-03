@@ -41,8 +41,15 @@
     "checkYarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use YARN not NPM! ⚠️ ' && echo && exit 1)",
     "preinstall": "$npm_execpath --silent run checkYarn"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
     "@nrwl/workspace": "9.2.3",
     "@types/node": "~13.13.4",
     "dotenv": "8.2.0",
