@@ -18,8 +18,7 @@ export default function(schema: ISchemaOptions): Rule {
     [
       deleteRootEslintrcFile(),
       updateWorkspace(tree, schema),
-      renameProjectEslintrcfile(tree, schema),
-      updateProjectEslintrcJson(schema)
+      renameProjectEslintrcfile(tree, schema)
     ]
   )(tree, _context);
 }
