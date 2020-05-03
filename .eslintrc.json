@@ -14,7 +14,8 @@
     "@nrwl/nx",
     "jest",
     "jest-formatting",
-    "import"
+    "import",
+    "unicorn"
   ],
   "extends": [
     "eslint:recommended",
@@ -25,7 +26,8 @@
     "plugin:jest-formatting/strict",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:unicorn/recommended"
   ],
   "rules": {
     "indent": [
