@@ -12,14 +12,16 @@
   "plugins": [
     "@typescript-eslint",
     "@nrwl/nx",
-    "jest"
+    "jest",
+    "jest-formatting"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
-    "plugin:jest/style"
+    "plugin:jest/style",
+    "plugin:jest-formatting/strict"
   ],
   "rules": {
     "indent": [
