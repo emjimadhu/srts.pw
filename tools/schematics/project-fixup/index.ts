@@ -1,11 +1,16 @@
 import {
   chain,
-  Rule, SchematicContext, Tree
+  Rule,
+  SchematicContext,
+  Tree
 } from '@angular-devkit/schematics';
 
 import { ISchemaOptions } from './schema';
 import {
-  deleteRootEslintrcFile, renameProjectEslintrcfile, updateWorkspace
+  deleteRootEslintrcFile,
+  renameProjectEslintrcfile,
+  updateProjectEslintrcJson,
+  updateWorkspace
 } from './utilities/helpers';
 
 export default function(schema: ISchemaOptions): Rule {
@@ -13,7 +18,8 @@ export default function(schema: ISchemaOptions): Rule {
     [
       deleteRootEslintrcFile(),
       updateWorkspace(tree, schema),
-      renameProjectEslintrcfile(tree, schema)
+      renameProjectEslintrcfile(tree, schema),
+      updateProjectEslintrcJson(schema)
     ]
   )(tree, _context);
 }

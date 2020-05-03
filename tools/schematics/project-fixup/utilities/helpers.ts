@@ -4,7 +4,9 @@ import {
   Tree
 } from '@angular-devkit/schematics';
 import { updateWorkspaceInTree } from '@nrwl/workspace/src/utils/ast-utils';
-import { getProjectConfig } from '@nrwl/workspace';
+import {
+  getProjectConfig, updateJsonInTree
+} from '@nrwl/workspace';
 
 import { ISchemaOptions } from '../schema';
 
@@ -31,3 +33,9 @@ export const renameProjectEslintrcfile = (tree: Tree, schema: ISchemaOptions): R
   projectTree.rename(`${projectConfigRoot}/.eslintrc`, `${projectConfigRoot}/.eslintrc.json`);
   return projectTree;
 };
+
+export const updateProjectEslintrcJson = (schema: ISchemaOptions): Rule => updateJsonInTree(`apps/${schema.projectName}/.eslintrc.json`, (json: any) => {
+  const previousRootEslintrcLocation = json.extends;
+  json.extends = `${previousRootEslintrcLocation}.json`;
+  return json;
+});
