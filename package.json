@@ -44,11 +44,11 @@
   "dependencies": {},
   "devDependencies": {
     "@nrwl/workspace": "9.2.3",
-    "@types/node": "~8.9.4",
-    "dotenv": "6.2.0",
+    "@types/node": "~13.13.4",
+    "dotenv": "8.2.0",
     "eslint": "6.8.0",
-    "ts-node": "~7.0.0",
-    "tslint": "~6.0.0",
+    "ts-node": "~8.10.0",
+    "tslint": "~6.1.2",
     "typescript": "~3.8.3"
   }
 }
