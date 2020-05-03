@@ -1,0 +1,35 @@
+import { join } from 'path';
+
+import { argv } from 'yargs';
+import { config } from 'dotenv';
+
+import { environment as <%= propertyName %>Environment } from '../../apps/<%= projectName %>/src/environments/environment';
+import { RunConfiguration } from './shared/constants';
+import { createFile } from './shared/utilities';
+
+config();
+
+// <%= className %> Environments Path
+const environmentPath: string = join(__dirname, '../../apps/<%= projectName %>/src/environments');
+
+const configEnvironment = argv.environment;
+const isProduction: boolean = configEnvironment === 'production';
+
+switch (configEnvironment) {
+case RunConfiguration.PRODUCTION:
+  // Production Envs
+  break;
+case RunConfiguration.DEVELOPMENT:
+  // Development Envs
+  break;
+}
+
+<%= propertyName %>Environment.production = isProduction;
+
+const environmentFileData = `/* eslint-disable @typescript-eslint/quotes, @typescript-eslint/indent, unicorn/prevent-abbreviations, quotes */
+
+export const environment = ${JSON.stringify(<%= propertyName %>Environment, null, 2)};
+`;
+
+// Create Environment file used by Angular || Nx CLI for current build configuration
+createFile(`${environmentPath}/environment.${configEnvironment}.ts`, environmentFileData);

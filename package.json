@@ -25,12 +25,10 @@
     }
   },
   "scripts": {
-    "nx": "nx",
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test",
-    "lint": "nx workspace-lint && nx lint",
-    "e2e": "nx e2e",
+    "lint:all": "yarn lint:workspace && yarn lint:tools",
+    "lint:workspace": "nx workspace-lint",
+    "lint:tools": "eslint -f formattify tools/**/*.ts --fix",
+    "utils:create-environment-files": "nx workspace-schematic environment-files",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",
