@@ -13,7 +13,8 @@
     "@typescript-eslint",
     "@nrwl/nx",
     "jest",
-    "jest-formatting"
+    "jest-formatting",
+    "import"
   ],
   "extends": [
     "eslint:recommended",
@@ -21,7 +22,10 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
     "plugin:jest/style",
-    "plugin:jest-formatting/strict"
+    "plugin:jest-formatting/strict",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "rules": {
     "indent": [
@@ -293,7 +297,36 @@
           "describe"
         ]
       }
-    ]
+    ],
+    "import/no-deprecated": 2,
+    "import/order": [
+      2,
+      {
+        "newlines-between": "always",
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "parent",
+            "sibling"
+          ],
+          "index"
+        ]
+      }
+    ],
+    "import/first": [
+      2,
+      "absolute-first"
+    ],
+    "import/exports-last": 2,
+    "import/no-duplicates": [
+      2,
+      {
+        "considerQueryString": true
+      }
+    ],
+    "import/newline-after-import": 2
   },
   "overrides": [
     {
