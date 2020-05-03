@@ -27,7 +27,7 @@
   "scripts": {
     "lint:all": "yarn lint:workspace && yarn lint:tools",
     "lint:workspace": "nx workspace-lint",
-    "lint:tools": "eslint -f formattify tools/**/*.ts --fix",
+    "lint:tools": "nx lint tools",
     "utils:create-environment-files": "nx workspace-schematic environment-files",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
