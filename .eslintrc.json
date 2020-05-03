@@ -11,12 +11,15 @@
   ],
   "plugins": [
     "@typescript-eslint",
-    "@nrwl/nx"
+    "@nrwl/nx",
+    "jest"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
   ],
   "rules": {
     "indent": [
@@ -265,6 +268,27 @@
               "*"
             ]
           }
+        ]
+      }
+    ],
+    "jest/consistent-test-it": [
+      2,
+      {
+        "fn": "it"
+      }
+    ],
+    "jest/no-expect-resolves": 2,
+    "jest/prefer-called-with": 2,
+    "jest/prefer-expect-assertions": 2,
+    "jest/prefer-spy-on": 2,
+    "jest/prefer-strict-equal": 2,
+    "jest/prefer-todo": 2,
+    "jest/require-top-level-describe": 2,
+    "jest/lowercase-name": [
+      2,
+      {
+        "ignore": [
+          "describe"
         ]
       }
     ]
