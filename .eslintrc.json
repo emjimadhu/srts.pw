@@ -1,0 +1,282 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": [
+    "**/*"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "@nrwl/nx"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "indent": [
+      2,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+    "quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "semi": [
+      2,
+      "always"
+    ],
+    "no-console": 1,
+    "no-duplicate-imports": 2,
+    "no-irregular-whitespace": 2,
+    "no-shadow": [
+      2,
+      {
+        "hoist": "never"
+      }
+    ],
+    "no-trailing-spaces": 2,
+    "no-unused-expressions": [
+      2,
+      {
+        "allowShortCircuit": true
+      }
+    ],
+    "no-var": 2,
+    "no-multi-spaces": [
+      2,
+      {
+        "ignoreEOLComments": false
+      }
+    ],
+    "key-spacing": [
+      2,
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "dot-location": [
+      2,
+      "property"
+    ],
+    "no-empty-function": [
+      2,
+      {
+        "allow": [
+          "constructors"
+        ]
+      }
+    ],
+    "array-bracket-newline": [
+      2,
+      {
+        "multiline": true,
+        "minItems": 2
+      }
+    ],
+    "array-bracket-spacing": [
+      2,
+      "always",
+      {
+        "singleValue": false,
+        "objectsInArrays": false,
+        "arraysInArrays": false
+      }
+    ],
+    "array-element-newline": [
+      2,
+      {
+        "minItems": 2
+      }
+    ],
+    "block-spacing": 2,
+    "brace-style": 2,
+    "comma-dangle": [
+      2,
+      "never"
+    ],
+    "eol-last": [
+      2,
+      "always"
+    ],
+    "func-call-spacing": [
+      2,
+      "never"
+    ],
+    "object-curly-newline": [
+      2,
+      {
+        "ImportDeclaration": {
+          "multiline": true,
+          "minProperties": 2
+        },
+        "ExportDeclaration": {
+          "multiline": true,
+          "minProperties": 2
+        },
+        "ObjectExpression": {
+          "multiline": true,
+          "minProperties": 1
+        },
+        "ObjectPattern": {
+          "multiline": true,
+          "minProperties": 1
+        }
+      }
+    ],
+    "object-curly-spacing": [
+      2,
+      "always"
+    ],
+    "object-property-newline": 2,
+    "space-before-function-paren": [
+      2,
+      "never"
+    ],
+    "arrow-spacing": 2,
+    "prefer-const": 2,
+    "eqeqeq": [
+      2,
+      "smart"
+    ],
+    "no-debugger": 2,
+    "no-duplicate-case": 2,
+    "no-eval": 2,
+    "no-redeclare": 2,
+    "arrow-body-style": [
+      2,
+      "as-needed"
+    ],
+    "arrow-parens": [
+      2,
+      "as-needed"
+    ],
+    "@typescript-eslint/array-type": 2,
+    "@typescript-eslint/explicit-member-accessibility": [
+      2,
+      {
+        "accessibility": "explicit",
+        "overrides": {
+          "constructors": "off"
+        }
+      }
+    ],
+    // @Todo Remove this once it has been removed from '@typescript-eslint/recommended'. This is replaced with '@typescript-eslint/naming-convention'
+    "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/naming-convention": [
+      2,
+      {
+        "selector": "default",
+        "format": [
+          "camelCase",
+          "snake_case"
+        ]
+      },
+      {
+        "selector": "variable",
+        "format": [
+          "camelCase",
+          "UPPER_CASE",
+          "snake_case",
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": "parameter",
+        "format": [
+          "camelCase"
+        ],
+        "leadingUnderscore": "allow",
+        "trailingUnderscore": "allow"
+      },
+      {
+        "selector": "memberLike",
+        "format": [
+          "camelCase"
+        ],
+        "leadingUnderscore": "allow",
+        "trailingUnderscore": "allow"
+      },
+      {
+        "selector": "enumMember",
+        "format": [
+          "UPPER_CASE",
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": "typeLike",
+        "format": [
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "prefix": [
+          "I"
+        ]
+      }
+    ],
+    "@typescript-eslint/member-delimiter-style": [
+      2,
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        }
+      }
+    ],
+    "@typescript-eslint/no-inferrable-types": 0,
+    "@typescript-eslint/typedef": 2,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-parameter-properties": 0,
+    "@nrwl/nx/enforce-module-boundaries": [
+      2,
+      {
+        "enforceBuildableLibDependency": true,
+        "allow": [],
+        "depConstraints": [
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": [
+              "*"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": 0
+      }
+    }
+  ]
+}
