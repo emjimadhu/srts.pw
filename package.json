@@ -1,7 +1,24 @@
 {
   "name": "nx-workspace-boilerplate",
   "version": "0.0.0",
+  "description": "My NX Workspace configurations with custom ESlint rules and schematics",
   "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=12.16.0",
+    "npm": ">=6.13.0",
+    "yarn": ">=1.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emjimadhu/nx-workspace-boilerplate.git"
+  },
+  "bugs": "https://github.com/emjimadhu/nx-workspace-boilerplate/issues",
+  "homepage": "https://github.com/emjimadhu/nx-workspace-boilerplate#readme",
+  "author": {
+    "email": "emjimadhu@gmail.com",
+    "name": "Em Ji Madhu"
+  },
   "scripts": {
     "nx": "nx",
     "start": "nx serve",
@@ -23,18 +40,19 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "checkYarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use YARN not NPM! ⚠️ ' && echo && exit 1)",
+    "preinstall": "$npm_execpath --silent run checkYarn"
   },
-  "private": true,
   "dependencies": {},
   "devDependencies": {
     "@nrwl/workspace": "9.2.3",
     "@types/node": "~8.9.4",
     "dotenv": "6.2.0",
+    "eslint": "6.8.0",
+    "prettier": "1.19.1",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "eslint": "6.8.0",
-    "typescript": "~3.8.3",
-    "prettier": "1.19.1"
+    "typescript": "~3.8.3"
   }
 }
