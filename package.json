@@ -29,6 +29,7 @@
     "lint:workspace": "nx workspace-lint",
     "lint:tools": "nx lint tools",
     "utils:create-environment-files": "nx workspace-schematic environment-files",
+    "utils:project-fixup": "nx workspace-schematic project-fixup",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",

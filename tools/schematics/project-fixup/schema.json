@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "project-fixup",
+  "type": "object",
+  "properties": {
+    "projectName": {
+      "type": "string",
+      "description": "Name of the project to fixup",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "To which project you want to fix? (ex: server)"
+    },
+    "skipFormat": {
+      "description": "Skip formatting files",
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "projectName"
+  ]
+}
