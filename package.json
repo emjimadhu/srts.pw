@@ -55,9 +55,9 @@
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
-    "@nrwl/eslint-plugin-nx": "9.2.3",
-    "@nrwl/linter": "9.2.3",
-    "@nrwl/workspace": "9.2.3",
+    "@nrwl/eslint-plugin-nx": "9.2.4",
+    "@nrwl/linter": "9.2.4",
+    "@nrwl/workspace": "9.2.4",
     "@types/node": "13.13.4",
     "@typescript-eslint/eslint-plugin": "2.31.0",
     "@typescript-eslint/parser": "2.31.0",
