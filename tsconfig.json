@@ -23,6 +23,9 @@
     "paths": {
       "@srts.pw/server/environments": [
         "libs/server/environments/src/index.ts"
+      ],
+      "@srts.pw/server/core/typeorm": [
+        "libs/server/core/typeorm/src/index.ts"
       ]
     }
   },

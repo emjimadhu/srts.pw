@@ -29,6 +29,9 @@
     },
     "server-environments": {
       "tags": []
+    },
+    "server-core-typeorm": {
+      "tags": []
     }
   }
 }
