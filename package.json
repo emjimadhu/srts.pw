@@ -30,6 +30,7 @@
     "build:server": "yarn substep:set-server-environment --environment=production && nx build server --configuration=production",
     "lint:server": "nx lint server",
     "test:server": "nx test server",
+    "barrels:server-common-typeorm": "barrel-maintainer libs/server/common/typeorm/src --includeRootDir --singleQuotes --ts",
     "lint:server-environments": "nx lint server-environments",
     "lint:workspace": "nx workspace-lint",
     "lint:tools": "eslint -f formattify tools/**/*.ts --fix",

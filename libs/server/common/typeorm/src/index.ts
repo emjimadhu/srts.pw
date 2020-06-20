@@ -1,2 +1,1 @@
-export * from './lib/server-common-typeorm.module';
-
+export * from './lib';
