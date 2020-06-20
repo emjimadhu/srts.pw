@@ -25,6 +25,10 @@
     }
   },
   "scripts": {
+    "start:server": "nx serve server",
+    "build:server": "nx build server",
+    "lint:server": "nx lint server",
+    "test:server": "nx test server",
     "lint:all": "yarn lint:workspace && yarn lint:tools",
     "lint:workspace": "nx workspace-lint",
     "lint:tools": "eslint -f formattify tools/**/*.ts --fix",
@@ -51,14 +55,25 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "@nestjs/common": "6.8.3",
+    "@nestjs/core": "6.8.3",
+    "@nestjs/platform-express": "6.8.3",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "6.5.5"
+  },
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
+    "@nestjs/schematics": "6.7.0",
+    "@nestjs/testing": "6.8.3",
     "@nrwl/eslint-plugin-nx": "9.4.5",
+    "@nrwl/jest": "9.4.5",
     "@nrwl/linter": "9.4.5",
     "@nrwl/nest": "9.4.5",
+    "@nrwl/node": "9.4.5",
     "@nrwl/workspace": "9.4.5",
+    "@types/jest": "25.1.4",
     "@types/node": "13.13.12",
     "@typescript-eslint/eslint-plugin": "3.3.0",
     "@typescript-eslint/parser": "3.3.0",
@@ -66,12 +81,15 @@
     "cz-conventional-changelog": "3.2.0",
     "dotenv": "8.2.0",
     "eslint": "7.3.0",
+    "eslint-config-prettier": "6.0.0",
     "eslint-formatter-formattify": "4.1.0",
     "eslint-plugin-import": "2.21.2",
     "eslint-plugin-jest": "23.13.2",
     "eslint-plugin-jest-formatting": "1.2.0",
     "eslint-plugin-unicorn": "20.1.0",
     "husky": "4.2.5",
+    "jest": "25.2.3",
+    "ts-jest": "25.2.1",
     "ts-node": "8.10.2",
     "tslint": "6.1.2",
     "typescript": "3.9.5"
