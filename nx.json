@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-workspace-boilerplate",
+  "npmScope": "srts.pw",
   "implicitDependencies": {
     "workspace.json": "*",
     "package.json": {

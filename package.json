@@ -1,7 +1,7 @@
 {
-  "name": "nx-workspace-boilerplate",
+  "name": "srts.pw",
   "version": "0.0.0",
-  "description": "My NX Workspace configurations with custom ESlint rules and schematics",
+  "description": "A URL Shotner",
   "license": "MIT",
   "private": true,
   "engines": {
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/emjimadhu/nx-workspace-boilerplate.git"
+    "url": "https://github.com/emjimadhu/srts.pw.git"
   },
-  "bugs": "https://github.com/emjimadhu/nx-workspace-boilerplate/issues",
-  "homepage": "https://github.com/emjimadhu/nx-workspace-boilerplate#readme",
+  "bugs": "https://github.com/emjimadhu/srts.pw/issues",
+  "homepage": "https://github.com/emjimadhu/srts.pw/blob/develop/README.md",
   "author": {
     "email": "emjimadhu@gmail.com",
     "name": "Em Ji Madhu"
