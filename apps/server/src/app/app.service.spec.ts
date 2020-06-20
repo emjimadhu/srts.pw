@@ -15,6 +15,8 @@ describe('AppService', () => {
 
   describe('getData', () => {
     it('should return "Welcome to server!"', () => {
+      expect.assertions(1);
+
       expect(service.getData()).toStrictEqual({
         message: 'Welcome to server!'
       });

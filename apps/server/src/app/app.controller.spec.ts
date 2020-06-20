@@ -17,6 +17,8 @@ describe('AppController', () => {
 
   describe('getData', () => {
     it('should return "Welcome to server!"', () => {
+      expect.assertions(1);
+
       const appController = app.get<AppController>(AppController);
 
       expect(appController.getData()).toStrictEqual({

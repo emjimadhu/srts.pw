@@ -26,7 +26,7 @@
               "fileReplacements": [
                 {
                   "replace": "apps/server/src/environments/environment.ts",
-                  "with": "apps/server/src/environments/environment.prod.ts"
+                  "with": "apps/server/src/environments/environment.production.ts"
                 }
               ]
             }
