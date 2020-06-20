@@ -26,6 +26,9 @@
   "projects": {
     "server": {
       "tags": []
+    },
+    "server-environments": {
+      "tags": []
     }
   }
 }
