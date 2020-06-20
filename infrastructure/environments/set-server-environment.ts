@@ -19,10 +19,10 @@ const isProduction: boolean = configEnvironment === 'production';
 
 switch (configEnvironment) {
 case RunConfiguration.PRODUCTION:
-  // Production Envs
+  serverEnvironment.port = parseInt(process.env.PRODUCTION_SERVER_PORT);
   break;
 case RunConfiguration.DEVELOPMENT:
-  // Development Envs
+  serverEnvironment.port = parseInt(process.env.DEVELOPMENT_SERVER_PORT);
   break;
 }
 
