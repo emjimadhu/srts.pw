@@ -24,7 +24,10 @@
     }
   },
   "projects": {
-    "tools": {
+    "server": {
+      "tags": []
+    },
+    "server-environments": {
       "tags": []
     }
   }
