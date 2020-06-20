@@ -7,8 +7,9 @@ import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const logger = new Logger('Bootstraap');
   await app.listen(environment.port, () => {
-    Logger.log(`Server running on http://localhost:${environment.port}`);
+    logger.log(`Server running on http://localhost:${environment.port}`);
   });
 }
 
