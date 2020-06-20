@@ -60,8 +60,12 @@
   "dependencies": {
     "@nestjs/common": "6.8.3",
     "@nestjs/core": "6.8.3",
+    "@nestjs/graphql": "7.4.1",
     "@nestjs/platform-express": "6.8.3",
     "@nestjs/typeorm": "7.1.0",
+    "apollo-server-express": "2.15.0",
+    "graphql": "15.1.0",
+    "graphql-tools": "6.0.10",
     "mongodb": "3.5.9",
     "reflect-metadata": "0.1.13",
     "rxjs": "6.5.5",
