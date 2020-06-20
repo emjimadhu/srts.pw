@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ServerCoreGraphqlModule } from '@srts.pw/server/core/graphql';
 
 import { ServerCoreTypeormModule } from '@srts.pw/server/core/typeorm';
 
@@ -7,7 +8,10 @@ import { AppService } from './app.service';
 
 
 @Module({
-  imports: [ServerCoreTypeormModule],
+  imports: [
+    ServerCoreGraphqlModule,
+    ServerCoreTypeormModule
+  ],
   controllers: [AppController],
   providers: [AppService]
 })
