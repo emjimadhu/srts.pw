@@ -32,6 +32,9 @@
     },
     "server-core-typeorm": {
       "tags": []
+    },
+    "server-core-graphql": {
+      "tags": []
     }
   }
 }
