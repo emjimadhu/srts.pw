@@ -1,30 +1,6 @@
 {
   "version": 1,
-  "projects": {
-    "tools": {
-      "root": "",
-      "sourceRoot": "tools",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "tools/.eslintrc.json",
-            "tsConfig": [
-              "tools/tsconfig.tools.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!tools/**"
-            ],
-            "fix": true,
-            "format": "formattify"
-          }
-        }
-      }
-    }
-  },
+  "projects": {},
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   },

@@ -23,9 +23,5 @@
       }
     }
   },
-  "projects": {
-    "tools": {
-      "tags": []
-    }
-  }
+  "projects": {}
 }
