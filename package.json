@@ -61,8 +61,11 @@
     "@nestjs/common": "6.8.3",
     "@nestjs/core": "6.8.3",
     "@nestjs/platform-express": "6.8.3",
+    "@nestjs/typeorm": "7.1.0",
+    "mongodb": "3.5.9",
     "reflect-metadata": "0.1.13",
-    "rxjs": "6.5.5"
+    "rxjs": "6.5.5",
+    "typeorm": "0.2.25"
   },
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
@@ -76,6 +79,7 @@
     "@nrwl/node": "9.4.5",
     "@nrwl/workspace": "9.4.5",
     "@types/jest": "25.1.4",
+    "@types/mongodb": "3.5.23",
     "@types/node": "13.13.12",
     "@types/yargs": "15.0.5",
     "@typescript-eslint/eslint-plugin": "3.3.0",

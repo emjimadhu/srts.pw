@@ -27,6 +27,7 @@
     "client",
     "server",
     "tools",
-    "client-e2e"
+    "client-e2e",
+    "libs"
   ]
 }
