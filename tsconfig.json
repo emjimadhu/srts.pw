@@ -21,7 +21,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-workspace-boilerplate/server/environments": [
+      "@srts.pw/server/environments": [
         "libs/server/environments/src/index.ts"
       ]
     }
