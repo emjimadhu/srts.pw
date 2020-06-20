@@ -176,6 +176,36 @@
           }
         }
       }
+    },
+    "server-common-typeorm": {
+      "root": "libs/server/common/typeorm",
+      "sourceRoot": "libs/server/common/typeorm/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/server/common/typeorm/tsconfig.lib.json",
+              "libs/server/common/typeorm/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/server/common/typeorm/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/server/common/typeorm/jest.config.js",
+            "tsConfig": "libs/server/common/typeorm/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

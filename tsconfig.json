@@ -29,6 +29,9 @@
       ],
       "@srts.pw/server/core/graphql": [
         "libs/server/core/graphql/src/index.ts"
+      ],
+      "@srts.pw/server/common/typeorm": [
+        "libs/server/common/typeorm/src/index.ts"
       ]
     }
   },
