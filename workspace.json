@@ -143,6 +143,69 @@
           }
         }
       }
+    },
+    "server-core-graphql": {
+      "root": "libs/server/core/graphql",
+      "sourceRoot": "libs/server/core/graphql/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/server/core/graphql/.eslintrc.json",
+            "tsConfig": [
+              "libs/server/core/graphql/tsconfig.lib.json",
+              "libs/server/core/graphql/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/server/core/graphql/**/*"
+            ],
+            "fix": true,
+            "format": "formattify"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/server/core/graphql/jest.config.js",
+            "tsConfig": "libs/server/core/graphql/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "server-common-typeorm": {
+      "root": "libs/server/common/typeorm",
+      "sourceRoot": "libs/server/common/typeorm/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/server/common/typeorm/tsconfig.lib.json",
+              "libs/server/common/typeorm/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/server/common/typeorm/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/server/common/typeorm/jest.config.js",
+            "tsConfig": "libs/server/common/typeorm/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
