@@ -38,6 +38,9 @@
     },
     "server-common-typeorm": {
       "tags": []
+    },
+    "server-urls": {
+      "tags": []
     }
   }
 }

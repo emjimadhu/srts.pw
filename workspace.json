@@ -187,6 +187,7 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
+            "config": "libs/server/common/typeorm/.eslintrc.json",
             "tsConfig": [
               "libs/server/common/typeorm/tsconfig.lib.json",
               "libs/server/common/typeorm/tsconfig.spec.json"
@@ -194,7 +195,9 @@
             "exclude": [
               "**/node_modules/**",
               "!libs/server/common/typeorm/**/*"
-            ]
+            ],
+            "fix": true,
+            "format": "formattify"
           }
         },
         "test": {
@@ -202,6 +205,39 @@
           "options": {
             "jestConfig": "libs/server/common/typeorm/jest.config.js",
             "tsConfig": "libs/server/common/typeorm/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "server-urls": {
+      "root": "libs/server/urls",
+      "sourceRoot": "libs/server/urls/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/server/urls/.eslintrc.json",
+            "tsConfig": [
+              "libs/server/urls/tsconfig.lib.json",
+              "libs/server/urls/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/server/urls/**/*"
+            ],
+            "fix": true,
+            "format": "formattify"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/server/urls/jest.config.js",
+            "tsConfig": "libs/server/urls/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

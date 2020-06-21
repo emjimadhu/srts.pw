@@ -32,6 +32,9 @@
       ],
       "@srts.pw/server/common/typeorm": [
         "libs/server/common/typeorm/src/index.ts"
+      ],
+      "@srts.pw/server/urls": [
+        "libs/server/urls/src/index.ts"
       ]
     }
   },
