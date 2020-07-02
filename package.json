@@ -72,7 +72,7 @@
     "graphql-tools": "6.0.10",
     "mongodb": "3.5.9",
     "reflect-metadata": "0.1.13",
-    "rxjs": "6.5.5",
+    "rxjs": "6.6.0",
     "typeorm": "0.2.25"
   },
   "devDependencies": {
