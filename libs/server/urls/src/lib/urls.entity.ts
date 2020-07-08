@@ -4,7 +4,7 @@ import {
 
 import { BaseDBEntity } from '@srts.pw/server/common/typeorm';
 
-@Entity()
+@Entity('urls')
 export class Urls extends BaseDBEntity {
   @Column({
     unique: true
