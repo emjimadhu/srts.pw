@@ -20,6 +20,7 @@ import { environment } from '@srts.pw/server/environments';
       */
       entities: getMetadataArgsStorage().tables.map((table: TableMetadataArgs) => table.target)
     })
-  ]
+  ],
+  exports: [TypeOrmModule]
 })
 export class ServerCoreTypeormModule {}

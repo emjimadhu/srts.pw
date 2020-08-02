@@ -68,3 +68,6 @@ Thumbs.db
 # Environment Files
 libs/**/environment.*.ts
 infrastructure/environments/.env
+
+# GQL Schema
+schema.gql
