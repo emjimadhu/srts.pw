@@ -2,16 +2,19 @@ import {
   InputType, Field
 } from '@nestjs/graphql';
 import {
-  IsUrl, Matches
+  IsUrl, Matches, IsOptional
 } from 'class-validator';
 
 
 @InputType()
 export class CreateShortUrlInput {
-  @Field()
-  @Matches(/[\da-z-]/i, {
+  @Field({
+    nullable: true
+  })
+  @Matches(/[\w-]+/g, {
     message: 'Invalid slug format. Should be Alphanumeric and Dash'
   })
+  @IsOptional()
   public slug: string;
 
   @Field()
