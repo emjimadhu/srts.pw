@@ -4,13 +4,16 @@ import {
 
 import { BaseDBEntity } from '@srts.pw/server/common/typeorm';
 
-@Entity('urls')
-export class Urls extends BaseDBEntity {
+@Entity('url')
+export class Url extends BaseDBEntity {
   @Column({
     unique: true
   })
   public slug: string;
 
   @Column()
-  public url: string;
+  public longUrl: string;
+
+  @Column()
+  public shortUrl: string;
 }
