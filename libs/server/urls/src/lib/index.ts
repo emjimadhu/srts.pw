@@ -1,3 +1,4 @@
+export * from './gql.decorator';
 export * from './models';
 export * from './server-urls.module';
 export * from './url.entity';
