@@ -1,4 +1,6 @@
-import { Injectable } from '@nestjs/common';
+import {
+  Injectable, NotFoundException
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import{ v4 as uuid } from 'uuid';
 
@@ -8,6 +10,7 @@ import { UrlRepository } from './url.repository';
 import { Url } from './url.entity';
 import { UrlType } from './url.gql.type';
 import { CreateShortUrlInput } from './models';
+import { RedirectInput } from './models/redirect.input';
 
 @Injectable()
 export class UrlService {
@@ -39,5 +42,21 @@ export class UrlService {
     const urlDocument = await this.urlRepository.save(urlEntity);
 
     return new UrlType(urlDocument);
+  }
+
+  public async redirect(requestVariables: RedirectInput): Promise<Url> {
+    const {
+      shortUrl
+    } = requestVariables;
+
+    const urlDocument = await this.urlRepository.findOne({
+      shortUrl
+    });
+
+    if (!urlDocument) {
+      throw new NotFoundException('URL doesn\'t exsists!');
+    }
+
+    return urlDocument;
   }
 }
