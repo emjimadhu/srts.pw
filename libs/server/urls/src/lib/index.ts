@@ -1,3 +1,4 @@
+export * from './models';
 export * from './server-urls.module';
 export * from './url.entity';
 export * from './url.gql.type';
