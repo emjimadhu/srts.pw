@@ -50,6 +50,9 @@
       "implicitDependencies": [
         "client"
       ]
+    },
+    "client-environments": {
+      "tags": []
     }
   }
 }

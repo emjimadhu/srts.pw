@@ -271,8 +271,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/client/src/environments/environment.ts",
-                  "with": "apps/client/src/environments/environment.production.ts"
+                  "replace": "libs/client/environments/src/lib/environment.ts",
+                  "with": "libs/client/environments/src/lib/environment.production.ts"
                 }
               ],
               "optimization": true,
@@ -289,6 +289,14 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "libs/client/environments/src/lib/environment.ts",
+                  "with": "libs/client/environments/src/lib/environment.development.ts"
+                }
+              ]
             }
           }
         },
@@ -300,6 +308,9 @@
           "configurations": {
             "production": {
               "buildTarget": "client:build:production"
+            },
+            "development": {
+              "buildTarget": "client:build:development"
             }
           }
         },
@@ -361,6 +372,39 @@
             ],
             "fix": true,
             "format": "formattify"
+          }
+        }
+      }
+    },
+    "client-environments": {
+      "root": "libs/client/environments",
+      "sourceRoot": "libs/client/environments/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/client/environments/.eslintrc.json",
+            "tsConfig": [
+              "libs/client/environments/tsconfig.lib.json",
+              "libs/client/environments/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/environments/**/*"
+            ],
+            "fix": true,
+            "format": "formattify"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/environments/jest.config.js",
+            "tsConfig": "libs/client/environments/tsconfig.spec.json",
+            "passWithNoTests": true
           }
         }
       }
