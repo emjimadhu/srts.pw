@@ -25,6 +25,8 @@
     }
   },
   "scripts": {
+    "start:all": "concurrently --names \"CLIENT,SERVER\" -c \"yellow.bold,yellow.bold\" \"yarn start:client\" \"yarn start:server\"",
+    "build:all": "yarn build:client && yarn build:server",
     "lint:all": "yarn lint:workspace && yarn lint:tools && yarn lint:server && yarn lint:client && yarn lint:server-environments",
     "start:server": "yarn substep:set-server-environment --environment=development && nx serve server --configuration=development",
     "build:server": "yarn substep:set-server-environment --environment=production && nx build server --configuration=production",
