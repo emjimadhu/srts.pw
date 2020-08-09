@@ -6,10 +6,10 @@ import { ApolloProvider } from '@apollo/client';
 
 import { apolloClient } from '../services/core/apollo-client.service';
 
-import './app.scss';
+import './app.component.scss';
 
 
-export const App: React.FC = () => {
+export const AppComponent: React.FC = () => {
   return (
     <ApolloProvider client={apolloClient}>
       <div className="app">
@@ -40,4 +40,4 @@ export const App: React.FC = () => {
 };
 
 
-export default App;
+export default AppComponent;

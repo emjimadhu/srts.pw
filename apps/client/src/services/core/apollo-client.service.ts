@@ -1,5 +1,5 @@
 import {
-  ApolloClient, InMemoryCache, createHttpLink, ApolloClientOptions, NormalizedCacheObject
+  ApolloClient, InMemoryCache, createHttpLink, NormalizedCacheObject
 } from '@apollo/client';
 
 export const apolloClient: ApolloClient<NormalizedCacheObject> = new ApolloClient({
