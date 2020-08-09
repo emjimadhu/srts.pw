@@ -9,8 +9,10 @@ import { environment } from '@srts.pw/server/environments';
 import { UrlRepository } from './url.repository';
 import { Url } from './url.entity';
 import { UrlType } from './url.gql.type';
-import { CreateShortUrlInput } from './models';
-import { RedirectInput } from './models/redirect.input';
+import {
+  CreateShortUrlInput, GetUrlsInput
+} from './models';
+import { GetURLByShortURLAndUserInput } from './models/get-url-by-short-url-and-user.input';
 
 @Injectable()
 export class UrlService {
@@ -19,13 +21,22 @@ export class UrlService {
     private readonly urlRepository: UrlRepository
   ) {}
 
-  public async listRead(): Promise<UrlType[]> {
-    return (await this.urlRepository.find()).map((urlDocument: Url) => new UrlType(urlDocument));
+  public async listRead(requestVariables: GetUrlsInput): Promise<UrlType[]> {
+    const {
+      user
+    } = requestVariables || {};
+    let filter: {user?: string} = {};
+    if (user) {
+      filter = {
+        user
+      };
+    }
+    return (await this.urlRepository.find(filter)).map((urlDocument: Url) => new UrlType(urlDocument));
   }
 
   public async createShortUrl(requestVariables: CreateShortUrlInput): Promise<UrlType> {
     let {
-      slug, url
+      slug, url, user
     } = requestVariables;
 
     if(!slug) {
@@ -36,7 +47,8 @@ export class UrlService {
       id: uuid(),
       longUrl: url,
       shortUrl: `${environment.hostUrl}/${slug}`,
-      slug
+      slug,
+      user
     });
 
     const urlDocument = await this.urlRepository.save(urlEntity);
@@ -44,17 +56,19 @@ export class UrlService {
     return new UrlType(urlDocument);
   }
 
-  public async getUrlByShortUrl(requestVariables: RedirectInput): Promise<UrlType> {
+  public async getUrlByShortUrl(requestVariables: GetURLByShortURLAndUserInput): Promise<UrlType> {
     const {
-      shortUrl
+      shortUrl,
+      user
     } = requestVariables;
 
     const urlDocument = await this.urlRepository.findOne({
-      shortUrl
+      shortUrl,
+      user
     });
 
     if (!urlDocument) {
-      throw new NotFoundException('URL doesn\'t exsists!');
+      throw new NotFoundException('URL or User doesn\'t exsists!');
     }
 
     return new UrlType(urlDocument);

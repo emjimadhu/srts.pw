@@ -2,7 +2,7 @@ import {
   InputType, Field
 } from '@nestjs/graphql';
 import {
-  IsUrl, Matches, IsOptional
+  IsUrl, Matches, IsOptional, IsUUID
 } from 'class-validator';
 
 
@@ -22,4 +22,10 @@ export class CreateShortUrlInput {
     message: 'Invalid URL format'
   })
   public url: string;
+
+  @Field()
+  @IsUUID('4', {
+    message: 'Invalid User'
+  })
+  public user: string;
 }
