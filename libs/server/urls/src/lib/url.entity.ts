@@ -16,4 +16,7 @@ export class Url extends BaseDBEntity {
 
   @Column()
   public shortUrl: string;
+
+  @Column()
+  public user: string;
 }

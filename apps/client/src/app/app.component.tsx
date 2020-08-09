@@ -8,8 +8,16 @@ import { apolloClient } from '../services/core/apollo-client.service';
 import {
   stackHorizontalGap, boldStyle
 } from './app.component.styles';
+import {
+  getUser, setUser
+} from '../services/core/auth.service';
+
 
 const AppComponent: React.FC = () => {
+  if (!getUser()) {
+    setUser();
+  }
+
   return (
     <ApolloProvider client={apolloClient}>
       <Stack

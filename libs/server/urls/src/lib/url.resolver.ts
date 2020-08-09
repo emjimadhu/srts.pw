@@ -4,8 +4,10 @@ import {
 
 import { UrlService } from './url.service';
 import { UrlType } from './url.gql.type';
-import { CreateShortUrlInput } from './models';
-import { RedirectInput } from './models/redirect.input';
+import {
+  CreateShortUrlInput, GetUrlsInput
+} from './models';
+import { GetURLByShortURLAndUserInput } from './models/get-url-by-short-url-and-user.input';
 
 
 @Resolver(of => UrlType)
@@ -15,8 +17,12 @@ export class UrlResolver {
   ) {}
 
   @Query(() => [UrlType])
-  public urls(): Promise<UrlType[]> {
-    return this.urlService.listRead();
+  public urls(
+    @Args('requestVariables', {
+      nullable: true
+    }) requestVariables: GetUrlsInput
+  ): Promise<UrlType[]> {
+    return this.urlService.listRead(requestVariables);
   }
 
   @Mutation(() => UrlType)
@@ -28,7 +34,7 @@ export class UrlResolver {
 
   @Query(() => UrlType)
   public async getUrlByShortUrl(
-    @Args('requestVariables') requestVariables: RedirectInput
+    @Args('requestVariables') requestVariables: GetURLByShortURLAndUserInput
   ): Promise<UrlType> {
     return this.urlService.getUrlByShortUrl(requestVariables);
   }
