@@ -15,6 +15,9 @@ export class UrlType extends BaseGQLType {
   public shortUrl: string;
 
   @Field()
+  public longUrl: string;
+
+  @Field()
   public createdAt: Date;
 
   @Field()
@@ -24,6 +27,7 @@ export class UrlType extends BaseGQLType {
     super();
     this.id = urlDocument.id;
     this.shortUrl = urlDocument.shortUrl;
+    this.longUrl = urlDocument.longUrl;
     this.createdAt = urlDocument.createdAt;
     this.updatedAt = urlDocument.updatedAt;
   }
