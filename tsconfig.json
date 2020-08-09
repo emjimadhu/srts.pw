@@ -35,7 +35,10 @@
       ],
       "@srts.pw/server/urls": [
         "libs/server/urls/src/index.ts"
-      ]
+      ],
+      "@srts.pw/client/environments": [
+        "libs/client/environments/src/index.ts"
+      ],
     }
   },
   "exclude": [
