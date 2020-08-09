@@ -44,7 +44,7 @@ export class UrlService {
     return new UrlType(urlDocument);
   }
 
-  public async redirect(requestVariables: RedirectInput): Promise<Url> {
+  public async getUrlByShortUrl(requestVariables: RedirectInput): Promise<UrlType> {
     const {
       shortUrl
     } = requestVariables;
@@ -57,6 +57,6 @@ export class UrlService {
       throw new NotFoundException('URL doesn\'t exsists!');
     }
 
-    return urlDocument;
+    return new UrlType(urlDocument);
   }
 }
