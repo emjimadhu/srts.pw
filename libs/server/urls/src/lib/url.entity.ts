@@ -4,6 +4,8 @@ import {
 
 import { BaseDBEntity } from '@srts.pw/server/common/typeorm';
 
+import { MetaData } from './url-metadata.entity-column';
+
 @Entity('url')
 export class Url extends BaseDBEntity {
   @Column({
@@ -19,4 +21,7 @@ export class Url extends BaseDBEntity {
 
   @Column()
   public user: string;
+
+  @Column(type => MetaData)
+  public metadata: MetaData
 }
