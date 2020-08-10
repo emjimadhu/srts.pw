@@ -11245,21 +11245,6 @@ merge@^1.2.1:
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
   integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
 
-metascraper-author@5.13.2:
-  version "5.13.2"
-  resolved "https://registry.yarnpkg.com/metascraper-author/-/metascraper-author-5.13.2.tgz#9a05d703eb9835c01235bbdbbc337e946663a3b3"
-  integrity sha512-wMof54inZoFuT3U9YYQvA9uzn9utnS2kCx3hdKxByg5GBNzC8H4JtyAez/N50awhSsYBQ2jv3lV0iPtF2ImzOA==
-  dependencies:
-    "@metascraper/helpers" "^5.13.2"
-    lodash "~4.17.19"
-
-metascraper-date@5.13.2:
-  version "5.13.2"
-  resolved "https://registry.yarnpkg.com/metascraper-date/-/metascraper-date-5.13.2.tgz#b73e735cd5e8b11d57c979ed5a39642efc35c44d"
-  integrity sha512-PPL48wfXe5DKztFGzn3kTPCJbpWVGZaBsdgQoLxHjw++RIihff5fD82f8T7LoAc8BymXFzgWj6JZiFYKCp4RHQ==
-  dependencies:
-    "@metascraper/helpers" "^5.13.2"
-
 metascraper-description@5.13.2:
   version "5.13.2"
   resolved "https://registry.yarnpkg.com/metascraper-description/-/metascraper-description-5.13.2.tgz#9399b79fe117c3196de9d2284f49913424fee687"
@@ -11281,13 +11266,6 @@ metascraper-title@5.13.2:
   dependencies:
     "@metascraper/helpers" "^5.13.2"
     lodash "~4.17.19"
-
-metascraper-url@5.13.2:
-  version "5.13.2"
-  resolved "https://registry.yarnpkg.com/metascraper-url/-/metascraper-url-5.13.2.tgz#935abe422411f5fb575bc3218cb9acb4566c66c4"
-  integrity sha512-0r+q2J6Hw+5K5eNFlthxNlXfu76zGdgMAH8i9xdj4gltliyey+8HPgqo3XQVcQpLkQvDeUDyQSFW8dJcBNy/qg==
-  dependencies:
-    "@metascraper/helpers" "^5.13.2"
 
 metascraper@5.13.2:
   version "5.13.2"
