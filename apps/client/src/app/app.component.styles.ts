@@ -22,12 +22,6 @@ export const lightStyle: ITextTokens = {
   }
 };
 
-export const appTextField: ITextFieldStyles = {
-  root: {
-    width: '50vw'
-  }
-};
-
 export const stackHorizontalGap: IStackTokens = {
   childrenGap: 15
 };
