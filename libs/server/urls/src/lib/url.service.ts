@@ -1,8 +1,13 @@
+/* eslint-disable unicorn/no-fn-reference-in-iterator */
 import {
-  Injectable, NotFoundException
+  Injectable, NotFoundException, HttpService
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import{ v4 as uuid } from 'uuid';
+import Metascraper from 'metascraper';
+import MetascraperImage from 'metascraper-image';
+import MetascraperDescription from 'metascraper-description';
+import MetascraperTitle from 'metascraper-title';
 
 import { environment } from '@srts.pw/server/environments';
 
@@ -18,7 +23,8 @@ import { GetURLByShortURLAndUserInput } from './models/get-url-by-short-url-and-
 export class UrlService {
   constructor(
     @InjectRepository(UrlRepository)
-    private readonly urlRepository: UrlRepository
+    private readonly urlRepository: UrlRepository,
+    private httpService: HttpService
   ) {}
 
   public async listRead(requestVariables: GetUrlsInput): Promise<UrlType[]> {
@@ -35,6 +41,12 @@ export class UrlService {
   }
 
   public async createShortUrl(requestVariables: CreateShortUrlInput): Promise<UrlType> {
+    const metascraper = Metascraper([
+      MetascraperImage(),
+      MetascraperDescription(),
+      MetascraperTitle()
+    ]);
+
     let {
       slug, url, user
     } = requestVariables;
@@ -43,12 +55,20 @@ export class UrlService {
       slug = uuid().slice(0, 8);
     }
 
+    const htmlDocument = await this.httpService.get(url).toPromise();
+
+    const metadata = await metascraper({
+      html: htmlDocument.data,
+      url: url
+    });
+
     const urlEntity = this.urlRepository.create({
       id: uuid(),
       longUrl: url,
       shortUrl: `${environment.hostUrl}/${slug}`,
       slug,
-      user
+      user,
+      metadata
     });
 
     const urlDocument = await this.urlRepository.save(urlEntity);
