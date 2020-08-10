@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable unicorn/no-fn-reference-in-iterator */
+import { URL } from 'url';
+
 import {
   Injectable, NotFoundException, HttpService
 } from '@nestjs/common';
@@ -55,12 +58,23 @@ export class UrlService {
       slug = uuid().slice(0, 8);
     }
 
-    const htmlDocument = await this.httpService.get(url).toPromise();
+    let htmlDocument: any;
+    let metadata: {description?: string;image?: string;title?:string} = {};
 
-    const metadata = await metascraper({
-      html: htmlDocument.data,
-      url: url
-    });
+    try {
+      htmlDocument = await this.httpService.get(url).toPromise();
+
+      metadata = await metascraper({
+        html: htmlDocument.data,
+        url: url
+      });
+    } catch {
+      metadata = {
+        title: (new URL(url)).hostname,
+        description: (new URL(url)).pathname,
+        image: 'https://via.placeholder.com/300?text=srts.pw'
+      };
+    }
 
     const urlEntity = this.urlRepository.create({
       id: uuid(),
