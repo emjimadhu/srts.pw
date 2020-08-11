@@ -5,7 +5,7 @@ import {
 
 import {
   stackHorizontalGap, boldStyle, contentClass
-} from '../../../app/app.component.styles';
+} from '../../../app/app.styles';
 
 export const AppBarComponent: React.FC = () => {
   return (

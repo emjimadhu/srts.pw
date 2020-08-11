@@ -3,7 +3,7 @@ import { ApolloProvider } from '@apollo/client';
 import { Stack } from '@fluentui/react';
 
 import { apolloClient } from '../services/core/apollo-client.service';
-import { stackHorizontalGap } from './app.component.styles';
+import { stackHorizontalGap } from './app.styles';
 import {
   getUser, setUser
 } from '../services/core/auth.service';

@@ -1,11 +1,12 @@
 import { gql } from '@apollo/client';
 
 export const CREATE_SHORT_URL_QUERY = gql`
-  mutation CreateShortUrl($url: String!, $user: String!) {
+  mutation CreateShortUrl($url: String!, $user: String!, $slug: String) {
     createShortUrl(
     requestVariables: {
       url: $url
       user: $user
+      slug: $slug
     }
   ) {
     id

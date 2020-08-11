@@ -42,6 +42,9 @@ const myTheme = createTheme({
     neutralDark: '#fbfafa',
     black: '#fdfdfc',
     white: '#201f1e'
+  },
+  semanticColors: {
+    errorText: '#f44336'
   }
 });
 

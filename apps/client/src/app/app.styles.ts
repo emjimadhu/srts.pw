@@ -1,5 +1,5 @@
 import {
-  ITextTokens, FontWeights, IStackTokens, getTheme, mergeStyles, AnimationClassNames, ITextFieldStyles
+  ITextTokens, FontWeights, IStackTokens, getTheme, mergeStyles, AnimationClassNames
 } from '@fluentui/react';
 
 export const theme = getTheme();
