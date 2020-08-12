@@ -1,5 +1,5 @@
 import {
-  ITextTokens, FontWeights, IStackTokens, getTheme, mergeStyles, AnimationClassNames
+  ITextTokens, FontWeights, IStackTokens, getTheme
 } from '@fluentui/react';
 
 export const theme = getTheme();
@@ -25,13 +25,3 @@ export const lightStyle: ITextTokens = {
 export const stackHorizontalGap: IStackTokens = {
   childrenGap: 15
 };
-
-export const contentClass = mergeStyles([
-  {
-    backgroundColor: theme.palette.blue,
-    color: theme.palette.white,
-    lineHeight: '50px',
-    padding: '0 20px'
-  },
-  AnimationClassNames.scaleUpIn100
-]);
