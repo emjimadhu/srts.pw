@@ -17,7 +17,7 @@ import {
 
 const getUrlErrorMessage = (value: string): string => {
   const urlRegEx = new RegExp(/https?:\/\/(www\.)?[\w#%+.:=@~-]{1,256}\.[\d()a-z]{1,6}\b([\w#%&()+./:=?@~-]*)/gi);
-  return (!value.match(urlRegEx)) ? 'Should be valid URL.' : '';
+  return (!value.match(urlRegEx)) ? 'Should be valid URL. (ex: https://google.com)' : '';
 };
 
 
@@ -86,7 +86,7 @@ const CreateShortUrlComponent: React.FC = () => {
           autoFocus
           styles={createUrlUrlTextFieldWidth}
           required
-          placeholder="Enter URL here *"
+          placeholder="Enter URL here (ex: https://google.com) *"
           name="url"
           disabled={disableTextField}
           value={url}
