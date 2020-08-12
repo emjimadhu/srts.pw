@@ -92,6 +92,7 @@ const CreateShortUrlComponent: React.FC = () => {
           value={url}
           onGetErrorMessage={getUrlErrorMessage}
           validateOnLoad={false}
+          autoComplete="off"
           onChange={(event_: React.FormEvent<HTMLTextAreaElement>) => {
             setUrl(event_.target['value']);
 
@@ -104,6 +105,7 @@ const CreateShortUrlComponent: React.FC = () => {
           name="slug"
           disabled={disableTextField}
           value={slug}
+          autoComplete="off"
           onChange={(event_: React.FormEvent<HTMLTextAreaElement>) => {
             setSlug(event_.target['value']);
           }}
