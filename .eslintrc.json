@@ -332,7 +332,9 @@
   },
   "settings": {
     "import/resolver": {
-      "typescript": {}
+      "typescript": {
+        "project": "./tsconfig.base.json"
+      }
     }
   },
   "overrides": [
