@@ -1,5 +1,8 @@
 {
   "npmScope": "srts.pw",
+  "affected": {
+    "defaultBase": "develop"
+  },
   "implicitDependencies": {
     "workspace.json": "*",
     "package.json": {
