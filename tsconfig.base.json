@@ -38,7 +38,7 @@
       ],
       "@srts.pw/client/environments": [
         "libs/client/environments/src/index.ts"
-      ],
+      ]
     }
   },
   "exclude": [
