@@ -6,9 +6,10 @@ import {
 } from '@fluentui/react';
 import { useMutation } from '@apollo/client';
 
+import { getUser } from '@srts.pw/client/services/core';
+
 import './create-short-url.component.scss';
 
-import { getUser } from '../../../services/core/auth.service';
 import { CREATE_SHORT_URL_QUERY } from './create-short-url.query';
 import {
   createUrlTextFieldStyles, createUrlSlugTextFieldWidth, createUrlUrlTextFieldWidth, shortenButtonStyles
