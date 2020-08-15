@@ -41,6 +41,9 @@
       ],
       "@srts.pw/client/services/core": [
         "libs/client/services/core/src/index.ts"
+      ],
+      "@srts.pw/client/components/header": [
+        "libs/client/components/header/src/index.ts"
       ]
     }
   },

@@ -59,6 +59,9 @@
     },
     "client-services-core": {
       "tags": []
+    },
+    "client-components-header": {
+      "tags": []
     }
   }
 }
