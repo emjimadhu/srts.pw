@@ -1,16 +1,49 @@
-
 import React from 'react';
+import {
+  AppBar, Toolbar, Typography
+} from '@material-ui/core';
+import {
+  makeStyles, createStyles, Theme
+} from '@material-ui/core/styles';
 
 import './client-components-header.component.scss';
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      boxShadow: 0
+    },
+    title: {
+      fontWeight: 'bold',
+      marginRight: theme.spacing(1)
+    }
+  })
+);
 
 export interface IClientComponentsHeaderProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHeaderProps) => {
+  const classes = useStyles();
+
   return (
-    <div>
-      <h1>Welcome to client-components-header!</h1>
-    </div>
+    <AppBar
+      position="static"
+      className={classes.root}
+    >
+      <Toolbar>
+        <Typography
+          variant="h5"
+          className={classes.title}
+        >
+          SRTS.PW
+        </Typography>
+        <Typography
+          variant="h6"
+        >
+           - URL Shortner
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 
