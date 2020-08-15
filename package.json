@@ -147,7 +147,7 @@
     "eslint-plugin-react-hooks": "4.0.8",
     "eslint-plugin-unicorn": "21.0.0",
     "husky": "4.2.5",
-    "jest": "26.3.0",
+    "jest": "26.4.0",
     "ts-jest": "26.2.0",
     "ts-node": "8.10.2",
     "tslint": "6.1.3",
