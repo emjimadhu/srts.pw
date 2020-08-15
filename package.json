@@ -38,6 +38,7 @@
     "test:client": "nx test client",
     "barrels:server-common-typeorm": "barrel-maintainer libs/server/common/typeorm/src --includeRootDir --singleQuotes --ts",
     "barrels:server-urls": "barrel-maintainer libs/server/urls/src --includeRootDir --singleQuotes --ts",
+    "barrels:client-core": "barrel-maintainer libs/client/services/core/src --includeRootDir --singleQuotes --ts",
     "lint:server-environments": "nx lint server-environments",
     "lint:workspace": "nx workspace-lint",
     "lint:tools": "eslint -f formattify tools/**/*.ts --fix",

@@ -38,6 +38,9 @@
       ],
       "@srts.pw/client/environments": [
         "libs/client/environments/src/index.ts"
+      ],
+      "@srts.pw/client/services/core": [
+        "libs/client/services/core/src/index.ts"
       ]
     }
   },
