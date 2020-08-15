@@ -1,1 +1,1 @@
-export * from './client-services-core';
+export * from './material-ui';
