@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core/styles';
 import LinkIcon from '@material-ui/icons/Link';
 
-import { IUrlDocument } from '@srts.pw/client/components/create-url';
+import { IUrlDocument } from '@srts.pw/client/types';
 
 import './client-components-url-preview.component.scss';
 

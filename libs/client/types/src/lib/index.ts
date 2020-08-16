@@ -1,1 +1,1 @@
-export * from './client-types';
+export * from './interfaces';

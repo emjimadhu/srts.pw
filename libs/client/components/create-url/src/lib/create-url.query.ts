@@ -1,5 +1,7 @@
 import { gql } from '@apollo/client';
 
+import { IUrlDocument } from '@srts.pw/client/types';
+
 export const CREATE_SHORT_URL_QUERY = gql`
   mutation CreateShortUrl($url: String!, $user: String!, $slug: String) {
     createShortUrl(
@@ -23,20 +25,6 @@ export const CREATE_SHORT_URL_QUERY = gql`
   }
   }
 `;
-
-export interface IUrlDocument {
-  id: string;
-  shortUrl: string;
-  longUrl: string;
-  user: string;
-  createdAt: Date;
-  updatedAt: Date;
-  metadata?: {
-    description?: string;
-    image?: string;
-    title?: string;
-  };
-}
 
 export interface ICreateShortUrl_ResponseData {
   createShortUrl : IUrlDocument;

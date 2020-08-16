@@ -4,10 +4,9 @@ import {
   makeStyles, Theme, createStyles
 } from '@material-ui/core/styles';
 
-import {
-  ClientComponentsCreateUrl, IUrlDocument
-} from '@srts.pw/client/components/create-url';
+import { ClientComponentsCreateUrl } from '@srts.pw/client/components/create-url';
 import { ClientComponentsUrlPreview } from '@srts.pw/client/components/url-preview';
+import { IUrlDocument } from '@srts.pw/client/types';
 
 import './client-pages-home.component.scss';
 
