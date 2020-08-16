@@ -40,6 +40,8 @@
     "test:client-components-header": "nx test client-components-header",
     "lint:client-component-create-url": "nx lint client-components-create-url",
     "test:client-components-create-url": "nx test client-components-create-url",
+    "lint:client-component-url-preview": "nx lint client-components-url-preview",
+    "test:client-components-url-preview": "nx test client-components-url-preview",
     "barrels:server-common-typeorm": "barrel-maintainer libs/server/common/typeorm/src --includeRootDir --singleQuotes --ts",
     "barrels:server-urls": "barrel-maintainer libs/server/urls/src --includeRootDir --singleQuotes --ts",
     "barrels:client-core": "barrel-maintainer libs/client/services/core/src --includeRootDir --singleQuotes --ts",

@@ -12,6 +12,7 @@ import { ClientComponentsHeader } from '@srts.pw/client/components/header';
 import {
   ClientComponentsCreateUrl, IUrlDocument
 } from '@srts.pw/client/components/create-url';
+import { ClientComponentsUrlPreview } from '@srts.pw/client/components/url-preview';
 
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -59,6 +60,7 @@ const AppComponent: React.FC = () => {
             <ClientComponentsCreateUrl
               setCreatedUrl={setCreatedUrl}
             />
+            <ClientComponentsUrlPreview />
           </Grid>
         </Grid>
       </Grid>

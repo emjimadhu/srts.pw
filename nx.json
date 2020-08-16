@@ -65,6 +65,9 @@
     },
     "client-components-create-url": {
       "tags": []
+    },
+    "client-components-url-preview": {
+      "tags": []
     }
   }
 }
