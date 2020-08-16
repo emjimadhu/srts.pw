@@ -11,7 +11,7 @@ import './client-components-header.component.scss';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      boxShadow: 0
+      boxShadow: 'none'
     },
     title: {
       fontWeight: 'bold',
