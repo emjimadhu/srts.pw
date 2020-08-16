@@ -44,10 +44,6 @@ const AppComponent: React.FC = () => {
     setUser();
   }
 
-  if (!createdUrl && JSON.parse(localStorage.getItem('urlDocument'))) {
-    setCreatedUrl(JSON.parse(localStorage.getItem('urlDocument')));
-  }
-
   console.log('Created Url');
   console.log(createdUrl);
 
@@ -56,11 +52,13 @@ const AppComponent: React.FC = () => {
       <ClientComponentsHeader />
       <Grid container className={classes.root}>
         <Grid item xs={12}>
-          <Grid container alignItems="center" justify="center" className={classes.urlInputContainer}>
+          <Grid container alignItems="center" justify="center" alignContent="center" className={classes.urlInputContainer}>
             <ClientComponentsCreateUrl
               setCreatedUrl={setCreatedUrl}
             />
-            <ClientComponentsUrlPreview />
+            <ClientComponentsUrlPreview
+              createdUrl={createdUrl}
+            />
           </Grid>
         </Grid>
       </Grid>
