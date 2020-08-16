@@ -44,15 +44,10 @@ export const ClientPagesUrls: React.FC = (properties: IClientPagesUrlsProps) => 
     }
   });
 
-  if (!loading) {
-    console.log('Data');
-    console.log(data.urls);
-  }
-
   return (
     <div className={classes.urlListContainer}>
-      <Typography variant="h3">
-        List of Shortened Urls
+      <Typography variant="h4">
+        List of Links
       </Typography>
 
       {
@@ -76,19 +71,12 @@ export const ClientPagesUrls: React.FC = (properties: IClientPagesUrlsProps) => 
                         <Typography gutterBottom variant="h5" component="h2">
                           {url?.metadata.title}
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography gutterBottom variant="body2" color="textSecondary" component="p">
                           {url?.metadata.description}
                         </Typography>
+                        Long Url: <strong>{url?.longUrl}</strong>
                       </CardContent>
                       <CardActions>
-                        <Button
-                          endIcon={<LinkIcon />}
-                          target="_blank"
-                          href={url?.longUrl}
-                          disableElevation
-                        >
-                          Long Url
-                        </Button>
                         <Button
                           variant="contained"
                           color="primary"

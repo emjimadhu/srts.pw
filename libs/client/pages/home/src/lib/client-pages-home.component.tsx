@@ -37,9 +37,6 @@ export const ClientPagesHome: React.FC = (properties: IClientPagesHomeProps) => 
     setCreatedUrl
   ] = useState<IUrlDocument | undefined>();
 
-  console.log('Created Url');
-  console.log(createdUrl);
-
   return (
     <Grid container className={classes.root}>
       <Grid item xs={12}>

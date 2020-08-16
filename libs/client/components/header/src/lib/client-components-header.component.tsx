@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  AppBar, Toolbar, Typography
+  AppBar, Toolbar, Typography, Button
 } from '@material-ui/core';
 import {
   makeStyles, createStyles, Theme
@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       fontWeight: 'bold',
       marginRight: theme.spacing(1)
+    },
+    subTitle: {
+      flexGrow: 1
     }
   })
 );
@@ -39,9 +42,12 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
         </Typography>
         <Typography
           variant="h6"
+          className={classes.subTitle}
         >
            - URL Shortner
         </Typography>
+        <Button color="inherit" href="/">Home</Button>
+        <Button color="inherit" href="/urls">Links</Button>
       </Toolbar>
     </AppBar>
   );

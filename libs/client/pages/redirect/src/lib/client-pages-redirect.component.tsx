@@ -18,10 +18,8 @@ export const ClientPagesRedirect: React.FC = (properties: IClientPagesRedirectPr
     }
   });
 
-  console.log(data);
-
   if (!loading && data?.getUrlByShortUrl) {
-    window.location.href = 'https://www.google.com';
+    window.location.href = data.getUrlByShortUrl.longUrl;
   }
 
   return (
