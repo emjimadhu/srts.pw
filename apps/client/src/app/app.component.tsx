@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ApolloProvider } from '@apollo/client';
-import { Stack } from '@fluentui/react';
-
-import { apolloClient } from '../services/core/apollo-client.service';
-import { stackHorizontalGap } from './app.styles';
 import {
-  getUser, setUser
-} from '../services/core/auth.service';
-import AppBarComponent from '../components/app/app-bar/app-bar.component';
-import CreateShortUrlComponent from '../components/app/create-short-url/create-short-url.component';
+  Router, Switch, Route
+} from 'react-router-dom';
 
+import {
+  apolloClient, getUser, setUser
+} from '@srts.pw/client/services/core';
+import { ClientComponentsHeader } from '@srts.pw/client/components/header';
+import { ClientPagesHome } from '@srts.pw/client/pages/home';
+import { ClientPagesUrls } from '@srts.pw/client/pages/urls';
+import { ClientPagesRedirect } from '@srts.pw/client/pages/redirect';
 
 const AppComponent: React.FC = () => {
   if (!getUser()) {
@@ -18,23 +19,18 @@ const AppComponent: React.FC = () => {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <AppBarComponent />
-      <Stack
-        horizontalAlign="center"
-        verticalAlign="center"
-        verticalFill
-        styles={{
-          root: {
-            width: '100vw',
-            height: '100vh',
-            margin: '0 auto',
-            textAlign: 'center'
-          }
-        }}
-        tokens={stackHorizontalGap}
-      >
-        <CreateShortUrlComponent />
-      </Stack>
+      <ClientComponentsHeader />
+      <Switch>
+        <Route exact path="/">
+          <ClientPagesHome />
+        </Route>
+        <Route path="/urls">
+          <ClientPagesUrls />
+        </Route>
+        <Route path="/r/:slug">
+          <ClientPagesRedirect />
+        </Route>
+      </Switch>
     </ApolloProvider>
   );
 };

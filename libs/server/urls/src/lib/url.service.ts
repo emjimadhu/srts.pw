@@ -72,14 +72,14 @@ export class UrlService {
       metadata = {
         title: (new URL(url)).hostname,
         description: (new URL(url)).pathname,
-        image: 'https://via.placeholder.com/300?text=srts.pw'
+        image: 'https://via.placeholder.com/1500?text=srts.pw'
       };
     }
 
     const urlEntity = this.urlRepository.create({
       id: uuid(),
       longUrl: url,
-      shortUrl: `${environment.hostUrl}/${slug}`,
+      shortUrl: `${environment.clientUrl}/r/${slug}`,
       slug,
       user,
       metadata
@@ -92,17 +92,15 @@ export class UrlService {
 
   public async getUrlByShortUrl(requestVariables: GetURLByShortURLAndUserInput): Promise<UrlType> {
     const {
-      shortUrl,
-      user
+      shortUrl
     } = requestVariables;
 
     const urlDocument = await this.urlRepository.findOne({
-      shortUrl,
-      user
+      shortUrl
     });
 
     if (!urlDocument) {
-      throw new NotFoundException('URL or User doesn\'t exsists!');
+      throw new NotFoundException('URL doesn\'t exsists!');
     }
 
     return new UrlType(urlDocument);

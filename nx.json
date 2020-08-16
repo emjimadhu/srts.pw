@@ -56,6 +56,30 @@
     },
     "client-environments": {
       "tags": []
+    },
+    "client-services-core": {
+      "tags": []
+    },
+    "client-components-header": {
+      "tags": []
+    },
+    "client-components-create-url": {
+      "tags": []
+    },
+    "client-components-url-preview": {
+      "tags": []
+    },
+    "client-pages-home": {
+      "tags": []
+    },
+    "client-pages-urls": {
+      "tags": []
+    },
+    "client-types": {
+      "tags": []
+    },
+    "client-pages-redirect": {
+      "tags": []
     }
   }
 }
