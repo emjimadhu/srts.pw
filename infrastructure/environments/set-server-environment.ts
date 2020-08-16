@@ -22,11 +22,13 @@ case RunConfiguration.PRODUCTION:
   serverEnvironment.port = parseInt(process.env.PRODUCTION_SERVER_PORT);
   serverEnvironment.mongoUri = process.env.PRODUCTION_MONGO_URI;
   serverEnvironment.hostUrl = 'https://srts.pw';
+  serverEnvironment.clientUrl = 'https://srts.pw';
   break;
 case RunConfiguration.DEVELOPMENT:
   serverEnvironment.port = parseInt(process.env.DEVELOPMENT_SERVER_PORT);
   serverEnvironment.mongoUri = process.env.DEVELOPMENT_MONGO_URI;
   serverEnvironment.hostUrl = `http://localhost:${process.env.DEVELOPMENT_SERVER_PORT}`;
+  serverEnvironment.clientUrl = 'http://localhost:4200';
   break;
 }
 

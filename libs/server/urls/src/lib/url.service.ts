@@ -72,14 +72,14 @@ export class UrlService {
       metadata = {
         title: (new URL(url)).hostname,
         description: (new URL(url)).pathname,
-        image: 'https://via.placeholder.com/300?text=srts.pw'
+        image: 'https://via.placeholder.com/1500?text=srts.pw'
       };
     }
 
     const urlEntity = this.urlRepository.create({
       id: uuid(),
       longUrl: url,
-      shortUrl: `${environment.hostUrl}/r/${slug}`,
+      shortUrl: `${environment.clientUrl}/r/${slug}`,
       slug,
       user,
       metadata
