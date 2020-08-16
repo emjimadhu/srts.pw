@@ -25,9 +25,10 @@
     }
   },
   "scripts": {
-    "start:all": "concurrently --names \"CLIENT,SERVER,ADMIN\" -c \"yellow.bold,yellow.bold,yellow.bold\" \"yarn start:client\" \"yarn start:server\" \"yarn start:admin\"",
-    "build:all": "yarn build:client && yarn build:server && yarn build:admin",
-    "lint:all": "yarn lint:workspace && yarn lint:tools && yarn lint:server && yarn lint:client && yarn lint:admin && yarn lint:server-environments && yarn lint:client-environments",
+    "start": "node dist/apps/server/main",
+    "start:all": "concurrently --names \"CLIENT,SERVER\" -c \"yellow.bold,yellow.bold\" \"yarn start:client\" \"yarn start:server\"",
+    "build:all": "yarn build:client && yarn build:server",
+    "lint:all": "yarn lint:workspace && yarn lint:tools && yarn lint:server && yarn lint:client && yarn lint:server-environments",
     "start:server": "yarn substep:set-server-environment --environment=development && nx serve server --configuration=development",
     "build:server": "yarn substep:set-server-environment --environment=production && nx build server --configuration=production",
     "lint:server": "nx lint server",
@@ -98,8 +99,7 @@
     "help": "nx help",
     "commit": "git-cz",
     "checkYarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use YARN not NPM! ⚠️ ' && echo && exit 1)",
-    "preinstall": "$npm_execpath --silent run checkYarn",
-    "postinstall": "node node_modules/@nx-plus/vue/patch-nx-dep-graph.js"
+    "preinstall": "$npm_execpath --silent run checkYarn"
   },
   "husky": {
     "hooks": {
