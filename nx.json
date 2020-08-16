@@ -71,6 +71,9 @@
     },
     "client-pages-home": {
       "tags": []
+    },
+    "client-pages-urls": {
+      "tags": []
     }
   }
 }

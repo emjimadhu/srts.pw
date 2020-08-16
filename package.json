@@ -44,6 +44,8 @@
     "test:client-components-url-preview": "nx test client-components-url-preview",
     "lint:client-pages-home": "nx lint client-pages-home",
     "test:client-pages-home": "nx test client-pages-home",
+    "lint:client-pages-urls": "nx lint client-pages-urls",
+    "test:client-pages-urls": "nx test client-pages-urls",
     "barrels:server-common-typeorm": "barrel-maintainer libs/server/common/typeorm/src --includeRootDir --singleQuotes --ts",
     "barrels:server-urls": "barrel-maintainer libs/server/urls/src --includeRootDir --singleQuotes --ts",
     "barrels:client-core": "barrel-maintainer libs/client/services/core/src --includeRootDir --singleQuotes --ts",

@@ -9,6 +9,7 @@ import {
 } from '@srts.pw/client/services/core';
 import { ClientComponentsHeader } from '@srts.pw/client/components/header';
 import { ClientPagesHome } from '@srts.pw/client/pages/home';
+import { ClientPagesUrls } from '@srts.pw/client/pages/urls';
 
 const AppComponent: React.FC = () => {
   if (!getUser()) {
@@ -21,6 +22,9 @@ const AppComponent: React.FC = () => {
       <Switch>
         <Route exact path="/">
           <ClientPagesHome />
+        </Route>
+        <Route path="/urls">
+          <ClientPagesUrls />
         </Route>
       </Switch>
     </ApolloProvider>
