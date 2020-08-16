@@ -44,6 +44,9 @@
       ],
       "@srts.pw/client/components/header": [
         "libs/client/components/header/src/index.ts"
+      ],
+      "@srts.pw/client/components/create-url": [
+        "libs/client/components/create-url/src/index.ts"
       ]
     }
   },

@@ -1,17 +1,17 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/client';
 import {
-  Paper, Grid, Container, useTheme, TextField, Button, TextFieldProps, OutlinedInputProps
+  Paper, Grid, TextField, Button
 } from '@material-ui/core';
 import {
   makeStyles, Theme, createStyles
 } from '@material-ui/core/styles';
-import { grey } from '@material-ui/core/colors';
 
 import {
   apolloClient, getUser, setUser
 } from '@srts.pw/client/services/core';
 import { ClientComponentsHeader } from '@srts.pw/client/components/header';
+import { ClientComponentsCreateUrl } from '@srts.pw/client/components/create-url';
 
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -51,6 +51,7 @@ const AppComponent: React.FC = () => {
           <Grid container alignItems="center" justify="center" className={classes.urlInputContainer}>
             <Grid item xs={12} sm={9}>
               <Paper elevation={0} className={classes.paper}>
+                <ClientComponentsCreateUrl />
                 <Grid container alignItems="center" spacing={2}>
                   <Grid item xs={12} sm={7}>
                     <TextField
