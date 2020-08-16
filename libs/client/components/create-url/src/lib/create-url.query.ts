@@ -37,3 +37,7 @@ export interface IUrlDocument {
     title?: string;
   };
 }
+
+export interface ICreateShortUrl_ResponseData {
+  createShortUrl : IUrlDocument;
+}

@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ApolloProvider } from '@apollo/client';
-import {
-  Paper, Grid, TextField, Button
-} from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import {
   makeStyles, Theme, createStyles
 } from '@material-ui/core/styles';
@@ -11,7 +9,9 @@ import {
   apolloClient, getUser, setUser
 } from '@srts.pw/client/services/core';
 import { ClientComponentsHeader } from '@srts.pw/client/components/header';
-import { ClientComponentsCreateUrl } from '@srts.pw/client/components/create-url';
+import {
+  ClientComponentsCreateUrl, IUrlDocument
+} from '@srts.pw/client/components/create-url';
 
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -32,13 +32,23 @@ const useStyles = makeStyles((theme: Theme) => {
   });
 });
 
-
 const AppComponent: React.FC = () => {
   const classes = useStyles();
+  const [
+    createdUrl,
+    setCreatedUrl
+  ] = useState<IUrlDocument | undefined>();
 
   if (!getUser()) {
     setUser();
   }
+
+  if (!createdUrl && JSON.parse(localStorage.getItem('urlDocument'))) {
+    setCreatedUrl(JSON.parse(localStorage.getItem('urlDocument')));
+  }
+
+  console.log('Created Url');
+  console.log(createdUrl);
 
   return (
     <ApolloProvider client={apolloClient}>
@@ -46,7 +56,9 @@ const AppComponent: React.FC = () => {
       <Grid container className={classes.root}>
         <Grid item xs={12}>
           <Grid container alignItems="center" justify="center" className={classes.urlInputContainer}>
-            <ClientComponentsCreateUrl />
+            <ClientComponentsCreateUrl
+              setCreatedUrl={setCreatedUrl}
+            />
           </Grid>
         </Grid>
       </Grid>

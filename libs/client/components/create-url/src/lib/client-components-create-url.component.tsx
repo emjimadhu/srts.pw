@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react';
+import React, {
+  useState, Dispatch
+} from 'react';
 import {
   Grid, TextField, Button, Paper, Collapse, CircularProgress
 } from '@material-ui/core';
@@ -9,13 +11,17 @@ import {
 import {
   Alert, AlertTitle
 } from '@material-ui/lab';
-import { useMutation } from '@apollo/client';
+import {
+  useMutation, FetchResult
+} from '@apollo/client';
 
 import { getUser } from '@srts.pw/client/services/core';
 
-import './client-components-create-url.component.scss';
+import {
+  CREATE_SHORT_URL_QUERY, IUrlDocument, ICreateShortUrl_ResponseData
+} from './create-url.query';
 
-import { CREATE_SHORT_URL_QUERY } from './create-url.query';
+import './client-components-create-url.component.scss';
 
 const useStyles = makeStyles((theme: Theme) => {
   const height = `calc(98vh - ${theme.breakpoints.up('xs') ? '64px' : '54px'})`;
@@ -35,9 +41,13 @@ const getUrlErrorMessage = (value: string): string => {
   return (!value.match(urlRegEx)) ? 'Should be valid URL. (ex: https://google.com)' : '';
 };
 
-export interface IClientComponentsCreateUrlProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface IClientComponentsCreateUrlProps {
+  setCreatedUrl: Dispatch<React.SetStateAction<IUrlDocument>>;
+}
 
-export const ClientComponentsCreateUrl:React.FC = (properties: IClientComponentsCreateUrlProps) => {
+export const ClientComponentsCreateUrl:React.FC<IClientComponentsCreateUrlProps> = ({
+  setCreatedUrl
+}) => {
   const classes = useStyles();
   const [
     url,
@@ -79,32 +89,41 @@ export const ClientComponentsCreateUrl:React.FC = (properties: IClientComponents
       setError(false);
       setWaitingForServer(true);
 
-      createShortUrl({
-        variables: {
-          url,
-          user: getUser(),
-          slug: (slug.length > 0) ? slug : undefined
+      const sendRequest = async() => {
+        try {
+          const fetchResult: FetchResult<ICreateShortUrl_ResponseData> = await createShortUrl({
+            variables: {
+              url,
+              user: getUser(),
+              slug: (slug.length > 0) ? slug : undefined
+            }
+          });
+
+          console.log('Data');
+          console.log(fetchResult);
+
+          if (!fetchResult.errors) {
+            setUrl('');
+            setSlug('');
+            setCreatedUrl(fetchResult.data.createShortUrl);
+            localStorage.setItem('urlDocument', JSON.stringify(fetchResult.data.createShortUrl));
+          }
+        } catch (fetchError) {
+          console.log('Error');
+          console.log(typeof fetchError);
+          console.log(Object.keys(fetchError));
+          console.log(fetchError);
+          console.log(fetchError.message);
+          console.log(fetchError.graphQLErrors);
+          console.log(fetchError.networkError);
+          console.log(fetchError.extraInfo);
+        } finally {
+          setWaitingForServer(false);
+          setDisableButton(true);
         }
-      }).then(data => {
-        console.log('Data');
-        console.log(data);
-        if (!data.errors) {
-          setUrl('');
-          setSlug('');
-        }
-      }).catch(error => {
-        console.log('Error');
-        console.log(typeof error);
-        console.log(Object.keys(error));
-        console.log(error);
-        console.log(error.message);
-        console.log(error.graphQLErrors);
-        console.log(error.networkError);
-        console.log(error.extraInfo);
-      }).finally(() => {
-        setWaitingForServer(false);
-        setDisableButton(true);
-      });
+      };
+
+      sendRequest();
     }
   };
 
