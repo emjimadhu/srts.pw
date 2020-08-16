@@ -74,6 +74,9 @@
     },
     "client-pages-urls": {
       "tags": []
+    },
+    "client-types": {
+      "tags": []
     }
   }
 }

@@ -56,6 +56,9 @@
       ],
       "@srts.pw/client/pages/urls": [
         "libs/client/pages/urls/src/index.ts"
+      ],
+      "@srts.pw/client/types": [
+        "libs/client/types/src/index.ts"
       ]
     }
   },
