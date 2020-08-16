@@ -50,6 +50,9 @@
       ],
       "@srts.pw/client/components/url-preview": [
         "libs/client/components/url-preview/src/index.ts"
+      ],
+      "@srts.pw/client/pages/home": [
+        "libs/client/pages/home/src/index.ts"
       ]
     }
   },
