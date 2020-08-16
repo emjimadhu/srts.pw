@@ -28,9 +28,6 @@ const useStyles = makeStyles((theme: Theme) => {
     urlInputContainer: {
       height,
       padding: space(2)
-    },
-    paper: {
-      padding: space(2)
     }
   });
 });
@@ -49,43 +46,7 @@ const AppComponent: React.FC = () => {
       <Grid container className={classes.root}>
         <Grid item xs={12}>
           <Grid container alignItems="center" justify="center" className={classes.urlInputContainer}>
-            <Grid item xs={12} sm={9}>
-              <Paper elevation={0} className={classes.paper}>
-                <ClientComponentsCreateUrl />
-                <Grid container alignItems="center" spacing={2}>
-                  <Grid item xs={12} sm={7}>
-                    <TextField
-                      autoFocus
-                      fullWidth
-                      required
-                      label="Enter URL (ex: https://www.google.com)"
-                      variant="outlined"
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={3}>
-                    <TextField
-                      fullWidth
-                      label="Slug"
-                      variant="outlined"
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={2}>
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      size="large"
-                      disableElevation
-                      fullWidth
-                      style={{
-                        height: '3.5rem'
-                      }}
-                    >
-                      Shorten
-                    </Button>
-                  </Grid>
-                </Grid>
-              </Paper>
-            </Grid>
+            <ClientComponentsCreateUrl />
           </Grid>
         </Grid>
       </Grid>
