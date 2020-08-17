@@ -6,15 +6,15 @@
     },
     {
       "src": "/assets/(.*)",
-      "dest": "/dist/apps/client/assets/$1"
+      "dest": "/assets/$1"
     },
     {
       "src": "/(.*).(js|css|ico)",
-      "dest": "/dist/apps/client/$1.$2"
+      "dest": "/$1.$2"
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/apps/client/index.html"
+      "dest": "/index.html"
     }
   ]
 }
