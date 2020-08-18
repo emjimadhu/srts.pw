@@ -1,11 +1,8 @@
-module.exports = {
-  "rules": {},
+{
   "extends": [
     "../../.eslintrc.json",
     "plugin:vue/essential",
-    "@vue/typescript/recommended",
-    "prettier",
-    "prettier/@typescript-eslint"
+    "@vue/typescript/recommended"
   ],
   "env": {
     "node": true
