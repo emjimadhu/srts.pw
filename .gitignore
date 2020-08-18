@@ -73,3 +73,5 @@ infrastructure/environments/.env
 schema.gql
 
 .vercel
+# Local Netlify folder
+.netlify
