@@ -30,6 +30,9 @@
     "client-e2e",
     "client-libs",
     "server-libs",
-    "libs"
+    "libs",
+    "admin",
+    "admin-libs",
+    "admin-e2e"
   ]
 }
