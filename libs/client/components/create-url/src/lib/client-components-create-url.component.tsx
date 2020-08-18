@@ -44,10 +44,12 @@ const getUrlErrorMessage = (value: string): string => {
 
 export interface IClientComponentsCreateUrlProps {
   setCreatedUrl: Dispatch<React.SetStateAction<IUrlDocument>>;
+  setFetchErrorMessage: Dispatch<React.SetStateAction<string>>;
 }
 
 export const ClientComponentsCreateUrl:React.FC<IClientComponentsCreateUrlProps> = ({
-  setCreatedUrl
+  setCreatedUrl,
+  setFetchErrorMessage
 }) => {
   const classes = useStyles();
   const [
@@ -100,14 +102,10 @@ export const ClientComponentsCreateUrl:React.FC<IClientComponentsCreateUrlProps>
             }
           });
 
-          console.log('Data');
-          console.log(fetchResult);
-
           if (!fetchResult.errors) {
             setUrl('');
             setSlug('');
             setCreatedUrl(fetchResult.data.createShortUrl);
-            localStorage.setItem('urlDocument', JSON.stringify(fetchResult.data.createShortUrl));
           }
         } catch (fetchError) {
           console.log('Error');
@@ -118,6 +116,7 @@ export const ClientComponentsCreateUrl:React.FC<IClientComponentsCreateUrlProps>
           console.log(fetchError.graphQLErrors);
           console.log(fetchError.networkError);
           console.log(fetchError.extraInfo);
+          (fetchError.message === 'Failed to fetch') ? setFetchErrorMessage('Can\'t fetch from Server. Please try again later') : setFetchErrorMessage(fetchError.message);
         } finally {
           setWaitingForServer(false);
           setDisableButton(true);

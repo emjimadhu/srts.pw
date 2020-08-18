@@ -9,6 +9,9 @@ import { ClientComponentsUrlPreview } from '@srts.pw/client/components/url-previ
 import { IUrlDocument } from '@srts.pw/client/types';
 
 import './client-pages-home.component.scss';
+import {
+  Alert, AlertTitle
+} from '@material-ui/lab';
 
 const useStyles = makeStyles((theme: Theme) => {
   const height = `calc(98vh - ${theme.breakpoints.up('xs') ? '64px' : '54px'})`;
@@ -36,6 +39,10 @@ export const ClientPagesHome: React.FC = (properties: IClientPagesHomeProps) => 
     createdUrl,
     setCreatedUrl
   ] = useState<IUrlDocument | undefined>();
+  const [
+    fetchErrorMessage,
+    setFetchErrorMessage
+  ] = useState('');
 
   return (
     <Grid container className={classes.root}>
@@ -43,7 +50,18 @@ export const ClientPagesHome: React.FC = (properties: IClientPagesHomeProps) => 
         <Grid container alignItems="center" justify="center" alignContent="center" className={classes.urlInputContainer}>
           <ClientComponentsCreateUrl
             setCreatedUrl={setCreatedUrl}
+            setFetchErrorMessage={setFetchErrorMessage}
           />
+          {
+            !!fetchErrorMessage && (
+              <Grid item xs={12} sm={9}>
+                <Alert severity="error">
+                  <AlertTitle>Error</AlertTitle>
+                  {fetchErrorMessage}
+                </Alert>
+              </Grid>
+            )
+          }
           <ClientComponentsUrlPreview
             createdUrl={createdUrl}
           />
