@@ -61,7 +61,7 @@ export const ClientPagesUrls: React.FC = (properties: IClientPagesUrlsProps) => 
     return (
       <Grid container direction="column" alignItems="center" justify="center" alignContent="center" className={classes.gridContainer}>
         <Alert variant="outlined" severity="error" className={classes.alert}>
-          {(error.message === 'Failed to fetch') ? 'Can\'t fetch from Server' : error.message}
+          {(error.message === 'Failed to fetch') ? 'Can\'t fetch from Server. Please try again later.' : error.message}
         </Alert>
       </Grid>
     );
