@@ -117,7 +117,7 @@
     "typeorm": "0.2.25",
     "uuid": "8.3.0",
     "vue": "2.6.11",
-    "vue-router": "3.2.0",
+    "vue-router": "3.4.3",
     "vuetify": "2.3.8"
   },
   "devDependencies": {
