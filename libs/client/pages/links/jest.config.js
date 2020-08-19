@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'client-pages-urls',
+  name: 'client-pages-links',
   preset: '../../../../jest.config.js',
   transform: {
     '^.+\\.[tj]sx?$': [
@@ -17,5 +17,5 @@ module.exports = {
     'jsx',
     'html'
   ],
-  coverageDirectory: '../../../../coverage/libs/client/pages/urls'
+  coverageDirectory: '../../../../coverage/libs/client/pages/links'
 };

@@ -48,9 +48,6 @@
       "@srts.pw/client/pages/home": [
         "libs/client/pages/home/src/index.ts"
       ],
-      "@srts.pw/client/pages/urls": [
-        "libs/client/pages/urls/src/index.ts"
-      ],
       "@srts.pw/client/types": [
         "libs/client/types/src/index.ts"
       ],
@@ -62,6 +59,9 @@
       ],
       "@srts.pw/client/components/link-preview": [
         "libs/client/components/link-preview/src/index.ts"
+      ],
+      "@srts.pw/client/pages/links": [
+        "libs/client/pages/links/src/index.ts"
       ]
     }
   },

@@ -9,7 +9,7 @@ import {
 } from '@srts.pw/client/services/core';
 import { ClientComponentsHeader } from '@srts.pw/client/components/header';
 import { ClientPagesHome } from '@srts.pw/client/pages/home';
-import { ClientPagesUrls } from '@srts.pw/client/pages/urls';
+import { ClientPagesLinks } from '@srts.pw/client/pages/links';
 import { ClientPagesRedirect } from '@srts.pw/client/pages/redirect';
 import { AppRoutes } from '@srts.pw/client/types';
 
@@ -26,7 +26,7 @@ const AppComponent: React.FC = () => {
           <ClientPagesHome />
         </Route>
         <Route path={AppRoutes.LINKS}>
-          <ClientPagesUrls />
+          <ClientPagesLinks />
         </Route>
         <Route path={AppRoutes.REDIRECT}>
           <ClientPagesRedirect />

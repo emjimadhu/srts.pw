@@ -66,9 +66,6 @@
     "client-pages-home": {
       "tags": []
     },
-    "client-pages-urls": {
-      "tags": []
-    },
     "client-types": {
       "tags": []
     },
@@ -88,6 +85,9 @@
       "tags": []
     },
     "client-components-link-preview": {
+      "tags": []
+    },
+    "client-pages-links": {
       "tags": []
     }
   }

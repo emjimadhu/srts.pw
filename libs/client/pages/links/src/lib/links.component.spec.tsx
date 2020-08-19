@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ClientPagesUrls from './client-pages-urls.component';
+import ClientPagesLinks from './links.component';
 
 describe('ClientPagesUrls', () => {
   it('should render successfully', () => {
@@ -9,7 +9,7 @@ describe('ClientPagesUrls', () => {
 
     const {
       baseElement
-    } = render(< ClientPagesUrls />);
+    } = render(< ClientPagesLinks />);
 
     expect(baseElement).toBeTruthy();
   });

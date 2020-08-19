@@ -18,8 +18,6 @@ import {
   IListUrlsByUser_ResponseData, IListUrlsByUser_RequestVariables, LIST_URLS_BY_USER_QUERY
 } from './list-urls-by-user.query';
 
-import './client-pages-urls.component.scss';
-
 const useStyles = makeStyles((theme: Theme) => ({
   gridContainer: {
     height: `calc(98vh - ${theme.breakpoints.up('xs') ? '64px' : '54px'})`,
@@ -46,9 +44,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }));
 
-export interface IClientPagesUrlsProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface IClientPagesLinksProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
-export const ClientPagesUrls: React.FC = (properties: IClientPagesUrlsProps) => {
+export const ClientPagesLinks: React.FC = (properties: IClientPagesLinksProps) => {
   const classes = useStyles();
   const user = getUser();
   const {
@@ -144,4 +142,4 @@ export const ClientPagesUrls: React.FC = (properties: IClientPagesUrlsProps) => 
 };
 
 
-export default ClientPagesUrls;
+export default ClientPagesLinks;
