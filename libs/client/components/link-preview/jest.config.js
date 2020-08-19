@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'client-components-url-preview',
+  name: 'client-components-link-preview',
   preset: '../../../../jest.config.js',
   transform: {
     '^.+\\.[tj]sx?$': [
@@ -17,5 +17,5 @@ module.exports = {
     'jsx',
     'html'
   ],
-  coverageDirectory: '../../../../coverage/libs/client/components/url-preview'
+  coverageDirectory: '../../../../coverage/libs/client/components/link-preview'
 };

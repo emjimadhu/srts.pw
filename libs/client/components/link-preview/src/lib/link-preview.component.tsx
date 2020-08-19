@@ -11,8 +11,6 @@ import LinkIcon from '@material-ui/icons/Link';
 
 import { IUrlDocument } from '@srts.pw/client/types';
 
-import './client-components-url-preview.component.scss';
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -47,11 +45,11 @@ const getShortUrlComponent = (url: string) => {
   );
 };
 
-export interface IClientComponentsUrlPreviewProps {
+export interface IClientComponentsLinkPreviewProps {
   createdUrl: IUrlDocument;
 }
 
-export const ClientComponentsUrlPreview: React.FC<IClientComponentsUrlPreviewProps> = ({
+export const ClientComponentsLinkPreview: React.FC<IClientComponentsLinkPreviewProps> = ({
   createdUrl
 }) => {
   const classes = useStyles();
@@ -122,4 +120,4 @@ export const ClientComponentsUrlPreview: React.FC<IClientComponentsUrlPreviewPro
 };
 
 
-export default ClientComponentsUrlPreview;
+export default ClientComponentsLinkPreview;

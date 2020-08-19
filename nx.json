@@ -63,9 +63,6 @@
     "client-components-header": {
       "tags": []
     },
-    "client-components-url-preview": {
-      "tags": []
-    },
     "client-pages-home": {
       "tags": []
     },
@@ -88,6 +85,9 @@
       ]
     },
     "client-components-create-link": {
+      "tags": []
+    },
+    "client-components-link-preview": {
       "tags": []
     }
   }

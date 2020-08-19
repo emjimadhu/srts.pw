@@ -8,7 +8,7 @@ import {
 } from '@material-ui/lab';
 
 import { ClientComponentsCreateLink } from '@srts.pw/client/components/create-link';
-import { ClientComponentsUrlPreview } from '@srts.pw/client/components/url-preview';
+import { ClientComponentsLinkPreview } from '@srts.pw/client/components/link-preview';
 import { IUrlDocument } from '@srts.pw/client/types';
 
 import './client-pages-home.component.scss';
@@ -62,7 +62,7 @@ export const ClientPagesHome: React.FC = (properties: IClientPagesHomeProps) => 
               </Grid>
             )
           }
-          <ClientComponentsUrlPreview
+          <ClientComponentsLinkPreview
             createdUrl={createdUrl}
           />
         </Grid>

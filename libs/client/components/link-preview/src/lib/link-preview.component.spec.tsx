@@ -1,15 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ClientComponentsUrlPreview from './client-components-url-preview.component';
+import ClientComponentsLinkPreview from './link-preview.component';
 
-describe('ClientComponentsUrlPreview', () => {
+describe('ClientComponentsLinkPreview', () => {
   it('should render successfully', () => {
     expect.assertions(1);
 
     const {
       baseElement
-    } = render(< ClientComponentsUrlPreview />);
+    } = render(< ClientComponentsLinkPreview />);
 
     expect(baseElement).toBeTruthy();
   });
