@@ -473,38 +473,6 @@
         }
       }
     },
-    "client-components-create-url": {
-      "root": "libs/client/components/create-url",
-      "sourceRoot": "libs/client/components/create-url/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/client/components/create-url/tsconfig.lib.json",
-              "libs/client/components/create-url/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/client/components/create-url/**/*"
-            ],
-            "fix": true,
-            "format": "formattify"
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/client/components/create-url/jest.config.js",
-            "tsConfig": "libs/client/components/create-url/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "client-components-url-preview": {
       "root": "libs/client/components/url-preview",
       "sourceRoot": "libs/client/components/url-preview/src",
@@ -758,6 +726,38 @@
             ],
             "fix": true,
             "format": "formattify"
+          }
+        }
+      }
+    },
+    "client-components-create-link": {
+      "root": "libs/client/components/create-link",
+      "sourceRoot": "libs/client/components/create-link/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/client/components/create-link/tsconfig.lib.json",
+              "libs/client/components/create-link/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/components/create-link/**/*"
+            ],
+            "fix": true,
+            "format": "formattify"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/components/create-link/jest.config.js",
+            "tsConfig": "libs/client/components/create-link/tsconfig.spec.json",
+            "passWithNoTests": true
           }
         }
       }

@@ -63,9 +63,6 @@
     "client-components-header": {
       "tags": []
     },
-    "client-components-create-url": {
-      "tags": []
-    },
     "client-components-url-preview": {
       "tags": []
     },
@@ -89,6 +86,9 @@
       "implicitDependencies": [
         "admin"
       ]
+    },
+    "client-components-create-link": {
+      "tags": []
     }
   }
 }

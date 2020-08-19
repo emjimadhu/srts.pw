@@ -3,15 +3,15 @@ import { Grid } from '@material-ui/core';
 import {
   makeStyles, Theme, createStyles
 } from '@material-ui/core/styles';
+import {
+  Alert, AlertTitle
+} from '@material-ui/lab';
 
-import { ClientComponentsCreateUrl } from '@srts.pw/client/components/create-url';
+import { ClientComponentsCreateLink } from '@srts.pw/client/components/create-link';
 import { ClientComponentsUrlPreview } from '@srts.pw/client/components/url-preview';
 import { IUrlDocument } from '@srts.pw/client/types';
 
 import './client-pages-home.component.scss';
-import {
-  Alert, AlertTitle
-} from '@material-ui/lab';
 
 const useStyles = makeStyles((theme: Theme) => {
   const height = `calc(98vh - ${theme.breakpoints.up('xs') ? '64px' : '54px'})`;
@@ -48,7 +48,7 @@ export const ClientPagesHome: React.FC = (properties: IClientPagesHomeProps) => 
     <Grid container className={classes.root}>
       <Grid item xs={12}>
         <Grid container alignItems="center" justify="center" alignContent="center" className={classes.urlInputContainer}>
-          <ClientComponentsCreateUrl
+          <ClientComponentsCreateLink
             setCreatedUrl={setCreatedUrl}
             setFetchErrorMessage={setFetchErrorMessage}
           />

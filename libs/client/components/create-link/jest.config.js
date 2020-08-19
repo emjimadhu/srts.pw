@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'client-components-create-url',
+  name: 'client-components-create-link',
   preset: '../../../../jest.config.js',
   transform: {
     '^.+\\.[tj]sx?$': [
@@ -17,5 +17,5 @@ module.exports = {
     'jsx',
     'html'
   ],
-  coverageDirectory: '../../../../coverage/libs/client/components/create-url'
+  coverageDirectory: '../../../../coverage/libs/client/components/create-link'
 };

@@ -20,9 +20,7 @@ import { IUrlDocument } from '@srts.pw/client/types';
 
 import {
   CREATE_SHORT_URL_QUERY, ICreateShortUrl_ResponseData
-} from './create-url.query';
-
-import './client-components-create-url.component.scss';
+} from './create-link.query';
 
 const useStyles = makeStyles((theme: Theme) => {
   const height = `calc(98vh - ${theme.breakpoints.up('xs') ? '64px' : '54px'})`;
@@ -42,12 +40,12 @@ const getUrlErrorMessage = (value: string): string => {
   return (!value.match(urlRegEx)) ? 'Should be valid URL. (ex: https://google.com)' : '';
 };
 
-export interface IClientComponentsCreateUrlProps {
+export interface IClientComponentsCreateLinkProps {
   setCreatedUrl: Dispatch<React.SetStateAction<IUrlDocument>>;
   setFetchErrorMessage: Dispatch<React.SetStateAction<string>>;
 }
 
-export const ClientComponentsCreateUrl:React.FC<IClientComponentsCreateUrlProps> = ({
+export const ClientComponentsCreateLink: React.FC<IClientComponentsCreateLinkProps> = ({
   setCreatedUrl,
   setFetchErrorMessage
 }) => {
@@ -198,4 +196,4 @@ export const ClientComponentsCreateUrl:React.FC<IClientComponentsCreateUrlProps>
 };
 
 
-export default ClientComponentsCreateUrl;
+export default ClientComponentsCreateLink;
