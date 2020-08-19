@@ -2636,32 +2636,6 @@
     prop-types "^15.7.2"
     react-is "^16.8.0"
 
-"@metascraper/helpers@^5.14.2":
-  version "5.14.2"
-  resolved "https://registry.yarnpkg.com/@metascraper/helpers/-/helpers-5.14.2.tgz#4c1556d727cef7a2b6c2fa5acab85fd880c7c9e7"
-  integrity sha512-w/5M8ytPU/n/hXmww+5WwKugKVNrE+rCrNnFDVNFAYz1CSFEfFPrTRNHu9XUWdf84bIXUqgeR/8Czel1ej/2hQ==
-  dependencies:
-    audio-extensions "0.0.0"
-    chrono-node "2.1.7"
-    condense-whitespace "~2.0.0"
-    entities "~2.0.3"
-    file-extension "~4.0.5"
-    has-values "~2.0.1"
-    image-extensions "~1.1.0"
-    is-relative-url "~3.0.0"
-    is-uri "~1.2.0"
-    iso-639-3 "~2.1.0"
-    isostring "0.0.1"
-    lodash "~4.17.19"
-    memoize-one "~5.1.1"
-    mime-types "~2.1.27"
-    normalize-url "~5.1.0"
-    smartquotes "~2.3.1"
-    title "~3.4.2"
-    truncate "~2.1.0"
-    url-regex "~5.0.0"
-    video-extensions "~1.1.0"
-
 "@metascraper/helpers@^5.14.3":
   version "5.14.3"
   resolved "https://registry.yarnpkg.com/@metascraper/helpers/-/helpers-5.14.3.tgz#1ac20badea463b8ce5d6fca5f68cea26511bf771"
@@ -12299,7 +12273,7 @@ lodash@4.17.15, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
-lodash@4.17.19, lodash@^4.15.0, lodash@^4.17.19, lodash@~4.17.19:
+lodash@4.17.19, lodash@^4.15.0, lodash@^4.17.19:
   version "4.17.19"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
   integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
@@ -12664,13 +12638,13 @@ metascraper-image@5.14.3:
   dependencies:
     "@metascraper/helpers" "^5.14.3"
 
-metascraper-title@5.14.2:
-  version "5.14.2"
-  resolved "https://registry.yarnpkg.com/metascraper-title/-/metascraper-title-5.14.2.tgz#e819be8016d9db7804889c86f176106a198b539a"
-  integrity sha512-6cNZfQzjBetn/3K2+2crbgCk/PnpBWAUYEMMtv+5bTYYuM9CgUT6XbW5XA0A5HBy1C9wjlV71xXeZGBSZ60Q5A==
+metascraper-title@5.14.3:
+  version "5.14.3"
+  resolved "https://registry.yarnpkg.com/metascraper-title/-/metascraper-title-5.14.3.tgz#9e91f972d6df8500dcea2565ee9e55e2617ece6d"
+  integrity sha512-V6MRvufaD/hD51r6Ly7hiN79sX+RHq++fSudepqebCazy1xQyjxDsIOIfMNezsXdR/e58n9MgSEWu5R+JqQ1mQ==
   dependencies:
-    "@metascraper/helpers" "^5.14.2"
-    lodash "~4.17.19"
+    "@metascraper/helpers" "^5.14.3"
+    lodash "~4.17.20"
 
 metascraper@5.14.3:
   version "5.14.3"
