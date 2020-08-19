@@ -62,6 +62,9 @@
       ],
       "@srts.pw/client/pages/links": [
         "libs/client/pages/links/src/index.ts"
+      ],
+      "@srts.pw/server/user": [
+        "libs/server/user/src/index.ts"
       ]
     }
   },
