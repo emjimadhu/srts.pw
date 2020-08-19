@@ -3,3 +3,8 @@ export enum AppRoutes {
   LINKS = '/links',
   REDIRECT = '/r/:slug'
 }
+
+export enum AppRouteNames {
+  HOME = 'HOME',
+  LINKS = 'LINKS'
+}

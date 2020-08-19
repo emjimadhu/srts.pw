@@ -14,7 +14,9 @@ import HomeIcon from '@material-ui/icons/Home';
 import LinkIcon from '@material-ui/icons/Link';
 import LinkOutlinedIcon from '@material-ui/icons/LinkOutlined';
 
-import { AppRoutes } from '@srts.pw/client/types';
+import {
+  AppRoutes, AppRouteNames
+} from '@srts.pw/client/types';
 
 import './client-components-header.component.scss';
 
@@ -97,17 +99,17 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
             onClose={() => handleMenuItemClick()}
           >
             <List component="nav">
-              <ListItem button onClick={() => handleMenuItemClick('/')}>
+              <ListItem button onClick={() => handleMenuItemClick(AppRoutes.ROOT)}>
                 <ListItemIcon>
                   <HomeIcon />
                 </ListItemIcon>
-                <ListItemText primary="HOME" />
+                <ListItemText primary={AppRouteNames.HOME} />
               </ListItem>
-              <ListItem button onClick={() => handleMenuItemClick('/urls')}>
+              <ListItem button onClick={() => handleMenuItemClick(AppRoutes.LINKS)}>
                 <ListItemIcon>
                   <LinkIcon />
                 </ListItemIcon>
-                <ListItemText primary="LINKS" />
+                <ListItemText primary={AppRouteNames.HOME} />
               </ListItem>
             </List>
           </Menu>
@@ -116,10 +118,10 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
     } else {
       return (
         <>
-          <Tooltip title="HOME" arrow classes={{
+          <Tooltip title={AppRouteNames.HOME} arrow classes={{
             tooltip: classes.tooltip
           }}>
-            <IconButton color="inherit" aria-label="home" href={AppRoutes.ROOT}>
+            <IconButton color="inherit" href={AppRoutes.ROOT}>
               {
                 pathname === AppRoutes.ROOT ? (
                   <HomeIcon className={classes.icon} />
@@ -129,7 +131,7 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
               }
             </IconButton>
           </Tooltip>
-          <Tooltip title="LINKS" arrow classes={{
+          <Tooltip title={AppRouteNames.LINKS} arrow classes={{
             tooltip: classes.tooltip
           }}>
             <IconButton color="inherit" aria-label="links" href={AppRoutes.LINKS}>
