@@ -11,6 +11,7 @@ import { ClientComponentsHeader } from '@srts.pw/client/components/header';
 import { ClientPagesHome } from '@srts.pw/client/pages/home';
 import { ClientPagesUrls } from '@srts.pw/client/pages/urls';
 import { ClientPagesRedirect } from '@srts.pw/client/pages/redirect';
+import { AppRoutes } from '@srts.pw/client/types';
 
 const AppComponent: React.FC = () => {
   if (!getUser()) {
@@ -21,13 +22,13 @@ const AppComponent: React.FC = () => {
     <ApolloProvider client={apolloClient}>
       <ClientComponentsHeader />
       <Switch>
-        <Route exact path="/">
+        <Route exact path={AppRoutes.ROOT}>
           <ClientPagesHome />
         </Route>
-        <Route path="/urls">
+        <Route path={AppRoutes.LINKS}>
           <ClientPagesUrls />
         </Route>
-        <Route path="/r/:slug">
+        <Route path={AppRoutes.REDIRECT}>
           <ClientPagesRedirect />
         </Route>
       </Switch>

@@ -14,6 +14,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import LinkIcon from '@material-ui/icons/Link';
 import LinkOutlinedIcon from '@material-ui/icons/LinkOutlined';
 
+import { AppRoutes } from '@srts.pw/client/types';
+
 import './client-components-header.component.scss';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -117,9 +119,9 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
           <Tooltip title="HOME" arrow classes={{
             tooltip: classes.tooltip
           }}>
-            <IconButton color="inherit" aria-label="home" href="/">
+            <IconButton color="inherit" aria-label="home" href={AppRoutes.ROOT}>
               {
-                pathname === '/' ? (
+                pathname === AppRoutes.ROOT ? (
                   <HomeIcon className={classes.icon} />
                 ) : (
                   <HomeOutlinedIcon className={classes.icon} />
@@ -130,9 +132,9 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
           <Tooltip title="LINKS" arrow classes={{
             tooltip: classes.tooltip
           }}>
-            <IconButton color="inherit" aria-label="links" href="/urls">
+            <IconButton color="inherit" aria-label="links" href={AppRoutes.LINKS}>
               {
-                pathname === '/urls' ? (
+                pathname === AppRoutes.LINKS ? (
                   <LinkIcon className={classes.icon} />
                 ) : (
                   <LinkOutlinedIcon className={classes.icon} />

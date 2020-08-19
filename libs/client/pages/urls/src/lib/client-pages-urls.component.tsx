@@ -10,7 +10,9 @@ import {
 import LinkIcon from '@material-ui/icons/Link';
 
 import { getUser } from '@srts.pw/client/services/core';
-import { IUrlDocument } from '@srts.pw/client/types';
+import {
+  IUrlDocument, AppRoutes
+} from '@srts.pw/client/types';
 
 import {
   IListUrlsByUser_ResponseData, IListUrlsByUser_RequestVariables, LIST_URLS_BY_USER_QUERY
@@ -84,7 +86,7 @@ export const ClientPagesUrls: React.FC = (properties: IClientPagesUrlsProps) => 
         ) : (data?.urls.length === 0 ? (
           <Grid container direction="column" alignItems="center" justify="center" alignContent="center" className={classes.gridContainer}>
             <Alert variant="outlined" severity="info" className={classes.alert}>
-              You don't have any links yet, Please <strong><Link href="/">create one</Link></strong>.
+              You don't have any links yet, Please <strong><Link href={AppRoutes.ROOT}>create one</Link></strong>.
             </Alert>
           </Grid>
         ) : (
