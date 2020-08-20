@@ -89,6 +89,9 @@
     },
     "client-pages-links": {
       "tags": []
+    },
+    "server-user": {
+      "tags": []
     }
   }
 }
