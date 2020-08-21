@@ -126,7 +126,7 @@
     "rxjs": "6.6.2",
     "typeorm": "0.2.25",
     "uuid": "8.3.0",
-    "vue": "2.6.11",
+    "vue": "2.6.12",
     "vue-router": "3.4.3",
     "vuetify": "2.3.9"
   },
@@ -198,7 +198,7 @@
     "typescript": "3.9.7",
     "vue-cli-plugin-vuetify": "2.0.7",
     "vue-jest": "3.0.6",
-    "vue-template-compiler": "2.6.11",
+    "vue-template-compiler": "2.6.12",
     "vuetify-loader": "1.6.0",
     "yargs": "15.4.1"
   }
