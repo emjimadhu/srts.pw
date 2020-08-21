@@ -7,19 +7,12 @@ import {
   Alert, AlertTitle
 } from '@material-ui/lab';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import {
-  useMutation, FetchResult
-} from '@apollo/client';
 
 import {
   AppRouteNames, AppRoutes
 } from '@srts.pw/client/types';
 
-import './client-pages-register.component.scss';
-
-import {
-  USER_REGISTER_MUTATION, IUserRegister_ResponseData
-} from './register.mutation';
+import './client-pages-login.component.scss';
 
 
 const useStyles = makeStyles(theme => ({
@@ -42,20 +35,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+export interface IClientPagesLoginProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
-export interface IClientPagesRegisterProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
-
-export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
+export const ClientPagesLogin = (properties: IClientPagesLoginProps) => {
   const classes = useStyles();
 
-  const [
-    firstName,
-    setFirstName
-  ] = useState('');
-  const [
-    lastName,
-    setLastName
-  ] = useState('');
   const [
     email,
     setEmail
@@ -76,52 +60,13 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
     errorMessage,
     setErrorMessage
   ] = useState('');
-  const [userRegisterMutation] = useMutation(USER_REGISTER_MUTATION);
 
   const setDisableSubmitButton = () => {
-    return !(!!firstName && !!lastName && !!email && !!password);
+    return !(!!email && !!password);
   };
 
   const handleFormSubmit = (event_: React.FormEvent<HTMLFormElement>) => {
     event_.preventDefault();
-
-    if (!waitingForServer) {
-      setWaitingForServer(true);
-      setError(false);
-
-      try {
-        const sendRequest = async() => {
-          const fetchResult: FetchResult<IUserRegister_ResponseData> = await userRegisterMutation({
-            variables: {
-              email,
-              password,
-              firstName,
-              lastName
-            }
-          });
-
-          console.log(fetchResult);
-          if (!fetchResult.errors) {
-            console.log(fetchResult.data.register);
-            setFirstName('');
-            setLastName('');
-            setEmail('');
-            setPassword('');
-          } else {
-            setError(true);
-            const fetchResultErrorMessage = fetchResult.errors[0].message;
-            setErrorMessage(fetchResultErrorMessage.includes('duplicate key') ? 'Email already exsists' : fetchResultErrorMessage);
-          }
-        };
-
-        sendRequest();
-      } catch (fetchError) {
-        console.log('Error');
-        console.log(typeof fetchError);
-      } finally {
-        setWaitingForServer(false);
-      }
-    }
   };
 
   return (
@@ -131,7 +76,7 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {AppRouteNames.REGISTER}
+          {AppRouteNames.LOGIN}
         </Typography>
         <form
           className={classes.form}
@@ -139,35 +84,6 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
           onSubmit={handleFormSubmit}
         >
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="fname"
-                variant="outlined"
-                required
-                fullWidth
-                label="First Name"
-                autoFocus
-                value={firstName}
-                onChange={(event_: React.ChangeEvent<HTMLInputElement>) => {
-                  setFirstName(event_.target.value);
-                  setError(false);
-                }}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                label="Last Name"
-                autoComplete="lname"
-                value={lastName}
-                onChange={(event_: React.ChangeEvent<HTMLInputElement>) => {
-                  setLastName(event_.target.value);
-                  setError(false);
-                }}
-              />
-            </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -216,12 +132,17 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
             className={classes.submit}
           >
             {waitingForServer && <CircularProgress size={24} />}
-            {!waitingForServer && 'Register'}
+            {!waitingForServer && 'Login'}
           </Button>
-          <Grid container justify="flex-end">
+          <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
+            </Grid>
             <Grid item>
-              <Link href={AppRoutes.LOGIN} variant="body2">
-                Already have an account? Sign in
+              <Link href={AppRoutes.REGISTER} variant="body2">
+                {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
           </Grid>
@@ -231,4 +152,4 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
   );
 };
 
-export default ClientPagesRegister;
+export default ClientPagesLogin;

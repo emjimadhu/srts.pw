@@ -113,13 +113,19 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
                 <ListItemIcon>
                   <LinkIcon />
                 </ListItemIcon>
-                <ListItemText primary={AppRouteNames.HOME} />
+                <ListItemText primary={AppRouteNames.LINKS} />
               </ListItem>
               <ListItem button onClick={() => handleMenuItemClick(AppRoutes.REGISTER)}>
                 <ListItemIcon>
                   <AccountCircleIcon />
                 </ListItemIcon>
                 <ListItemText primary={AppRouteNames.REGISTER.toUpperCase()} />
+              </ListItem>
+              <ListItem button onClick={() => handleMenuItemClick(AppRoutes.LOGIN)}>
+                <ListItemIcon>
+                  <FaceIcon />
+                </ListItemIcon>
+                <ListItemText primary={AppRouteNames.LOGIN.toUpperCase()} />
               </ListItem>
             </List>
           </Menu>
@@ -163,6 +169,19 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
                   <AccountCircleIcon className={classes.icon} />
                 ) : (
                   <AccountCircleOutlinedIcon className={classes.icon} />
+                )
+              }
+            </IconButton>
+          </Tooltip>
+          <Tooltip title={AppRouteNames.LOGIN.toUpperCase()} arrow classes={{
+            tooltip: classes.tooltip
+          }}>
+            <IconButton color="inherit" aria-label="links" href={AppRoutes.LOGIN}>
+              {
+                pathname === AppRoutes.LOGIN ? (
+                  <FaceIcon className={classes.icon} />
+                ) : (
+                  <FaceOutlinedIcon className={classes.icon} />
                 )
               }
             </IconButton>
