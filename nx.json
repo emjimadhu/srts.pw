@@ -92,6 +92,9 @@
     },
     "server-user": {
       "tags": []
+    },
+    "client-pages-register": {
+      "tags": []
     }
   }
 }
