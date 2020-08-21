@@ -95,6 +95,9 @@
     },
     "client-pages-register": {
       "tags": []
+    },
+    "client-pages-login": {
+      "tags": []
     }
   }
 }
