@@ -2,7 +2,7 @@ export enum AppRoutes {
   ROOT = '/',
   LINKS = '/links',
   REDIRECT = '/r/:slug',
-  REGISTER = 'register'
+  REGISTER = '/register'
 }
 
 export enum AppRouteNames {
