@@ -11,15 +11,15 @@ import {
   useMutation, FetchResult
 } from '@apollo/client';
 
-import { AppRouteNames } from '@srts.pw/client/types';
+import {
+  AppRouteNames, AppRoutes
+} from '@srts.pw/client/types';
 
 import './client-pages-register.component.scss';
 
 import {
   USER_REGISTER_MUTATION, IUserRegister_ResponseData
 } from './register.mutation';
-
-import { error } from 'console';
 
 
 const useStyles = makeStyles(theme => ({
@@ -220,7 +220,7 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href={AppRoutes.LOGIN} variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
