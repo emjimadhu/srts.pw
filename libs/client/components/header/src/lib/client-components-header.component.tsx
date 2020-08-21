@@ -13,6 +13,10 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import HomeIcon from '@material-ui/icons/Home';
 import LinkIcon from '@material-ui/icons/Link';
 import LinkOutlinedIcon from '@material-ui/icons/LinkOutlined';
+import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import FaceOutlinedIcon from '@material-ui/icons/FaceOutlined';
+import FaceIcon from '@material-ui/icons/Face';
 
 import {
   AppRoutes, AppRouteNames
@@ -111,6 +115,12 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
                 </ListItemIcon>
                 <ListItemText primary={AppRouteNames.HOME} />
               </ListItem>
+              <ListItem button onClick={() => handleMenuItemClick(AppRoutes.REGISTER)}>
+                <ListItemIcon>
+                  <AccountCircleIcon />
+                </ListItemIcon>
+                <ListItemText primary={AppRouteNames.REGISTER.toUpperCase()} />
+              </ListItem>
             </List>
           </Menu>
         </div>
@@ -140,6 +150,19 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
                   <LinkIcon className={classes.icon} />
                 ) : (
                   <LinkOutlinedIcon className={classes.icon} />
+                )
+              }
+            </IconButton>
+          </Tooltip>
+          <Tooltip title={AppRouteNames.REGISTER.toUpperCase()} arrow classes={{
+            tooltip: classes.tooltip
+          }}>
+            <IconButton color="inherit" aria-label="links" href={AppRoutes.REGISTER}>
+              {
+                pathname === AppRoutes.REGISTER ? (
+                  <AccountCircleIcon className={classes.icon} />
+                ) : (
+                  <AccountCircleOutlinedIcon className={classes.icon} />
                 )
               }
             </IconButton>

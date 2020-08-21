@@ -56,6 +56,8 @@
     "test:client-pages-links": "nx test client-pages-links",
     "lint:client-pages-redirect": "nx lint client-pages-redirect",
     "test:client-pages-redirect": "nx test client-pages-redirect",
+    "lint:client-pages-register": "nx lint client-pages-register",
+    "test:client-pages-register": "nx test client-pages-register",
     "barrels:server-common-typeorm": "barrel-maintainer libs/server/common/typeorm/src --includeRootDir --singleQuotes --ts",
     "barrels:server-urls": "barrel-maintainer libs/server/urls/src --includeRootDir --singleQuotes --ts",
     "barrels:server-user": "barrel-maintainer libs/server/user/src --includeRootDir --singleQuotes --ts",

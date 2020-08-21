@@ -1,10 +1,12 @@
 export enum AppRoutes {
   ROOT = '/',
   LINKS = '/links',
-  REDIRECT = '/r/:slug'
+  REDIRECT = '/r/:slug',
+  REGISTER = '/register'
 }
 
 export enum AppRouteNames {
   HOME = 'HOME',
-  LINKS = 'LINKS'
+  LINKS = 'LINKS',
+  REGISTER = 'Register'
 }
