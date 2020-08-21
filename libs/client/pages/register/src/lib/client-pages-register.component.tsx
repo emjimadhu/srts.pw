@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Container, Avatar, Typography, Grid, TextField, Button, Link
+  Container, Avatar, Typography, Grid, TextField, Button, Link, CircularProgress, Collapse
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import {
+  Alert, AlertTitle
+} from '@material-ui/lab';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import {
+  useMutation, FetchResult
+} from '@apollo/client';
 
 import { AppRouteNames } from '@srts.pw/client/types';
 
 import './client-pages-register.component.scss';
+
+import {
+  USER_REGISTER_MUTATION, IUserRegister_ResponseData
+} from './register.mutation';
+
+import { error } from 'console';
 
 
 const useStyles = makeStyles(theme => ({
@@ -36,6 +48,82 @@ export interface IClientPagesRegisterProps {} // eslint-disable-line @typescript
 export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
   const classes = useStyles();
 
+  const [
+    firstName,
+    setFirstName
+  ] = useState('');
+  const [
+    lastName,
+    setLastName
+  ] = useState('');
+  const [
+    email,
+    setEmail
+  ] = useState('');
+  const [
+    password,
+    setPassword
+  ] = useState('');
+  const [
+    waitingForServer,
+    setWaitingForServer
+  ] = useState(false);
+  const [
+    error,
+    setError
+  ] = useState(false);
+  const [
+    errorMessage,
+    setErrorMessage
+  ] = useState('');
+  const [userRegisterMutation] = useMutation(USER_REGISTER_MUTATION);
+
+  const setDisableSubmitButton = () => {
+    return !(!!firstName && !!lastName && !!email && !!password);
+  };
+
+  const handleFormSubmit = (event_: React.FormEvent<HTMLFormElement>) => {
+    event_.preventDefault();
+
+    if (!waitingForServer) {
+      setWaitingForServer(true);
+      setError(false);
+
+      try {
+        const sendRequest = async() => {
+          const fetchResult: FetchResult<IUserRegister_ResponseData> = await userRegisterMutation({
+            variables: {
+              email,
+              password,
+              firstName,
+              lastName
+            }
+          });
+
+          console.log(fetchResult);
+          if (!fetchResult.errors) {
+            console.log(fetchResult.data.register);
+            setFirstName('');
+            setLastName('');
+            setEmail('');
+            setPassword('');
+          } else {
+            setError(true);
+            const fetchResultErrorMessage = fetchResult.errors[0].message;
+            setErrorMessage(fetchResultErrorMessage.includes('duplicate key') ? 'Email already exsists' : fetchResultErrorMessage);
+          }
+        };
+
+        sendRequest();
+      } catch (fetchError) {
+        console.log('Error');
+        console.log(typeof fetchError);
+      } finally {
+        setWaitingForServer(false);
+      }
+    }
+  };
+
   return (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
@@ -45,18 +133,25 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
         <Typography component="h1" variant="h5">
           {AppRouteNames.REGISTER}
         </Typography>
-        <form className={classes.form} noValidate>
+        <form
+          className={classes.form}
+          noValidate
+          onSubmit={handleFormSubmit}
+        >
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="fname"
-                name="firstName"
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
                 label="First Name"
                 autoFocus
+                value={firstName}
+                onChange={(event_: React.ChangeEvent<HTMLInputElement>) => {
+                  setFirstName(event_.target.value);
+                  setError(false);
+                }}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -64,10 +159,13 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
                 variant="outlined"
                 required
                 fullWidth
-                id="lastName"
                 label="Last Name"
-                name="lastName"
                 autoComplete="lname"
+                value={lastName}
+                onChange={(event_: React.ChangeEvent<HTMLInputElement>) => {
+                  setLastName(event_.target.value);
+                  setError(false);
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -75,10 +173,13 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
                 variant="outlined"
                 required
                 fullWidth
-                id="email"
                 label="Email Address"
-                name="email"
                 autoComplete="email"
+                value={email}
+                onChange={(event_: React.ChangeEvent<HTMLInputElement>) => {
+                  setEmail(event_.target.value);
+                  setError(false);
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -86,12 +187,23 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
                 variant="outlined"
                 required
                 fullWidth
-                name="password"
                 label="Password"
                 type="password"
-                id="password"
-                autoComplete="current-password"
+                autoComplete="password"
+                value={password}
+                onChange={(event_: React.ChangeEvent<HTMLInputElement>) => {
+                  setPassword(event_.target.value);
+                  setError(false);
+                }}
               />
+            </Grid>
+            <Grid item xs={12}>
+              <Collapse in={error}>
+                <Alert severity="error">
+                  <AlertTitle>Error</AlertTitle>
+                  <strong>{errorMessage}</strong>
+                </Alert>
+              </Collapse>
             </Grid>
           </Grid>
           <Button
@@ -100,9 +212,11 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
             variant="contained"
             color="primary"
             size="large"
+            disabled={setDisableSubmitButton() || waitingForServer}
             className={classes.submit}
           >
-            Sign Up
+            {waitingForServer && <CircularProgress size={24} />}
+            {!waitingForServer && 'Register'}
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
