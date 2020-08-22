@@ -7,6 +7,7 @@ import { ServerCoreGraphqlModule } from '@srts.pw/server/core/graphql';
 import { ServerUrlsModule } from '@srts.pw/server/urls';
 import { environment } from '@srts.pw/server/environments';
 import { ServerUserModule } from '@srts.pw/server/user';
+import { ServerCoreMailerModule } from '@srts.pw/server/core/mailer';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -29,6 +30,7 @@ import { AppService } from './app.service';
       */
       entities: getMetadataArgsStorage().tables.map((table: TableMetadataArgs) => table.target)
     }),
+    ServerCoreMailerModule,
     ServerUrlsModule,
     ServerUserModule
   ],
