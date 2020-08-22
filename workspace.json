@@ -15,7 +15,12 @@
             "main": "apps/server/src/main.ts",
             "tsConfig": "apps/server/tsconfig.app.json",
             "assets": [
-              "apps/server/src/assets"
+              "apps/server/src/assets",
+              {
+                "input": "libs/server/core/mailer/src/templates",
+                "glob": "**/*",
+                "output": "mail-templates"
+              }
             ]
           },
           "configurations": {
@@ -853,6 +858,38 @@
           "options": {
             "jestConfig": "libs/client/pages/login/jest.config.js",
             "tsConfig": "libs/client/pages/login/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "server-core-mailer": {
+      "root": "libs/server/core/mailer",
+      "sourceRoot": "libs/server/core/mailer/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/server/core/mailer/tsconfig.lib.json",
+              "libs/server/core/mailer/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/server/core/mailer/**/*"
+            ],
+            "fix": true,
+            "format": "formattify"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/server/core/mailer/jest.config.js",
+            "tsConfig": "libs/server/core/mailer/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

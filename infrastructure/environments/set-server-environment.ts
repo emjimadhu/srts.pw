@@ -22,11 +22,21 @@ case RunConfiguration.PRODUCTION:
   serverEnvironment.port = parseInt(process.env.PRODUCTION_SERVER_PORT);
   serverEnvironment.mongoUri = process.env.PRODUCTION_MONGO_URI;
   serverEnvironment.clientUrl = process.env.PRODUCTION_CLIENT_URL;
+
+  serverEnvironment.mailer.host = process.env.PRODUCTION_API_ADMIN_MAILER_HOST;
+  serverEnvironment.mailer.port = parseInt(process.env.PRODUCTION_API_ADMIN_MAILER_PORT);
+  serverEnvironment.mailer.username = process.env.PRODUCTION_API_ADMIN_MAILER_EMAIL_ID;
+  serverEnvironment.mailer.password = process.env.PRODUCTION_API_ADMIN_MAILER_EMAIL_PASSWORD;
   break;
 case RunConfiguration.DEVELOPMENT:
   serverEnvironment.port = parseInt(process.env.DEVELOPMENT_SERVER_PORT);
   serverEnvironment.mongoUri = process.env.DEVELOPMENT_MONGO_URI;
   serverEnvironment.clientUrl = process.env.DEVELOPMENT_CLIENT_URL;
+
+  serverEnvironment.mailer.host = process.env.DEVELOPMENT_API_ADMIN_MAILER_HOST;
+  serverEnvironment.mailer.port = parseInt(process.env.DEVELOPMENT_API_ADMIN_MAILER_PORT);
+  serverEnvironment.mailer.username = process.env.DEVELOPMENT_API_ADMIN_MAILER_EMAIL_ID;
+  serverEnvironment.mailer.password = process.env.DEVELOPMENT_API_ADMIN_MAILER_EMAIL_PASSWORD;
   break;
 }
 

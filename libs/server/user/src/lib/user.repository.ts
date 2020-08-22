@@ -11,7 +11,7 @@ import { UserRegisterInput } from './services/user-register';
 
 @EntityRepository(User)
 export class UserRepository extends BaseRepository<User> {
-  public async register(requestVariables: UserRegisterInput): Promise<User> {
+  public async register(requestVariables: UserRegisterInput, verificationToken?: string): Promise<User> {
     const {
       firstName, lastName, email, password
     } = requestVariables;
