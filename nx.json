@@ -98,6 +98,9 @@
     },
     "client-pages-login": {
       "tags": []
+    },
+    "server-core-mailer": {
+      "tags": []
     }
   }
 }

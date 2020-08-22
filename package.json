@@ -36,6 +36,8 @@
     "test:server-urls": "nx test server-urls",
     "lint:server-user": "nx lint server-user",
     "test:server-user": "nx test server-user",
+    "lint:server-core-mailer": "nx lint server-core-mailer",
+    "test:server-core-mailer": "nx test server-core-mailer",
     "start:client": "yarn substep:set-client-environment --environment=development && nx serve client --configuration=development",
     "build:client": "yarn substep:set-client-environment --environment=production && nx build client --configuration=production",
     "lint:client": "nx lint client",

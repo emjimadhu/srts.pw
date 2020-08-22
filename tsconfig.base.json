@@ -71,6 +71,9 @@
       ],
       "@srts.pw/client/pages/login": [
         "libs/client/pages/login/src/index.ts"
+      ],
+      "@srts.pw/server/core/mailer": [
+        "libs/server/core/mailer/src/index.ts"
       ]
     }
   },
