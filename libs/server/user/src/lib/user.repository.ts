@@ -19,12 +19,20 @@ export class UserRepository extends BaseRepository<User> {
     const salt = await this.generateSalt();
 
     const user = this.create({
-      firstName,
-      lastName,
+      profile: {
+        firstName,
+        lastName
+      },
       userName: email,
       email,
       password: await this.hashPassword(password, salt),
       isVerified: false,
+      services: {
+        verificationToken: {
+          verificationToken,
+          generatedAt: new Date()
+        }
+      },
       id: uuid()
     });
 

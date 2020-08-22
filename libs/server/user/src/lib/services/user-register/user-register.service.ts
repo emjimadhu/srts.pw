@@ -25,8 +25,8 @@ export class UserRegisterService {
 
     await this.mailerService.sendVerificationTokenEmail({
       email: userDocument.email,
-      firstName: userDocument.firstName,
-      lastName: userDocument.lastName,
+      firstName: userDocument.profile.firstName,
+      lastName: userDocument.profile.lastName,
       token: `https://srts.pw/verify-email/${verificationToken}`
     });
 

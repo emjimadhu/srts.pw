@@ -29,8 +29,8 @@ export class UserType extends BaseGQLType {
   constructor(userDocument: User) {
     super();
     this.id = userDocument.id;
-    this.firstName = userDocument.firstName;
-    this.lastName = userDocument.lastName;
+    this.firstName = userDocument.profile.firstName;
+    this.lastName = userDocument.profile.lastName;
     this.email = userDocument.email;
     this.createdAt = userDocument.createdAt;
     this.updatedAt = userDocument.updatedAt;
