@@ -15,7 +15,12 @@
             "main": "apps/server/src/main.ts",
             "tsConfig": "apps/server/tsconfig.app.json",
             "assets": [
-              "apps/server/src/assets"
+              "apps/server/src/assets",
+              {
+                "input": "libs/server/core/mailer/src/templates",
+                "glob": "**/*",
+                "output": "mail-templates"
+              }
             ]
           },
           "configurations": {
