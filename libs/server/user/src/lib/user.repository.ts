@@ -5,6 +5,7 @@ import {
 } from 'bcrypt';
 
 import { BaseRepository } from '@srts.pw/server/common/typeorm';
+import { UserRoles } from '@srts.pw/server/common/types';
 
 import { User } from './user.entity';
 import { UserRegisterInput } from './services/user-register';
@@ -33,7 +34,8 @@ export class UserRepository extends BaseRepository<User> {
           generatedAt: new Date()
         }
       },
-      id: uuid()
+      id: uuid(),
+      role: UserRoles.USER
     });
 
 

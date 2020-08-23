@@ -3,6 +3,7 @@ import {
 } from 'typeorm';
 
 import { BaseDBEntity } from '@srts.pw/server/common/typeorm';
+import { UserRoles } from '@srts.pw/server/common/types';
 
 import { UserProfile } from './models/user/profile.embeded-entity';
 import { UserServices } from './models/user/services.embeded-entity';
@@ -32,4 +33,10 @@ export class User extends BaseDBEntity {
 
   @Column(type => UserServices)
   public services: UserServices;
+
+  @Column('enum', {
+    enum: UserRoles,
+    default: UserRoles.USER
+  })
+  public role: UserRoles;
 }
