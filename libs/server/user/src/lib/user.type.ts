@@ -20,6 +20,9 @@ export class UserType extends BaseGQLType {
   @Field()
   public email: string;
 
+  @Field()
+  public isVerified: boolean;
+
   @Field(type => Date)
   public createdAt: Date;
 
@@ -34,5 +37,6 @@ export class UserType extends BaseGQLType {
     this.email = userDocument.email;
     this.createdAt = userDocument.createdAt;
     this.updatedAt = userDocument.updatedAt;
+    this.isVerified = userDocument.isVerified;
   }
 }
