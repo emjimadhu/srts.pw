@@ -62,6 +62,8 @@
     "test:client-pages-register": "nx test client-pages-register",
     "lint:client-pages-login": "nx lint client-pages-login",
     "test:client-pages-login": "nx test client-pages-login",
+    "lint:client-pages-verify-email": "nx lint client-pages-verify-email",
+    "test:client-pages-verify-email": "nx test client-pages-verify-email",
     "barrels:server-common-typeorm": "barrel-maintainer libs/server/common/typeorm/src --includeRootDir --singleQuotes --ts",
     "barrels:server-urls": "barrel-maintainer libs/server/urls/src --includeRootDir --singleQuotes --ts",
     "barrels:server-user": "barrel-maintainer libs/server/user/src --includeRootDir --singleQuotes --ts",

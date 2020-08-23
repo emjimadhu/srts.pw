@@ -13,6 +13,7 @@ import { ClientPagesLinks } from '@srts.pw/client/pages/links';
 import { ClientPagesRedirect } from '@srts.pw/client/pages/redirect';
 import { ClientPagesRegister } from '@srts.pw/client/pages/register';
 import { ClientPagesLogin } from '@srts.pw/client/pages/login';
+import { ClientPagesVerifyEmail } from '@srts.pw/client/pages/verify-email';
 import { AppRoutes } from '@srts.pw/client/types';
 
 const AppComponent: React.FC = () => {
@@ -38,6 +39,9 @@ const AppComponent: React.FC = () => {
         </Route>
         <Route path={AppRoutes.LOGIN}>
           <ClientPagesLogin />
+        </Route>
+        <Route path={AppRoutes.VERIFY_EMAIL}>
+          <ClientPagesVerifyEmail />
         </Route>
       </Switch>
     </ApolloProvider>
