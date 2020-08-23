@@ -29,7 +29,7 @@ export class UserRepository extends BaseRepository<User> {
       isVerified: false,
       services: {
         verificationToken: {
-          verificationToken,
+          token: verificationToken,
           generatedAt: new Date()
         }
       },
@@ -38,6 +38,26 @@ export class UserRepository extends BaseRepository<User> {
 
 
     return this.save(user);
+  }
+
+  public userReadByVerificationToken(token: string): Promise<User> {
+    return this.findOne({
+      where: {
+        'services.verificationToken.token': {
+          $eq: token
+        }
+      }
+    });
+  }
+
+  public userVerificationTokenUpdate(userDocument: User): Promise<User> {
+    return this.save({
+      ...userDocument,
+      services: {
+        verificationToken: {}
+      },
+      isVerified: true
+    });
   }
 
   private generateSalt(): Promise<string> {

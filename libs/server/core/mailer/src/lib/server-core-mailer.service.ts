@@ -3,6 +3,7 @@ import { MailerService } from '@nestjs-modules/mailer';
 import { SentMessageInfo } from 'nodemailer';
 
 import { ISendVerficationToken } from './types/verification-token.interface';
+import { ISendWelcomeEmail } from './types/welcome.interface';
 
 @Injectable()
 export class ServerCoreMailerService {
@@ -19,10 +20,27 @@ export class ServerCoreMailerService {
       .sendMail({
         to: email,
         from: 'user@outlook.com',
-        subject: 'Welcome to srts.pw',
+        subject: 'Verify srts.pw Account',
         template: 'verification-email',
         context: {
           verificationToken: token,
+          fullName: `${firstName} ${lastName}`
+        }
+      });
+  }
+
+  public sendWelcomeEmail(requestVariables: ISendWelcomeEmail): Promise<SentMessageInfo> {
+    const {
+      firstName, lastName, email
+    } = requestVariables;
+
+    return this.mailerService
+      .sendMail({
+        to: email,
+        from: 'user@outlook.com',
+        subject: 'Welcome to srts.pw',
+        template: 'welcome',
+        context: {
           fullName: `${firstName} ${lastName}`
         }
       });

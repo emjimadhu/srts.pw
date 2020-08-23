@@ -2,7 +2,7 @@ import { Column } from 'typeorm';
 
 export class UserVerificationToken {
   @Column()
-  public verificationToken: string;
+  public token: string;
 
   @Column()
   public generatedAt: Date;
