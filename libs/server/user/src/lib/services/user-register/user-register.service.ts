@@ -1,15 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import {
+  asyncScheduler, Observable, scheduled
+} from 'rxjs';
+import {
+  map, tap
+} from 'rxjs/operators';
 import { v4 as uuid } from 'uuid';
 
 import {
-  UserRoles, generateSalt, hashPassword
+  generateSalt, hashPassword, UserRoles
 } from '@srts.pw/server/common/types';
 import { ServerCoreMailerService } from '@srts.pw/server/core/mailer';
+import { environment } from '@srts.pw/server/environments';
 
+import { User } from '../../user.entity';
 import { UserRepository } from '../../user.repository';
-import { UserRegisterInput } from './user-register.input';
 import { UserType } from '../../user.type';
+import { UserRegisterInput } from './user-register.input';
+
 
 @Injectable()
 export class UserRegisterService {
@@ -21,39 +30,44 @@ export class UserRegisterService {
 
   public async register(
     requestVariables: UserRegisterInput
-  ): Promise<UserType> {
+  ): Promise<Observable<UserType>> {
     const {
       firstName, lastName, email, password
     } = requestVariables;
-    const salt = await generateSalt();
     const verificationToken = uuid();
+    const salt = await generateSalt();
+    const hashedPassord = await hashPassword(password, salt);
 
-    const userDocument = await this.userRepository.userRegister({
-      profile: {
-        firstName,
-        lastName
-      },
-      userName: email,
-      email,
-      password: await hashPassword(password, salt),
-      isVerified: false,
-      services: {
-        verificationToken: {
-          token: verificationToken,
-          generatedAt: new Date()
-        }
-      },
-      id: uuid(),
-      role: UserRoles.USER
-    });
-
-    await this.mailerService.sendVerificationTokenEmail({
-      email: userDocument.email,
-      firstName: userDocument.profile.firstName,
-      lastName: userDocument.profile.lastName,
-      token: `https://srts.pw/verify-email/${verificationToken}`
-    });
-
-    return new UserType(userDocument);
+    return scheduled(
+      this.userRepository.userRegister({
+        profile: {
+          firstName,
+          lastName
+        },
+        userName: email,
+        email,
+        password: hashedPassord,
+        isVerified: false,
+        services: {
+          verificationToken: {
+            token: verificationToken,
+            generatedAt: new Date()
+          }
+        },
+        id: uuid(),
+        role: UserRoles.USER
+      }),
+      asyncScheduler
+    ).pipe(
+      tap(async(userDocument: User) => {
+        await this.mailerService.sendVerificationTokenEmail({
+          email: userDocument.email,
+          firstName: userDocument.profile.firstName,
+          lastName: userDocument.profile.lastName,
+          token: `${environment.clientUrl}/verify-email/${verificationToken}`
+        });
+      }),
+      map((userDocument: User) => new UserType(userDocument))
+    );
   }
 }

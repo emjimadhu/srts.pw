@@ -1,6 +1,7 @@
 import {
   Resolver, Mutation, Args, Query
 } from '@nestjs/graphql';
+import { Observable } from 'rxjs';
 
 import { UserType } from './user.type';
 import { UserRegisterService } from './services/user-register/user-register.service';
@@ -23,7 +24,7 @@ export class UserResolver {
   @Mutation(() => UserType)
   public register(
     @Args('requestVariables') requestVariables: UserRegisterInput
-  ): Promise<UserType> {
+  ): Promise<Observable<UserType>> {
     return this.userRegisterService.register(requestVariables);
   }
 
