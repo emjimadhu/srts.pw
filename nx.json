@@ -107,6 +107,9 @@
     },
     "server-common-types": {
       "tags": []
+    },
+    "client-pages-not-found": {
+      "tags": []
     }
   }
 }

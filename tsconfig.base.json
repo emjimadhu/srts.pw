@@ -80,6 +80,9 @@
       ],
       "@srts.pw/server/common/types": [
         "libs/server/common/types/src/index.ts"
+      ],
+      "@srts.pw/client/pages/not-found": [
+        "libs/client/pages/not-found/src/index.ts"
       ]
     }
   },

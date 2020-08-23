@@ -958,6 +958,38 @@
           }
         }
       }
+    },
+    "client-pages-not-found": {
+      "root": "libs/client/pages/not-found",
+      "sourceRoot": "libs/client/pages/not-found/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/client/pages/not-found/tsconfig.lib.json",
+              "libs/client/pages/not-found/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/pages/not-found/**/*"
+            ],
+            "fix": true,
+            "format": "formattify"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/pages/not-found/jest.config.js",
+            "tsConfig": "libs/client/pages/not-found/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
