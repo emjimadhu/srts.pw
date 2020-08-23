@@ -1,18 +1,22 @@
 import {
-  Resolver, Mutation, Args, Query
+  Args, Mutation, Query, Resolver
 } from '@nestjs/graphql';
 import { Observable } from 'rxjs';
 
-import { UserType } from './user.type';
-import { UserRegisterService } from './services/user-register/user-register.service';
 import {
   UserRegisterInput, UserVerifyEmailInput, UserVerifyEmailService
 } from './services';
+import { UserLoginInput } from './services/user-login';
+import { UserLoginService } from './services/user-login/user-login.service';
+import { UserRegisterService } from './services/user-register/user-register.service';
+import { UserType } from './user.type';
+
 
 @Resolver(of => UserType)
 export class UserResolver {
   constructor(
     private readonly userRegisterService: UserRegisterService,
+    private readonly userLoginService: UserLoginService,
     private readonly userVerifyEmailService: UserVerifyEmailService
   ) {}
 
@@ -26,6 +30,13 @@ export class UserResolver {
     @Args('requestVariables') requestVariables: UserRegisterInput
   ): Promise<Observable<UserType>> {
     return this.userRegisterService.register(requestVariables);
+  }
+
+  @Mutation(() => UserType)
+  public login(
+    @Args('requestVariables') requestVariables: UserLoginInput
+  ): Promise<Observable<UserType>> {
+    return this.userLoginService.login(requestVariables);
   }
 
   @Mutation(() => Boolean)

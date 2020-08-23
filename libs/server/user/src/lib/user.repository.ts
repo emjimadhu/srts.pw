@@ -32,4 +32,10 @@ export class UserRepository extends BaseRepository<User> {
       isVerified: true
     });
   }
+
+  public userReadByEmail(email: string): Promise<User> {
+    return this.findOne({
+      email
+    });
+  }
 }
