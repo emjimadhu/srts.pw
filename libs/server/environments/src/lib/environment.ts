@@ -10,5 +10,6 @@ export const environment = {
     username: '',
     password: '',
     from: ''
-  }
+  },
+  jwtSecret: ''
 };
