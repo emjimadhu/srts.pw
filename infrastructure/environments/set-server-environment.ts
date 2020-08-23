@@ -28,6 +28,7 @@ case RunConfiguration.PRODUCTION:
   serverEnvironment.mailer.username = process.env.PRODUCTION_SERVER_MAILER_EMAIL_ID;
   serverEnvironment.mailer.password = process.env.PRODUCTION_SERVER_MAILER_EMAIL_PASSWORD;
   serverEnvironment.mailer.from = process.env.PRODUCTION_SERVER_MAILER_EMAIL_FROM;
+  serverEnvironment.mailer.service = process.env.PRODUCTION_SERVER_MAILER_EMAIL_SERVICE;
   break;
 case RunConfiguration.DEVELOPMENT:
   serverEnvironment.port = parseInt(process.env.DEVELOPMENT_SERVER_PORT);
@@ -39,6 +40,7 @@ case RunConfiguration.DEVELOPMENT:
   serverEnvironment.mailer.username = process.env.DEVELOPMENT_SERVER_MAILER_EMAIL_ID;
   serverEnvironment.mailer.password = process.env.DEVELOPMENT_SERVER_MAILER_EMAIL_PASSWORD;
   serverEnvironment.mailer.from = process.env.DEVELOPMENT_SERVER_MAILER_EMAIL_FROM;
+  serverEnvironment.mailer.service = process.env.DEVELOPMENT_SERVER_MAILER_EMAIL_SERVICE;
   break;
 }
 

@@ -4,6 +4,7 @@ export const environment = {
   mongoUri: '',
   clientUrl: '',
   mailer: {
+    service: 'ethereal',
     host: '',
     port: 0,
     username: '',
