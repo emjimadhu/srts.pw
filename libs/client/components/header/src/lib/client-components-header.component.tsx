@@ -3,7 +3,7 @@ import {
   useHistory, useLocation
 } from 'react-router-dom';
 import {
-  AppBar, Toolbar, Typography, IconButton, Menu, useMediaQuery, Tooltip, List, ListItem, ListItemIcon, ListItemText
+  AppBar, Toolbar, Typography, IconButton, Menu, useMediaQuery, Tooltip, List, ListItem, ListItemIcon, ListItemText, SvgIcon
 } from '@material-ui/core';
 import {
   makeStyles, createStyles, Theme, useTheme
@@ -22,12 +22,17 @@ import {
   AppRoutes, AppRouteNames
 } from '@srts.pw/client/types';
 
+import { ReactComponent as LogoSvg } from '../assets/logo.svg';
+
 import './client-components-header.component.scss';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       boxShadow: 'none'
+    },
+    menuButton: {
+      marginRight: theme.spacing(2)
     },
     title: {
       fontWeight: 'bold',
@@ -197,6 +202,9 @@ export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHe
       className={classes.root}
     >
       <Toolbar>
+        <SvgIcon className={classes.menuButton}>
+          <LogoSvg />
+        </SvgIcon>
         <Typography
           variant="h5"
           className={classes.title}
