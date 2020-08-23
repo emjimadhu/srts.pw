@@ -4,13 +4,13 @@ import {
 
 import { BaseDBEntity } from '@srts.pw/server/common/typeorm';
 
+import { UserProfile } from './models/user/profile.embeded-entity';
+import { UserServices } from './models/user/services.embeded-entity';
+
 @Entity()
 export class User extends BaseDBEntity {
-  @Column()
-  public firstName: string;
-
-  @Column()
-  public lastName: string;
+  @Column(type => UserProfile)
+  public profile: UserProfile;
 
   @Column({
     unique: true
@@ -29,4 +29,7 @@ export class User extends BaseDBEntity {
     default: false
   })
   public isVerified: boolean;
+
+  @Column(type => UserServices)
+  public services: UserServices;
 }

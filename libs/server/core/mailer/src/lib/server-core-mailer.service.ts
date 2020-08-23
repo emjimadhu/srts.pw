@@ -2,7 +2,10 @@ import { Injectable } from '@nestjs/common';
 import { MailerService } from '@nestjs-modules/mailer';
 import { SentMessageInfo } from 'nodemailer';
 
+import { environment } from '@srts.pw/server/environments';
+
 import { ISendVerficationToken } from './types/verification-token.interface';
+import { ISendWelcomeEmail } from './types/welcome.interface';
 
 @Injectable()
 export class ServerCoreMailerService {
@@ -18,11 +21,28 @@ export class ServerCoreMailerService {
     return this.mailerService
       .sendMail({
         to: email,
-        from: 'user@outlook.com',
-        subject: 'Welcome to srts.pw',
+        from: environment.mailer.from,
+        subject: 'Verify srts.pw Account',
         template: 'verification-email',
         context: {
           verificationToken: token,
+          fullName: `${firstName} ${lastName}`
+        }
+      });
+  }
+
+  public sendWelcomeEmail(requestVariables: ISendWelcomeEmail): Promise<SentMessageInfo> {
+    const {
+      firstName, lastName, email
+    } = requestVariables;
+
+    return this.mailerService
+      .sendMail({
+        to: email,
+        from: environment.mailer.from,
+        subject: 'Welcome to srts.pw',
+        template: 'welcome',
+        context: {
           fullName: `${firstName} ${lastName}`
         }
       });

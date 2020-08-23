@@ -19,17 +19,45 @@ export class UserRepository extends BaseRepository<User> {
     const salt = await this.generateSalt();
 
     const user = this.create({
-      firstName,
-      lastName,
+      profile: {
+        firstName,
+        lastName
+      },
       userName: email,
       email,
       password: await this.hashPassword(password, salt),
       isVerified: false,
+      services: {
+        verificationToken: {
+          token: verificationToken,
+          generatedAt: new Date()
+        }
+      },
       id: uuid()
     });
 
 
     return this.save(user);
+  }
+
+  public userReadByVerificationToken(token: string): Promise<User> {
+    return this.findOne({
+      where: {
+        'services.verificationToken.token': {
+          $eq: token
+        }
+      }
+    });
+  }
+
+  public userVerificationTokenUpdate(userDocument: User): Promise<User> {
+    return this.save({
+      ...userDocument,
+      services: {
+        verificationToken: {}
+      },
+      isVerified: true
+    });
   }
 
   private generateSalt(): Promise<string> {

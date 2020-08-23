@@ -1,4 +1,5 @@
 export * from './common';
+export * from './models';
 export * from './server-user.module';
 export * from './services';
 export * from './user.entity';
