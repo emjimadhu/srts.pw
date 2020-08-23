@@ -894,6 +894,38 @@
           }
         }
       }
+    },
+    "client-pages-verify-email": {
+      "root": "libs/client/pages/verify-email",
+      "sourceRoot": "libs/client/pages/verify-email/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/client/pages/verify-email/tsconfig.lib.json",
+              "libs/client/pages/verify-email/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/pages/verify-email/**/*"
+            ],
+            "fix": true,
+            "format": "formattify"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/pages/verify-email/jest.config.js",
+            "tsConfig": "libs/client/pages/verify-email/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

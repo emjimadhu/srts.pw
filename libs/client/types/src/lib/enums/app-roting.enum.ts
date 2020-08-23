@@ -3,12 +3,14 @@ export enum AppRoutes {
   LINKS = '/links',
   REDIRECT = '/r/:slug',
   REGISTER = '/register',
-  LOGIN = '/login'
+  LOGIN = '/login',
+  VERIFY_EMAIL = '/verify-email/:token'
 }
 
 export enum AppRouteNames {
   HOME = 'HOME',
   LINKS = 'LINKS',
   REGISTER = 'Register',
-  LOGIN = 'Login'
+  LOGIN = 'Login',
+  VERIFY_EMAIL = 'Verify Email'
 }

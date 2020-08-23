@@ -74,6 +74,9 @@
       ],
       "@srts.pw/server/core/mailer": [
         "libs/server/core/mailer/src/index.ts"
+      ],
+      "@srts.pw/client/pages/verify-email": [
+        "libs/client/pages/verify-email/src/index.ts"
       ]
     }
   },

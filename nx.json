@@ -101,6 +101,9 @@
     },
     "server-core-mailer": {
       "tags": []
+    },
+    "client-pages-verify-email": {
+      "tags": []
     }
   }
 }
