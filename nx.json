@@ -110,6 +110,9 @@
     },
     "client-pages-not-found": {
       "tags": []
+    },
+    "server-auth": {
+      "tags": []
     }
   }
 }
