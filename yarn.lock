@@ -3154,10 +3154,10 @@
     consola "^2.3.0"
     node-fetch "^2.3.0"
 
-"@nx-plus/vue@0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@nx-plus/vue/-/vue-0.5.0.tgz#46d69ce13c29f7e80ff53539378e7056af3102ce"
-  integrity sha512-dxjGTQYVMQW0FHext98gcgzxhuosMKJBO4/FRx07fJdOKj5iTBOtvZy18gl+XBgLPDnTqZNN4eMu4Rj+bzphuA==
+"@nx-plus/vue@0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@nx-plus/vue/-/vue-0.6.0.tgz#b039de63f557cf99745856784ac2b56f9587dd26"
+  integrity sha512-6Y0l4AJd9C6BF118l94a/qEWTg6ib1kVH11rg/2gh6e8Jn5UKkFPcSXMpqYCFRGz/5aNRLhmzdUELXRSb9Fl8A==
   dependencies:
     "@angular-devkit/architect" "~0.901.0"
     "@angular-devkit/core" "~9.1.0"
@@ -3165,16 +3165,16 @@
     "@nrwl/cypress" "^9.0.0"
     "@nrwl/jest" "^9.0.0"
     "@nrwl/linter" "^9.0.0"
-    "@vue/cli-shared-utils" "~4.3.0"
+    "@vue/cli-shared-utils" "~4.5.0"
     copy-webpack-plugin "^5.1.1"
     less "^3.0.4"
     less-loader "^5.0.0"
     rxjs "6.5.4"
-    sass "^1.26.3"
+    sass "^1.26.5"
     sass-loader "^8.0.2"
     stylus "^0.54.7"
     stylus-loader "^3.0.2"
-    tsconfig-paths-webpack-plugin "3.2.0"
+    tsconfig-paths-webpack-plugin "3.3.0"
     typescript "~3.8.3"
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
@@ -4289,7 +4289,7 @@
   optionalDependencies:
     vue-loader-v16 "npm:vue-loader@^16.0.0-beta.3"
 
-"@vue/cli-shared-utils@^4.5.4":
+"@vue/cli-shared-utils@^4.5.4", "@vue/cli-shared-utils@~4.5.0":
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.5.4.tgz#ed36b2971dc02653f7f2ad4e66bbe9510e1bd414"
   integrity sha512-7ZwAvGxl5szGuaJCc4jdPy/2Lb7oJvG847MDF+7pZ7FVl6bURwbUJjiUwL6DTxvpC4vch6B4tXfVvZFjzVP/bw==
@@ -4304,25 +4304,6 @@
     ora "^3.4.0"
     read-pkg "^5.1.1"
     request "^2.88.2"
-    semver "^6.1.0"
-    strip-ansi "^6.0.0"
-
-"@vue/cli-shared-utils@~4.3.0":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.3.1.tgz#a74bf4d53825d4a4b05a84b03e023974871bc38a"
-  integrity sha512-lcfRalou7Z9jZgIh9PeTIpwDK7RIjr9OxfLGwbdR8czUZYUeUa67zVEMJD0OPYh/CCoREtzNbVfLPb/IYYxWEA==
-  dependencies:
-    "@hapi/joi" "^15.0.1"
-    chalk "^2.4.2"
-    execa "^1.0.0"
-    launch-editor "^2.2.1"
-    lru-cache "^5.1.1"
-    node-ipc "^9.1.1"
-    open "^6.3.0"
-    ora "^3.4.0"
-    read-pkg "^5.1.1"
-    request "^2.88.2"
-    request-promise-native "^1.0.8"
     semver "^6.1.0"
     strip-ansi "^6.0.0"
 
@@ -16602,7 +16583,7 @@ sass@1.22.9:
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
-sass@^1.26.3:
+sass@^1.26.5:
   version "1.26.10"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.26.10.tgz#851d126021cdc93decbf201d1eca2a20ee434760"
   integrity sha512-bzN0uvmzfsTvjz0qwccN1sPm2HxxpNI/Xa+7PlUEMS+nQvbyuEK7Y0qFqxlPHhiNHb1Ze8WQJtU31olMObkAMw==
@@ -18201,6 +18182,15 @@ tsconfig-paths-webpack-plugin@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/tsconfig-paths-webpack-plugin/-/tsconfig-paths-webpack-plugin-3.2.0.tgz#6e70bd42915ad0efb64d3385163f0c1270f3e04d"
   integrity sha512-S/gOOPOkV8rIL4LurZ1vUdYCVgo15iX9ZMJ6wx6w2OgcpT/G4wMyHB6WM+xheSqGMrWKuxFul+aXpCju3wmj/g==
+  dependencies:
+    chalk "^2.3.0"
+    enhanced-resolve "^4.0.0"
+    tsconfig-paths "^3.4.0"
+
+tsconfig-paths-webpack-plugin@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths-webpack-plugin/-/tsconfig-paths-webpack-plugin-3.3.0.tgz#a7461723c20623ca9148621a5ce36532682ad2ff"
+  integrity sha512-MpQeZpwPY4gYASCUjY4yt2Zj8yv86O8f++3Ai4o0yI0fUC6G1syvnL9VuY71PBgimRYDQU47f12BEmJq9wRaSw==
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
