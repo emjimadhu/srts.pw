@@ -31,7 +31,7 @@ export class UserResolver {
   @Mutation(() => Boolean)
   public verifyEmail(
     @Args('requestVariables') requestVariables: UserVerifyEmailInput
-  ): Promise<boolean> {
+  ): Promise<Observable<boolean>> {
     return this.userVerifyEmailService.verifyEmail(requestVariables);
   }
 }
