@@ -264,7 +264,12 @@
             "tsConfig": "apps/client/tsconfig.app.json",
             "assets": [
               "apps/client/src/favicon.ico",
-              "apps/client/src/assets"
+              "apps/client/src/assets",
+              {
+                "input": "libs/client/pages/not-found/src/templates",
+                "glob": "**/*",
+                "output": "lottie-templates"
+              }
             ],
             "styles": [
               "apps/client/src/styles.scss"

@@ -20,6 +20,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "resolveJsonModule": true,
     "paths": {
       "@srts.pw/server/environments": [
         "libs/server/environments/src/index.ts"
