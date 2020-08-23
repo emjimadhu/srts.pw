@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { MailerService } from '@nestjs-modules/mailer';
 import { SentMessageInfo } from 'nodemailer';
 
+import { environment } from '@srts.pw/server/environments';
+
 import { ISendVerficationToken } from './types/verification-token.interface';
 import { ISendWelcomeEmail } from './types/welcome.interface';
 
@@ -19,7 +21,7 @@ export class ServerCoreMailerService {
     return this.mailerService
       .sendMail({
         to: email,
-        from: 'user@outlook.com',
+        from: environment.mailer.from,
         subject: 'Verify srts.pw Account',
         template: 'verification-email',
         context: {
@@ -37,7 +39,7 @@ export class ServerCoreMailerService {
     return this.mailerService
       .sendMail({
         to: email,
-        from: 'user@outlook.com',
+        from: environment.mailer.from,
         subject: 'Welcome to srts.pw',
         template: 'welcome',
         context: {

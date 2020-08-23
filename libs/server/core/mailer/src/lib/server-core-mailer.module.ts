@@ -22,7 +22,7 @@ import { ServerCoreMailerService } from './server-core-mailer.service';
         }
       },
       defaults: {
-        from: '"srts.pw" <user@outlook.com>'
+        from: `"srts.pw" <${environment.mailer.from}>`
       },
       template: {
         dir: __dirname + '/mail-templates',

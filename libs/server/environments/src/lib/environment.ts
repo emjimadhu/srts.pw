@@ -7,6 +7,7 @@ export const environment = {
     host: '',
     port: 0,
     username: '',
-    password: ''
+    password: '',
+    from: ''
   }
 };
