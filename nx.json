@@ -104,6 +104,9 @@
     },
     "client-pages-verify-email": {
       "tags": []
+    },
+    "server-common-types": {
+      "tags": []
     }
   }
 }

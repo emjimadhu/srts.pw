@@ -77,6 +77,9 @@
       ],
       "@srts.pw/client/pages/verify-email": [
         "libs/client/pages/verify-email/src/index.ts"
+      ],
+      "@srts.pw/server/common/types": [
+        "libs/server/common/types/src/index.ts"
       ]
     }
   },
