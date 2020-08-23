@@ -150,7 +150,7 @@
     "@babel/preset-typescript": "7.10.4",
     "@commitlint/cli": "9.1.2",
     "@commitlint/config-conventional": "9.1.2",
-    "@nestjs/schematics": "7.0.1",
+    "@nestjs/schematics": "7.1.0",
     "@nestjs/testing": "7.4.2",
     "@nrwl/cypress": "10.1.0",
     "@nrwl/eslint-plugin-nx": "10.1.0",
