@@ -1,11 +1,10 @@
 import { EntityRepository } from 'typeorm';
 import { v4 as uuid } from 'uuid';
-import {
-  genSalt, hash
-} from 'bcrypt';
 
 import { BaseRepository } from '@srts.pw/server/common/typeorm';
-import { UserRoles } from '@srts.pw/server/common/types';
+import {
+  UserRoles, generateSalt, hashPassword
+} from '@srts.pw/server/common/types';
 
 import { User } from './user.entity';
 import { UserRegisterInput } from './services/user-register';
@@ -17,7 +16,7 @@ export class UserRepository extends BaseRepository<User> {
       firstName, lastName, email, password
     } = requestVariables;
 
-    const salt = await this.generateSalt();
+    const salt = await generateSalt();
 
     const user = this.create({
       profile: {
@@ -26,7 +25,7 @@ export class UserRepository extends BaseRepository<User> {
       },
       userName: email,
       email,
-      password: await this.hashPassword(password, salt),
+      password: await hashPassword(password, salt),
       isVerified: false,
       services: {
         verificationToken: {
@@ -60,13 +59,5 @@ export class UserRepository extends BaseRepository<User> {
       },
       isVerified: true
     });
-  }
-
-  private generateSalt(): Promise<string> {
-    return genSalt();
-  }
-
-  private async hashPassword(password: string, salt: string): Promise<string> {
-    return hash(password, salt);
   }
 }
