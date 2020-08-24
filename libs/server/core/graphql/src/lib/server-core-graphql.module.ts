@@ -15,7 +15,8 @@ import { environment } from '@srts.pw/server/environments';
       }) => ({
         req,
         res
-      })
+      }),
+      cors: false
     })
   ]
 })

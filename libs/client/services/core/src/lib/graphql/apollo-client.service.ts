@@ -6,7 +6,8 @@ import { environment } from '@srts.pw/client/environments';
 
 export const apolloClient: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   link: createHttpLink({
-    uri: environment.graphQlURL
+    uri: environment.graphQlURL,
+    credentials: 'include'
   }),
   cache: new InMemoryCache(),
   name: 'srts.pw-wweb-client',
