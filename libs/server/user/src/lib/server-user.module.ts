@@ -14,6 +14,7 @@ import { UserLoginService } from './services/user-login/user-login.service';
     UserRegisterService,
     UserLoginService,
     UserVerifyEmailService
-  ]
+  ],
+  exports: [UserLoginService]
 })
 export class ServerUserModule {}

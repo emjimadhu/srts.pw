@@ -1,5 +1,5 @@
 import {
-  Injectable, NotFoundException, BadRequestException
+  Injectable, NotFoundException, UnauthorizedException
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { hash } from 'bcrypt';
@@ -34,7 +34,7 @@ export class UserLoginService {
       this.userRepository.userReadByEmail(email),
       asapScheduler
     ).pipe(
-      mergeMap((userDocument: User) => {
+      mergeMap((userDocument: User) => { // eslint-disable-line import/no-deprecated
         if (userDocument) {
           return zip(
             scheduled(
@@ -50,7 +50,7 @@ export class UserLoginService {
               boolean, User
             ]) => {
             if (!isValidPassword) {
-              throw new BadRequestException('Email or Password is Invalid');
+              throw new UnauthorizedException('Email or Password is Invalid');
             }
             return user;
           }));
@@ -60,6 +60,16 @@ export class UserLoginService {
       }),
       map((userDocument: User) => new UserType(userDocument))
     );
+  }
+
+  public async validateJwtPayload(payload: {id: string; email: string}): Promise<UserType> {
+    const userDocument = await this.userRepository.userReadById(payload.id);
+
+    if (!userDocument) {
+      throw new NotFoundException('User could not be found.');
+    }
+
+    return new UserType(userDocument);
   }
 
   private async validatePassword(userDocument: User, password: string): Promise<boolean> {

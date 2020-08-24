@@ -38,4 +38,10 @@ export class UserRepository extends BaseRepository<User> {
       email
     });
   }
+
+  public userReadById(id: string): Promise<User> {
+    return this.findOne({
+      id
+    });
+  }
 }
