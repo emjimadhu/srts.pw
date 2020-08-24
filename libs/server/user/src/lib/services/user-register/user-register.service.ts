@@ -46,9 +46,14 @@ export class UserRegisterService {
         },
         userName: email,
         email,
-        password: hashedPassord,
         isVerified: false,
         services: {
+          password: {
+            password: hashedPassord,
+            salt,
+            generatedAt: new Date(),
+            updatedAt: new Date()
+          },
           verificationToken: {
             token: verificationToken,
             generatedAt: new Date()

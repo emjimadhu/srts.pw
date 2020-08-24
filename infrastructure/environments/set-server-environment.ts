@@ -22,6 +22,7 @@ case RunConfiguration.PRODUCTION:
   serverEnvironment.port = parseInt(process.env.PRODUCTION_SERVER_PORT);
   serverEnvironment.mongoUri = process.env.PRODUCTION_MONGO_URI;
   serverEnvironment.clientUrl = process.env.PRODUCTION_CLIENT_URL;
+  serverEnvironment.jwtSecret = process.env.PRODUCTION_JWT_SECRET;
 
   serverEnvironment.mailer.host = process.env.PRODUCTION_SERVER_MAILER_HOST;
   serverEnvironment.mailer.port = parseInt(process.env.PRODUCTION_SERVER_MAILER_PORT);
@@ -34,6 +35,7 @@ case RunConfiguration.DEVELOPMENT:
   serverEnvironment.port = parseInt(process.env.DEVELOPMENT_SERVER_PORT);
   serverEnvironment.mongoUri = process.env.DEVELOPMENT_MONGO_URI;
   serverEnvironment.clientUrl = process.env.DEVELOPMENT_CLIENT_URL;
+  serverEnvironment.jwtSecret = process.env.DEVELOPMENT_JWT_SECRET;
 
   serverEnvironment.mailer.host = process.env.DEVELOPMENT_SERVER_MAILER_HOST;
   serverEnvironment.mailer.port = parseInt(process.env.DEVELOPMENT_SERVER_MAILER_PORT);

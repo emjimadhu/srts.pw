@@ -9,7 +9,13 @@ import { environment } from '@srts.pw/server/environments';
       autoSchemaFile: 'schema.gql',
       debug: !environment.production,
       playground: !environment.production,
-      introspection: !environment.production
+      introspection: !environment.production,
+      context: ({ // eslint-disable-line @typescript-eslint/typedef
+        req, res
+      }) => ({
+        req,
+        res
+      })
     })
   ]
 })

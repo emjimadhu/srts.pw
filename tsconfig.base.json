@@ -84,6 +84,9 @@
       ],
       "@srts.pw/client/pages/not-found": [
         "libs/client/pages/not-found/src/index.ts"
+      ],
+      "@srts.pw/server/auth": [
+        "libs/server/auth/src/index.ts"
       ]
     }
   },
