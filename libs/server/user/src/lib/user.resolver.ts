@@ -1,7 +1,14 @@
+import { UseGuards } from '@nestjs/common';
 import {
   Args, Mutation, Query, Resolver
 } from '@nestjs/graphql';
+import { Response } from 'express';
 import { Observable } from 'rxjs';
+
+import {
+  convertDaysToSeconds, GqlAuthGuard, ResponseGql
+} from '@srts.pw/server/common/types';
+import { environment } from '@srts.pw/server/environments';
 
 import {
   UserRegisterInput, UserVerifyEmailInput, UserVerifyEmailService
@@ -21,6 +28,7 @@ export class UserResolver {
   ) {}
 
   @Query(() => String)
+  @UseGuards(GqlAuthGuard)
   public users(): string {
     return 'Users';
   }
@@ -33,10 +41,20 @@ export class UserResolver {
   }
 
   @Mutation(() => UserType)
-  public login(
-    @Args('requestVariables') requestVariables: UserLoginInput
-  ): Promise<Observable<UserType>> {
-    return this.userLoginService.login(requestVariables);
+  public async login(
+    @Args('requestVariables') requestVariables: UserLoginInput,
+    @ResponseGql() response: Response
+  ): Promise<UserType> {
+    const loginDetails = await (await this.userLoginService.login(requestVariables)).toPromise();
+    const seconds = convertDaysToSeconds(7);
+    const date = new Date();
+    date.setSeconds(seconds);
+    response.cookie('token', loginDetails.accessToken, {
+      httpOnly: true,
+      expires: date,
+      secure: environment.production
+    });
+    return loginDetails.user;
   }
 
   @Mutation(() => Boolean)

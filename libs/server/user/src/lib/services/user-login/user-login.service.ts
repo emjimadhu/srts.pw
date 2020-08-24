@@ -1,6 +1,7 @@
 import {
   Injectable, NotFoundException, UnauthorizedException
 } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import { hash } from 'bcrypt';
 import {
@@ -20,12 +21,13 @@ import { UserLoginInput } from './user-login.input';
 export class UserLoginService {
   constructor(
     @InjectRepository(UserRepository)
-    private readonly userRepository: UserRepository
+    private readonly userRepository: UserRepository,
+    private jwtService: JwtService
   ) {}
 
   public async login(
     requestVariables: UserLoginInput
-  ): Promise<Observable<UserType>> {
+  ): Promise<Observable<{user: UserType; accessToken: string}>> {
     const {
       email, password
     } = requestVariables;
@@ -58,7 +60,19 @@ export class UserLoginService {
           throw new NotFoundException('User does not Exsists');
         }
       }),
-      map((userDocument: User) => new UserType(userDocument))
+      map((userDocument: User) => {
+        const user = new UserType(userDocument);
+        const payload = {
+          id: user.id
+        };
+
+        const accessToken = this.jwtService.sign(payload);
+
+        return {
+          user,
+          accessToken
+        };
+      })
     );
   }
 

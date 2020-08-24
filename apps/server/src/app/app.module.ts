@@ -8,10 +8,10 @@ import { ServerUrlsModule } from '@srts.pw/server/urls';
 import { environment } from '@srts.pw/server/environments';
 import { ServerUserModule } from '@srts.pw/server/user';
 import { ServerCoreMailerModule } from '@srts.pw/server/core/mailer';
+import { ServerAuthModule } from '@srts.pw/server/auth';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-
 
 
 @Module({
@@ -31,6 +31,7 @@ import { AppService } from './app.service';
       entities: getMetadataArgsStorage().tables.map((table: TableMetadataArgs) => table.target)
     }),
     ServerCoreMailerModule,
+    ServerAuthModule,
     ServerUrlsModule,
     ServerUserModule
   ],
