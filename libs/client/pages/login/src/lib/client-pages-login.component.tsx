@@ -9,10 +9,12 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import {
   Alert, AlertTitle
 } from '@material-ui/lab';
-import React, { useState } from 'react';
+import React, {
+  useState, useContext
+} from 'react';
 
 import {
-  AppRouteNames, AppRoutes
+  AppRouteNames, AppRoutes, UserContext, UserActionEnum
 } from '@srts.pw/client/shared';
 
 import {
@@ -46,6 +48,9 @@ export interface IClientPagesLoginProps {} // eslint-disable-line @typescript-es
 
 export const ClientPagesLogin: React.FC = (properties: IClientPagesLoginProps) => {
   const classes = useStyles();
+  const {
+    dispatch
+  } = useContext(UserContext);
 
   const [
     email,
@@ -89,11 +94,15 @@ export const ClientPagesLogin: React.FC = (properties: IClientPagesLoginProps) =
             }
           });
 
-          console.log(fetchResult);
           if (!fetchResult.errors) {
-            console.log(fetchResult.data.login);
             setEmail('');
             setPassword('');
+            dispatch({
+              type: UserActionEnum.SET_USER_AND_TOKEN,
+              payload: {
+                user: fetchResult.data.login
+              }
+            });
           } else {
             setError(true);
             const fetchResultErrorMessage = fetchResult.errors[0].message;
