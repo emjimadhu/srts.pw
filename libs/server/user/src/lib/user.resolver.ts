@@ -45,16 +45,16 @@ export class UserResolver {
     @Args('requestVariables') requestVariables: UserLoginInput,
     @ResponseGql() response: Response
   ): Promise<UserType> {
-    const loginDetails = await (await this.userLoginService.login(requestVariables)).toPromise();
+    const user = await (await this.userLoginService.login(requestVariables)).toPromise();
     const seconds = convertDaysToSeconds(7);
     const date = new Date();
     date.setSeconds(seconds);
-    response.cookie('token', loginDetails.accessToken, {
+    response.cookie('token', user.token, {
       httpOnly: true,
       expires: date,
       secure: environment.production
     });
-    return loginDetails.user;
+    return user;
   }
 
   @Mutation(() => Boolean)
