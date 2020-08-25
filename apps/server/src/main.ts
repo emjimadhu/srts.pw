@@ -16,7 +16,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:4200',
-      'https://sts.pw',
+      'https://srts.pw',
       'https://admin.srts.pw'
     ],
     credentials: true
