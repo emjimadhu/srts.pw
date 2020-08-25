@@ -12,7 +12,7 @@ import LinkIcon from '@material-ui/icons/Link';
 import { getUser } from '@srts.pw/client/services/core';
 import {
   IUrlDocument, AppRoutes
-} from '@srts.pw/client/types';
+} from '@srts.pw/client/shared';
 
 import {
   IListUrlsByUser_ResponseData, IListUrlsByUser_RequestVariables, LIST_URLS_BY_USER_QUERY

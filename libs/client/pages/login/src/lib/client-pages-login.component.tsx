@@ -13,7 +13,7 @@ import React, { useState } from 'react';
 
 import {
   AppRouteNames, AppRoutes
-} from '@srts.pw/client/types';
+} from '@srts.pw/client/shared';
 
 import {
   IUserLogin_ResponseData, USER_LOGIN_MUTATION

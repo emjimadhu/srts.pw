@@ -9,7 +9,7 @@ import {
 
 import { ClientComponentsCreateLink } from '@srts.pw/client/components/create-link';
 import { ClientComponentsLinkPreview } from '@srts.pw/client/components/link-preview';
-import { IUrlDocument } from '@srts.pw/client/types';
+import { IUrlDocument } from '@srts.pw/client/shared';
 
 import './client-pages-home.component.scss';
 

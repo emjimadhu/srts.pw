@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core/styles';
 import LinkIcon from '@material-ui/icons/Link';
 
-import { IUrlDocument } from '@srts.pw/client/types';
+import { IUrlDocument } from '@srts.pw/client/shared';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

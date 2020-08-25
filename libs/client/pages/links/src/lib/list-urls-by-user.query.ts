@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-import { IUrlDocument } from '@srts.pw/client/types';
+import { IUrlDocument } from '@srts.pw/client/shared';
 
 export const LIST_URLS_BY_USER_QUERY = gql`
   query ListUrlsByUser($user: String!) {

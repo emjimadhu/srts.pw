@@ -15,7 +15,7 @@ import { ClientPagesRegister } from '@srts.pw/client/pages/register';
 import { ClientPagesLogin } from '@srts.pw/client/pages/login';
 import { ClientPagesVerifyEmail } from '@srts.pw/client/pages/verify-email';
 import { ClientPagesNotFound } from '@srts.pw/client/pages/not-found';
-import { AppRoutes } from '@srts.pw/client/types';
+import { AppRoutes } from '@srts.pw/client/shared';
 
 const AppComponent: React.FC = () => {
   if (!getUser()) {

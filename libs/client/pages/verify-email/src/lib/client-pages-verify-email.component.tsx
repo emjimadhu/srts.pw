@@ -18,7 +18,7 @@ import {
   useMutation, FetchResult
 } from '@apollo/client';
 
-import { AppRoutes } from '@srts.pw/client/types';
+import { AppRoutes } from '@srts.pw/client/shared';
 import './client-pages-verify-email.component.scss';
 
 import {

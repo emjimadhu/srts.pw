@@ -76,7 +76,7 @@
     "barrels:server-user": "barrel-maintainer libs/server/user/src --includeRootDir --singleQuotes --ts",
     "barrels:server-auth": "barrel-maintainer libs/server/auth/src --includeRootDir --singleQuotes --ts",
     "barrels:client-core": "barrel-maintainer libs/client/services/core/src --includeRootDir --singleQuotes --ts",
-    "barrels:client-types": "barrel-maintainer libs/client/types/src --includeRootDir --singleQuotes --ts",
+    "barrels:client-shared": "barrel-maintainer libs/client/shared/src --includeRootDir --singleQuotes --ts",
     "lint:server-environments": "nx lint server-environments",
     "lint:workspace": "nx workspace-lint",
     "lint:tools": "eslint -f formattify tools/**/*.ts --fix",
