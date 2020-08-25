@@ -13,7 +13,7 @@ import {
 
 import {
   AppRouteNames, AppRoutes
-} from '@srts.pw/client/types';
+} from '@srts.pw/client/shared';
 
 import './client-pages-register.component.scss';
 

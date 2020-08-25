@@ -16,7 +16,7 @@ import {
 } from '@apollo/client';
 
 import { getUser } from '@srts.pw/client/services/core';
-import { IUrlDocument } from '@srts.pw/client/types';
+import { IUrlDocument } from '@srts.pw/client/shared';
 
 import {
   CREATE_SHORT_URL_QUERY, ICreateShortUrl_ResponseData

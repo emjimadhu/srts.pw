@@ -49,9 +49,6 @@
       "@srts.pw/client/pages/home": [
         "libs/client/pages/home/src/index.ts"
       ],
-      "@srts.pw/client/types": [
-        "libs/client/types/src/index.ts"
-      ],
       "@srts.pw/client/pages/redirect": [
         "libs/client/pages/redirect/src/index.ts"
       ],
@@ -87,6 +84,9 @@
       ],
       "@srts.pw/server/auth": [
         "libs/server/auth/src/index.ts"
+      ],
+      "@srts.pw/client/shared": [
+        "libs/client/shared/src/index.ts"
       ]
     }
   },

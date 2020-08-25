@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'client-types',
+  name: 'client-shared',
   preset: '../../../jest.config.js',
   globals: {
     'ts-jest': {
@@ -16,5 +16,5 @@ module.exports = {
     'jsx',
     'html'
   ],
-  coverageDirectory: '../../../coverage/libs/client/types'
+  coverageDirectory: '../../../coverage/libs/client/shared'
 };

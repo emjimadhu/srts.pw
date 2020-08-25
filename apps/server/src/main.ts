@@ -13,7 +13,14 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe());
-  app.enableCors();
+  app.enableCors({
+    origin: [
+      'http://localhost:4200',
+      'https://sts.pw',
+      'https://admin.srts.pw'
+    ],
+    credentials: true
+  });
   const logger = new Logger('Bootstrap');
   await app.listen(environment.port, () => {
     logger.log(`Server running on http://localhost:${environment.port}`);

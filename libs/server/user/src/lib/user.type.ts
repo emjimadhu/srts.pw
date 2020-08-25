@@ -23,13 +23,16 @@ export class UserType extends BaseGQLType {
   @Field()
   public isVerified: boolean;
 
+  @Field()
+  public token: string;
+
   @Field(type => Date)
   public createdAt: Date;
 
   @Field(type => Date)
   public updatedAt: Date;
 
-  constructor(userDocument: User) {
+  constructor(userDocument: User, token?: string) {
     super();
     this.id = userDocument.id;
     this.firstName = userDocument.profile.firstName;
@@ -38,5 +41,6 @@ export class UserType extends BaseGQLType {
     this.createdAt = userDocument.createdAt;
     this.updatedAt = userDocument.updatedAt;
     this.isVerified = userDocument.isVerified;
+    this.token = token;
   }
 }

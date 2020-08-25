@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
 import {
-  Container, Avatar, Typography, Grid, TextField, Button, Link, CircularProgress, Collapse
+  FetchResult, useMutation
+} from '@apollo/client';
+import {
+  Avatar, Button, CircularProgress, Collapse, Container, Grid, Link, TextField, Typography
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import {
   Alert, AlertTitle
 } from '@material-ui/lab';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import React, {
+  useState, useContext
+} from 'react';
 
 import {
-  AppRouteNames, AppRoutes
-} from '@srts.pw/client/types';
+  AppRouteNames, AppRoutes, UserContext, UserActionEnum
+} from '@srts.pw/client/shared';
+
+import {
+  IUserLogin_ResponseData, USER_LOGIN_MUTATION
+} from './login.mutation';
 
 import './client-pages-login.component.scss';
 
@@ -37,8 +46,11 @@ const useStyles = makeStyles(theme => ({
 
 export interface IClientPagesLoginProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
-export const ClientPagesLogin = (properties: IClientPagesLoginProps) => {
+export const ClientPagesLogin: React.FC = (properties: IClientPagesLoginProps) => {
   const classes = useStyles();
+  const {
+    dispatch
+  } = useContext(UserContext);
 
   const [
     email,
@@ -60,6 +72,7 @@ export const ClientPagesLogin = (properties: IClientPagesLoginProps) => {
     errorMessage,
     setErrorMessage
   ] = useState('');
+  const [userLoginMutation] = useMutation(USER_LOGIN_MUTATION);
 
   const setDisableSubmitButton = () => {
     return !(!!email && !!password);
@@ -67,6 +80,44 @@ export const ClientPagesLogin = (properties: IClientPagesLoginProps) => {
 
   const handleFormSubmit = (event_: React.FormEvent<HTMLFormElement>) => {
     event_.preventDefault();
+
+    if (!waitingForServer) {
+      setWaitingForServer(true);
+      setError(false);
+
+      try {
+        const sendRequest = async() => {
+          const fetchResult: FetchResult<IUserLogin_ResponseData> = await userLoginMutation({
+            variables: {
+              email,
+              password
+            }
+          });
+
+          if (!fetchResult.errors) {
+            setEmail('');
+            setPassword('');
+            dispatch({
+              type: UserActionEnum.SET_USER_AND_TOKEN,
+              payload: {
+                user: fetchResult.data.login
+              }
+            });
+          } else {
+            setError(true);
+            const fetchResultErrorMessage = fetchResult.errors[0].message;
+            setErrorMessage(fetchResultErrorMessage.includes('duplicate key') ? 'Email already exsists' : fetchResultErrorMessage);
+          }
+        };
+
+        sendRequest();
+      } catch (fetchError) {
+        setError(true);
+        (fetchError.message === 'Failed to fetch') ? setErrorMessage('Can\'t fetch from Server. Please try again later') : setErrorMessage(fetchError.message);
+      } finally {
+        setWaitingForServer(false);
+      }
+    }
   };
 
   return (

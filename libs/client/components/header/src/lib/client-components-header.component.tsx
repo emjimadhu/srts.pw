@@ -20,7 +20,7 @@ import FaceIcon from '@material-ui/icons/Face';
 
 import {
   AppRoutes, AppRouteNames
-} from '@srts.pw/client/types';
+} from '@srts.pw/client/shared';
 
 import { ReactComponent as LogoSvg } from '../assets/logo.svg';
 

@@ -66,9 +66,6 @@
     "client-pages-home": {
       "tags": []
     },
-    "client-types": {
-      "tags": []
-    },
     "client-pages-redirect": {
       "tags": []
     },
@@ -112,6 +109,9 @@
       "tags": []
     },
     "server-auth": {
+      "tags": []
+    },
+    "client-shared": {
       "tags": []
     }
   }

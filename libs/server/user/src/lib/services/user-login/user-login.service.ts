@@ -27,7 +27,7 @@ export class UserLoginService {
 
   public async login(
     requestVariables: UserLoginInput
-  ): Promise<Observable<{user: UserType; accessToken: string}>> {
+  ): Promise<Observable<UserType>> {
     const {
       email, password
     } = requestVariables;
@@ -61,17 +61,13 @@ export class UserLoginService {
         }
       }),
       map((userDocument: User) => {
-        const user = new UserType(userDocument);
         const payload = {
-          id: user.id
+          id: userDocument.id
         };
 
         const accessToken = this.jwtService.sign(payload);
 
-        return {
-          user,
-          accessToken
-        };
+        return new UserType(userDocument, accessToken);
       })
     );
   }

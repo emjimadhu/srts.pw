@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-import { IUser } from '@srts.pw/client/types';
+import { IUser } from '@srts.pw/client/shared';
 
 export const USER_REGISTER_MUTATION = gql`
   mutation UserRegisterMutation($email: String!, $firstName: String!, $lastName: String!, $password: String!) {

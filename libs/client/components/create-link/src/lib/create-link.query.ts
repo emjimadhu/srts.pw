@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-import { IUrlDocument } from '@srts.pw/client/types';
+import { IUrlDocument } from '@srts.pw/client/shared';
 
 export const CREATE_SHORT_URL_QUERY = gql`
   mutation CreateShortUrl($url: String!, $user: String!, $slug: String) {
