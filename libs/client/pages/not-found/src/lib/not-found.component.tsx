@@ -1,37 +1,14 @@
-import React from 'react';
 import { Lottie } from '@crello/react-lottie';
 import {
-  Grid, Typography, Link
+  Grid, Link, Typography
 } from '@material-ui/core';
-import {
-  makeStyles, Theme, createStyles
-} from '@material-ui/core/styles';
+import React, { FC } from 'react';
 
 import animationData from '../templates/not-found.json';
+import { useStyles } from './not-found.style';
 
-import './client-pages-not-found.component.scss';
 
-const useStyles = makeStyles((theme: Theme) => {
-  const height = `calc(98vh - ${theme.breakpoints.up('xs') ? '64px' : '54px'})`;
-  const space = (value: number) => {
-    return theme.spacing(value);
-  };
-
-  return createStyles({
-    container: {
-      marginTop: space(1),
-      height,
-      padding: space(2)
-    },
-    lottie: {
-      paddingBottom: space(2)
-    }
-  });
-});
-
-export interface IClientPagesNotFoundProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
-
-export const ClientPagesNotFound: React.FC = (properties: IClientPagesNotFoundProps) => {
+export const ClientPagesNotFound: FC = () => {
   const classes = useStyles();
 
   const defaultOptions = {

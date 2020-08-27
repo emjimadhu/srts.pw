@@ -1,1 +1,1 @@
-export * from './lib/client-pages-verify-email.component';
+export * from './lib/verify-email.component';

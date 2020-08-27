@@ -1,15 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ClientPagesHome from './client-pages-home.component';
+import ClientPagesLogin from './login.component';
 
-describe('ClientPagesHome', () => {
+describe('ClientPagesLogin', () => {
   it('should render successfully', () => {
     expect.assertions(1);
 
     const {
       baseElement
-    } = render(< ClientPagesHome />);
+    } = render(<ClientPagesLogin />);
 
     expect(baseElement).toBeTruthy();
   });

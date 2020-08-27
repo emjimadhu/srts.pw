@@ -1,55 +1,29 @@
-import React, { useState } from 'react';
 import {
-  Container, Avatar, Typography, Grid, TextField, Button, Link, CircularProgress, Collapse
+  FetchResult, useMutation
+} from '@apollo/client';
+import {
+  Avatar, Button, CircularProgress, Collapse, Container, Grid, Link, TextField, Typography
 } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import {
   Alert, AlertTitle
 } from '@material-ui/lab';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import {
-  useMutation, FetchResult
-} from '@apollo/client';
+import React, {
+  useState, FC
+} from 'react';
 
+import { getTemporaryUser } from '@srts.pw/client/services/core';
 import {
   AppRouteNames, AppRoutes
 } from '@srts.pw/client/shared';
-import { getTemporaryUser } from '@srts.pw/client/services/core';
-
-import './client-pages-register.component.scss';
 
 import {
-  USER_REGISTER_MUTATION, IUserRegister_ResponseData
+  IUserRegister_ResponseData, USER_REGISTER_MUTATION
 } from './register.mutation';
+import { useStyles } from './register.style';
 
 
-const useStyles = makeStyles(theme => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.primary.main
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3)
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2)
-  },
-  verificationMessage: {
-    paddingTop: theme.spacing(3)
-  }
-}));
-
-
-export interface IClientPagesRegisterProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
-
-export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
+export const ClientPagesRegister: FC = () => {
   const classes = useStyles();
 
   const [

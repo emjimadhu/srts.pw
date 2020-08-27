@@ -1,15 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ClientPagesRegister from './client-pages-register.component';
+import ClientPagesNotFound from './not-found.component';
 
-describe('ClientPagesRegister', () => {
+describe('ClientPagesNotFound', () => {
   it('should render successfully', () => {
     expect.assertions(1);
 
     const {
       baseElement
-    } = render(<ClientPagesRegister />);
+    } = render(<ClientPagesNotFound />);
 
     expect(baseElement).toBeTruthy();
   });

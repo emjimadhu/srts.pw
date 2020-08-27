@@ -1,54 +1,29 @@
-import React, {
-  useState, useEffect
-} from 'react';
 import {
-  Grid, CircularProgress, Typography, Collapse
+  FetchResult, useMutation
+} from '@apollo/client';
+import {
+  CircularProgress, Collapse, Grid, Typography
 } from '@material-ui/core';
-import {
-  makeStyles, Theme, createStyles
-} from '@material-ui/core/styles';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import {
   Alert, AlertTitle
 } from '@material-ui/lab';
+import React, {
+  FC, useEffect, useState
+} from 'react';
 import {
-  useParams, useHistory
+  useHistory, useParams
 } from 'react-router-dom';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import {
-  useMutation, FetchResult
-} from '@apollo/client';
 
 import { AppRoutes } from '@srts.pw/client/shared';
-import './client-pages-verify-email.component.scss';
 
 import {
-  USER_VERIFY_EMAIL_MUTATION, IUserVerifyEmail_ResponseData
+  IUserVerifyEmail_ResponseData, USER_VERIFY_EMAIL_MUTATION
 } from './verify-email.mutation';
+import { useStyles } from './verify-email.style';
 
-const useStyles = makeStyles((theme: Theme) => {
-  const height = `calc(98vh - ${theme.breakpoints.up('xs') ? '64px' : '54px'})`;
-  const space = (value: number) => {
-    return theme.spacing(value);
-  };
 
-  return createStyles({
-    container: {
-      marginTop: space(1),
-      height,
-      padding: space(2)
-    },
-    progress: {
-      paddingBottom: space(2)
-    },
-    icon: {
-      fontSize: '74px'
-    }
-  });
-});
-
-export interface IClientPagesVerifyEmailProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
-
-export const ClientPagesVerifyEmail: React.FC = (properties: IClientPagesVerifyEmailProps) => {
+export const ClientPagesVerifyEmail: FC = () => {
   const classes = useStyles();
   const [
     isVerified,

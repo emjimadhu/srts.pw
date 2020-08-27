@@ -1,58 +1,32 @@
-import React, { useState } from 'react';
+import {
+  AppBar, IconButton, List, ListItem, ListItemIcon, ListItemText, Menu, SvgIcon, Toolbar, Tooltip, Typography, useMediaQuery
+} from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
+import FaceIcon from '@material-ui/icons/Face';
+import FaceOutlinedIcon from '@material-ui/icons/FaceOutlined';
+import HomeIcon from '@material-ui/icons/Home';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import LinkIcon from '@material-ui/icons/Link';
+import LinkOutlinedIcon from '@material-ui/icons/LinkOutlined';
+import MenuIcon from '@material-ui/icons/Menu';
+import React, {
+  useState, FC
+} from 'react';
 import {
   useHistory, useLocation
 } from 'react-router-dom';
-import {
-  AppBar, Toolbar, Typography, IconButton, Menu, useMediaQuery, Tooltip, List, ListItem, ListItemIcon, ListItemText, SvgIcon
-} from '@material-ui/core';
-import {
-  makeStyles, createStyles, Theme, useTheme
-} from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import HomeIcon from '@material-ui/icons/Home';
-import LinkIcon from '@material-ui/icons/Link';
-import LinkOutlinedIcon from '@material-ui/icons/LinkOutlined';
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import FaceOutlinedIcon from '@material-ui/icons/FaceOutlined';
-import FaceIcon from '@material-ui/icons/Face';
 
 import {
-  AppRoutes, AppRouteNames
+  AppRouteNames, AppRoutes
 } from '@srts.pw/client/shared';
 
 import { ReactComponent as LogoSvg } from '../assets/logo.svg';
+import { useStyles } from './header.style';
 
-import './client-components-header.component.scss';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      boxShadow: 'none'
-    },
-    menuButton: {
-      marginRight: theme.spacing(2)
-    },
-    title: {
-      fontWeight: 'bold',
-      marginRight: theme.spacing(1)
-    },
-    subTitle: {
-      flexGrow: 1
-    },
-    icon: {
-      fontSize: '2rem'
-    },
-    tooltip: {
-      fontSize: '1.5rem'
-    }
-  })
-);
-
-export interface IClientComponentsHeaderProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
-
-export const ClientComponentsHeader: React.FC = (properties: IClientComponentsHeaderProps) => {
+export const ClientComponentsHeader: FC = () => {
   const classes = useStyles();
   const theme = useTheme();
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.only('xs'));

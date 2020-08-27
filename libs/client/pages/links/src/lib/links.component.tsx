@@ -1,52 +1,23 @@
-import React from 'react';
 import { useQuery } from '@apollo/client';
 import {
-  Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, CircularProgress, Link
+  Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Grid, Link, Typography
 } from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
-import {
-  Theme, makeStyles
-} from '@material-ui/core/styles';
 import LinkIcon from '@material-ui/icons/Link';
+import { Alert } from '@material-ui/lab';
+import React, { FC } from 'react';
 
 import { getUser } from '@srts.pw/client/services/core';
 import {
-  IUrlDocument, AppRoutes
+  AppRoutes, IUrlDocument
 } from '@srts.pw/client/shared';
 
+import { useStyles } from './links.style';
 import {
-  IListUrlsByUser_ResponseData, IListUrlsByUser_RequestVariables, LIST_URLS_BY_USER_QUERY
+  IListUrlsByUser_RequestVariables, IListUrlsByUser_ResponseData, LIST_URLS_BY_USER_QUERY
 } from './list-urls-by-user.query';
 
-const useStyles = makeStyles((theme: Theme) => ({
-  gridContainer: {
-    height: `calc(98vh - ${theme.breakpoints.up('xs') ? '64px' : '54px'})`,
-    padding: theme.spacing(2)
-  },
-  urlListContainer: {
-    paddingTop: '20px',
-    paddingRight: '50px',
-    paddingLeft: '50px'
-  },
-  urlListGrid: {
-    paddingTop: '40px'
-  },
-  cardMedia: {
-    height: 200
-  },
-  alert: {
-    '& .MuiAlert-icon': {
-      fontSize: '3rem'
-    },
-    '& .MuiAlert-message': {
-      fontSize: '1.7rem'
-    }
-  }
-}));
 
-export interface IClientPagesLinksProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
-
-export const ClientPagesLinks: React.FC = (properties: IClientPagesLinksProps) => {
+export const ClientPagesLinks: FC = () => {
   const classes = useStyles();
   const user = getUser();
   const {

@@ -1,39 +1,19 @@
-import React, { useState } from 'react';
 import { Grid } from '@material-ui/core';
-import {
-  makeStyles, Theme, createStyles
-} from '@material-ui/core/styles';
 import {
   Alert, AlertTitle
 } from '@material-ui/lab';
+import React, {
+  useState, FC
+} from 'react';
 
 import { ClientComponentsCreateLink } from '@srts.pw/client/components/create-link';
 import { ClientComponentsLinkPreview } from '@srts.pw/client/components/link-preview';
 import { IUrlDocument } from '@srts.pw/client/shared';
 
-import './client-pages-home.component.scss';
+import { useStyles } from './home.style';
 
-const useStyles = makeStyles((theme: Theme) => {
-  const height = `calc(98vh - ${theme.breakpoints.up('xs') ? '64px' : '54px'})`;
-  const space = (value: number) => {
-    return theme.spacing(value);
-  };
 
-  return createStyles({
-    root: {
-      marginTop: space(1),
-      height
-    },
-    urlInputContainer: {
-      height,
-      padding: space(2)
-    }
-  });
-});
-
-export interface IClientPagesHomeProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
-
-export const ClientPagesHome: React.FC = (properties: IClientPagesHomeProps) => {
+export const ClientPagesHome: FC = () => {
   const classes = useStyles();
   const [
     createdUrl,

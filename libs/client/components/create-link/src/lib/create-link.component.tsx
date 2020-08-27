@@ -1,53 +1,34 @@
 /* eslint-disable no-console */
-import React, {
-  useState, Dispatch
-} from 'react';
 import {
-  Grid, TextField, Button, Paper, Collapse, CircularProgress
+  FetchResult, useMutation
+} from '@apollo/client';
+import {
+  Button, CircularProgress, Collapse, Grid, Paper, TextField
 } from '@material-ui/core';
-import {
-  makeStyles, Theme, createStyles
-} from '@material-ui/core/styles';
 import {
   Alert, AlertTitle
 } from '@material-ui/lab';
-import {
-  useMutation, FetchResult
-} from '@apollo/client';
+import React, {
+  useState, FC
+} from 'react';
 
 import {
-  getUser, getTemporaryUser
+  getTemporaryUser, getUser
 } from '@srts.pw/client/services/core';
-import { IUrlDocument } from '@srts.pw/client/shared';
 
+import { IClientComponentsCreateLinkProperties } from './create-link-properties.interface';
 import {
   CREATE_SHORT_URL_QUERY, ICreateShortUrl_ResponseData
 } from './create-link.query';
+import { useStyles } from './create-link.style';
 
-const useStyles = makeStyles((theme: Theme) => {
-  const height = `calc(98vh - ${theme.breakpoints.up('xs') ? '64px' : '54px'})`;
-  const space = (value: number) => {
-    return theme.spacing(value);
-  };
-
-  return createStyles({
-    paper: {
-      padding: space(2)
-    }
-  });
-});
 
 const getUrlErrorMessage = (value: string): string => {
   const urlRegEx = new RegExp(/https?:\/\/(www\.)?[\w#%+.:=@~-]{1,256}\.[\d()a-z]{1,6}\b([\w#%&()+./:=?@~-]*)/gi);
   return (!value.match(urlRegEx)) ? 'Should be valid URL. (ex: https://google.com)' : '';
 };
 
-export interface IClientComponentsCreateLinkProps {
-  setCreatedUrl: Dispatch<React.SetStateAction<IUrlDocument>>;
-  setFetchErrorMessage: Dispatch<React.SetStateAction<string>>;
-}
-
-export const ClientComponentsCreateLink: React.FC<IClientComponentsCreateLinkProps> = ({
+export const ClientComponentsCreateLink: FC<IClientComponentsCreateLinkProperties> = ({
   setCreatedUrl,
   setFetchErrorMessage
 }) => {

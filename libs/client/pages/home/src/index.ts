@@ -1,1 +1,1 @@
-export * from './lib/client-pages-home.component';
+export * from './lib/home.component';

@@ -1,1 +1,1 @@
-export * from './lib/client-pages-redirect.component';
+export * from './lib/redirect.component';

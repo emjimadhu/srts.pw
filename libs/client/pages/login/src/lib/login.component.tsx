@@ -4,50 +4,26 @@ import {
 import {
   Avatar, Button, CircularProgress, Collapse, Container, Grid, Link, TextField, Typography
 } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import {
   Alert, AlertTitle
 } from '@material-ui/lab';
 import React, {
-  useState, useContext
+  useContext, useState, FC
 } from 'react';
 
-import {
-  AppRouteNames, AppRoutes, UserContext, UserActionEnum
-} from '@srts.pw/client/shared';
 import { setUser } from '@srts.pw/client/services/core';
+import {
+  AppRouteNames, AppRoutes, UserActionEnum, UserContext
+} from '@srts.pw/client/shared';
 
 import {
   IUserLogin_ResponseData, USER_LOGIN_MUTATION
 } from './login.mutation';
+import { useStyles } from './login.style';
 
-import './client-pages-login.component.scss';
 
-
-const useStyles = makeStyles(theme => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.primary.main
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3)
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2)
-  }
-}));
-
-export interface IClientPagesLoginProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
-
-export const ClientPagesLogin: React.FC = (properties: IClientPagesLoginProps) => {
+export const ClientPagesLogin: FC = () => {
   const classes = useStyles();
   const {
     dispatch

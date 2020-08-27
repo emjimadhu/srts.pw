@@ -1,41 +1,15 @@
-import React, {
-  useState, useEffect
-} from 'react';
 import {
-  Grid, Card, CardContent, Typography, IconButton, CardMedia, Button, Collapse, Link
+  Button, Card, CardContent, CardMedia, Collapse, Grid, Link, Typography
 } from '@material-ui/core';
-import {
-  makeStyles, Theme, createStyles, useTheme
-} from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import LinkIcon from '@material-ui/icons/Link';
+import React, {
+  useEffect, useState, FC
+} from 'react';
 
-import { IUrlDocument } from '@srts.pw/client/shared';
+import { useStyles } from './like-preview.style';
+import { IClientComponentsLinkPreviewProperties } from './link.preview-properties.interface';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: 'flex'
-    },
-    details: {
-      display: 'flex',
-      flexDirection: 'column'
-    },
-    content: {
-      flex: '1 0 auto'
-    },
-    cover: {
-      width: 151
-    },
-    controls: {
-      display: 'flex',
-      alignItems: 'center',
-      padding: theme.spacing(2)
-    },
-    button: {
-      marginRight: theme.spacing(2)
-    }
-  })
-);
 
 const getShortUrlComponent = (url: string) => {
   return (
@@ -45,11 +19,7 @@ const getShortUrlComponent = (url: string) => {
   );
 };
 
-export interface IClientComponentsLinkPreviewProps {
-  createdUrl: IUrlDocument;
-}
-
-export const ClientComponentsLinkPreview: React.FC<IClientComponentsLinkPreviewProps> = ({
+export const ClientComponentsLinkPreview: FC<IClientComponentsLinkPreviewProperties> = ({
   createdUrl
 }) => {
   const classes = useStyles();
