@@ -32,7 +32,7 @@ export class UserRegisterService {
     requestVariables: UserRegisterInput
   ): Promise<Observable<UserType>> {
     const {
-      firstName, lastName, email, password
+      firstName, lastName, email, password, id
     } = requestVariables;
     const verificationToken = uuid();
     const salt = await generateSalt();
@@ -59,7 +59,7 @@ export class UserRegisterService {
             generatedAt: new Date()
           }
         },
-        id: uuid(),
+        id,
         role: UserRoles.USER
       }),
       asyncScheduler

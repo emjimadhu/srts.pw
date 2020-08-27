@@ -1,11 +1,10 @@
 import {
-  InputType, Field
+  Field, InputType
 } from '@nestjs/graphql';
-import {
-  MinLength, IsUUID, IsOptional
-} from 'class-validator';
+import { IsUUID } from 'class-validator';
 
 import { UserBaseInput } from '../../common';
+
 
 @InputType()
 export class UserRegisterInput extends UserBaseInput {
@@ -16,9 +15,6 @@ export class UserRegisterInput extends UserBaseInput {
   public lastName: string;
 
   @IsUUID('4')
-  @IsOptional()
-  @Field({
-    nullable: true
-  })
+  @Field()
   public id?: string;
 }

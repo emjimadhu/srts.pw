@@ -16,6 +16,7 @@ import React, {
 import {
   AppRouteNames, AppRoutes, UserContext, UserActionEnum
 } from '@srts.pw/client/shared';
+import { setUser } from '@srts.pw/client/services/core';
 
 import {
   IUserLogin_ResponseData, USER_LOGIN_MUTATION
@@ -103,6 +104,7 @@ export const ClientPagesLogin: React.FC = (properties: IClientPagesLoginProps) =
                 user: fetchResult.data.login
               }
             });
+            setUser(fetchResult.data.login);
           } else {
             setError(true);
             const fetchResultErrorMessage = fetchResult.errors[0].message;

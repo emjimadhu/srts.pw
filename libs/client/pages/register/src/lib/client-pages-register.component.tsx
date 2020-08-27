@@ -14,6 +14,7 @@ import {
 import {
   AppRouteNames, AppRoutes
 } from '@srts.pw/client/shared';
+import { getTemporaryUser } from '@srts.pw/client/services/core';
 
 import './client-pages-register.component.scss';
 
@@ -103,7 +104,8 @@ export const ClientPagesRegister = (properties: IClientPagesRegisterProps) => {
               email,
               password,
               firstName,
-              lastName
+              lastName,
+              id: getTemporaryUser()
             }
           });
 

@@ -15,7 +15,9 @@ import {
   useMutation, FetchResult
 } from '@apollo/client';
 
-import { getUser } from '@srts.pw/client/services/core';
+import {
+  getUser, getTemporaryUser
+} from '@srts.pw/client/services/core';
 import { IUrlDocument } from '@srts.pw/client/shared';
 
 import {
@@ -95,7 +97,7 @@ export const ClientComponentsCreateLink: React.FC<IClientComponentsCreateLinkPro
           const fetchResult: FetchResult<ICreateShortUrl_ResponseData> = await createShortUrl({
             variables: {
               url,
-              user: getUser(),
+              user: getUser() ? getUser() : getTemporaryUser(),
               slug: (slug.length > 0) ? slug : undefined
             }
           });

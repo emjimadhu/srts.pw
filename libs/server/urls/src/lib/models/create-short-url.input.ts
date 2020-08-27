@@ -23,7 +23,9 @@ export class CreateShortUrlInput {
   })
   public url: string;
 
-  @Field()
+  @Field({
+    nullable: true
+  })
   @IsUUID('4', {
     message: 'Invalid User'
   })

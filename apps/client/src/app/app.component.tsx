@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 import {
-  apolloClient, getUser, setUser
+  apolloClient, getUser, setTemporaryUser
 } from '@srts.pw/client/services/core';
 import { ClientComponentsHeader } from '@srts.pw/client/components/header';
 import { ClientPagesHome } from '@srts.pw/client/pages/home';
@@ -29,7 +29,7 @@ const AppComponent: React.FC = () => {
   ] = useReducer(UserReducer, userState);
 
   if (!getUser()) {
-    setUser();
+    setTemporaryUser();
   }
 
   return (
