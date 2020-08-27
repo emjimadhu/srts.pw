@@ -14,7 +14,12 @@ async function bootstrap() {
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors({
-    origin: '*',
+    origin: [
+      'http://localhost:4200',
+      'https://srts.pw',
+      'https://admin.srts.pw'
+    ],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true
   });
   const logger = new Logger('Bootstrap');
