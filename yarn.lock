@@ -2685,32 +2685,6 @@
     prop-types "^15.7.2"
     react-is "^16.8.0"
 
-"@metascraper/helpers@^5.14.4":
-  version "5.14.4"
-  resolved "https://registry.yarnpkg.com/@metascraper/helpers/-/helpers-5.14.4.tgz#9d04a087707eda9250bcd23dc176773ee5e2a1a3"
-  integrity sha512-jv8wloys3TpaKQ++nvGZFMxqGVNgylHmOwjBEdwe32MAetPfsRVcoI7RCo4RZSUNH/mFgirYjFrZS/1LLDIh3Q==
-  dependencies:
-    audio-extensions "0.0.0"
-    chrono-node "2.1.7"
-    condense-whitespace "~2.0.0"
-    entities "~2.0.3"
-    file-extension "~4.0.5"
-    has-values "~2.0.1"
-    image-extensions "~1.1.0"
-    is-relative-url "~3.0.0"
-    is-uri "~1.2.0"
-    iso-639-3 "~2.1.0"
-    isostring "0.0.1"
-    lodash "~4.17.20"
-    memoize-one "~5.1.1"
-    mime-types "~2.1.27"
-    normalize-url "~5.1.0"
-    smartquotes "~2.3.1"
-    title "~3.4.2"
-    truncate "~2.1.0"
-    url-regex-safe "~1.0.1"
-    video-extensions "~1.1.0"
-
 "@metascraper/helpers@^5.14.5":
   version "5.14.5"
   resolved "https://registry.yarnpkg.com/@metascraper/helpers/-/helpers-5.14.5.tgz#2bae21de7bddd35387922225d8fe581f404fbca0"
@@ -6688,13 +6662,6 @@ chrome-trace-event@^1.0.2:
   integrity sha512-9e/zx1jw7B4CO+c/RXoCsfg/x1AfUBioy4owYH0bJprEYAx5hRFLRhWBqHAG57D0ZM4H7vxbP7bPe0VwhQRYDQ==
   dependencies:
     tslib "^1.9.0"
-
-chrono-node@2.1.7:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/chrono-node/-/chrono-node-2.1.7.tgz#e33b40c3c872708b9ec8612e11bceed4f72d2995"
-  integrity sha512-6x+15cnjmbaOjdlEziRuT3gc9Qaf5contCe5jxMEKj58D8YYxbWNkrNNhbxAkjXj2VDfyAELk55C6nFPdRZGXQ==
-  dependencies:
-    dayjs "^1.8.29"
 
 chrono-node@2.1.8:
   version "2.1.8"
@@ -13458,12 +13425,12 @@ merge@^1.2.1:
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
   integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
 
-metascraper-description@5.14.4:
-  version "5.14.4"
-  resolved "https://registry.yarnpkg.com/metascraper-description/-/metascraper-description-5.14.4.tgz#1e6e2248eae234e25154fa7659a5357e7202cadb"
-  integrity sha512-QD949lihxAsEOcqM1ooZq6XFCeBPCgzQuDs102NKd98Ztz2Eo2o8ZDUCquvvAUOLUkKnTcgH1pWfxUNaKRgZvA==
+metascraper-description@5.14.5:
+  version "5.14.5"
+  resolved "https://registry.yarnpkg.com/metascraper-description/-/metascraper-description-5.14.5.tgz#dcab56ed34c923eebc9eb42ae329bd40b3029890"
+  integrity sha512-6prcL9lQtQ8Q1y/vr76dsQW0mkoDuTQyPWicoPYst6DNuzBv6eGbO7aYskPnhfhCnlpW9+sUnAaydZpK3OOu1A==
   dependencies:
-    "@metascraper/helpers" "^5.14.4"
+    "@metascraper/helpers" "^5.14.5"
 
 metascraper-image@5.14.5:
   version "5.14.5"
