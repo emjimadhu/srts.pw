@@ -13,9 +13,7 @@ import { IClientComponentsLinkPreviewProperties } from './link.preview-propertie
 
 const getShortUrlComponent = (url: string) => {
   return (
-    <>
-      Short Url: <Link target="_blank" href={url}><strong>{url}</strong></Link>
-    </>
+    <Link target="_blank" href={url}><strong>{url}</strong></Link>
   );
 };
 
@@ -44,38 +42,19 @@ export const ClientComponentsLinkPreview: FC<IClientComponentsLinkPreviewPropert
         <Card className={classes.root}>
           <div className={classes.details}>
             <CardContent className={classes.content}>
-              <Typography component="h5" variant="h5">
+              <Typography component="h5" noWrap variant="h5">
                 {createdUrl?.metadata.title}
               </Typography>
-              <Typography variant="subtitle1" color="textSecondary">
+              <Typography variant="subtitle1" noWrap color="textSecondary">
                 {createdUrl?.metadata.description}
               </Typography>
-              <Typography variant="subtitle1" color="textSecondary">
+            </CardContent>
+            <div className={classes.controls}>
+              <Typography variant="h6" noWrap>
                 {
                   getShortUrlComponent(createdUrl?.shortUrl)
                 }
               </Typography>
-            </CardContent>
-            <div className={classes.controls}>
-              <Button
-                endIcon={<LinkIcon />}
-                className={classes.button}
-                target="_blank"
-                href={createdUrl?.longUrl}
-              >
-              Long Url
-              </Button>
-              <Button
-                variant="contained"
-                size="large"
-                color="primary"
-                disableElevation
-                endIcon={<LinkIcon />}
-                target="_blank"
-                href={createdUrl?.shortUrl}
-              >
-              Short Url
-              </Button>
             </div>
           </div>
           {createdUrl && <CardMedia

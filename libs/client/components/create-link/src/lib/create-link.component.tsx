@@ -116,7 +116,7 @@ export const ClientComponentsCreateLink: FC<IClientComponentsCreateLinkPropertie
           onSubmit={handleFormSubmit}
         >
           <Grid container alignItems="center" spacing={2}>
-            <Grid item xs={12} sm={7}>
+            <Grid item xs={12} sm={10}>
               <TextField
                 autoFocus
                 fullWidth
@@ -133,16 +133,6 @@ export const ClientComponentsCreateLink: FC<IClientComponentsCreateLinkPropertie
                   setErrorMessage('');
                 }}
                 label="Enter URL (ex: https://www.google.com)"
-                variant="outlined"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField
-                fullWidth
-                label="Slug"
-                value={slug}
-                onChange={(event_: React.ChangeEvent<HTMLInputElement>) => setSlug(event_.target.value)}
-                disabled={waitingForServer}
                 variant="outlined"
               />
             </Grid>
