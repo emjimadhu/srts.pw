@@ -1,76 +1,116 @@
-# srts.pw
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/emjimadhu/corona-tracker">
+    <img src="repo-assets/logo.png" alt="Logo" width="250">
+  </a>
 
-This project was generated using [Nx](https://nx.dev).
+  <h3 align="center">srts.pw</h3>
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
+  <p align="center">
+    A URL Shortner.
+    <br />
+    <br />
+    <a href="https://srts.pw/">Website</a>
+  </p>
+</p>
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
 
-## Adding capabilities to your workspace
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+* [About the Project](#about-the-project)
+ * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Main Scripts](#main-scripts)
+* [Directory Structure](#directory-structure)
+* [Contact](#contact)
 
-Below are some plugins which you can add to your workspace:
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
 
-## Generate an application
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+A URL Shortner for everyone. This project built using React.js, Vue.js, Nest.js, Typescript and NX Workspace.
 
-> You can use any of the plugins above to generate applications as well.
+## Built With
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+* [ReactJS](https://reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [NX Workspace](https://nx.dev/react)
+* [NodeJS](https://nodejs.org)
+* [Yarn](https://yarnpkg.com)
+* [Vue](https://vuejs.org)
+* [NestJS](https://nestjs.com/)
 
-## Generate a library
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+<!-- GETTING STARTED -->
+## Getting Started
 
-> You can also use any of the plugins above to generate libraries as well.
+To get a local copy up and running follow these simple steps.
 
-Libraries are sharable across libraries and applications. They can be imported from `@srts.pw/mylib`.
+### Prerequisites
 
-## Development server
+- **node** - v12.16.1
+- **npm** - v6.14.5
+- **yarn** - v1.22.4
+- **nx** - v10.0.11
+- **vue** - v4.5.4
+- **nest** - v7.5.1
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+### Installation
 
-## Code scaffolding
+1. Clone the repo
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+```sh
+# SSH
+git clone git@github.com:emjimadhu/srts.pw.git
 
-## Build
+# HTTPS
+git clone https://github.com/emjimadhu/srts.pw.git
+```
 
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Install NPM packages
 
-## Running unit tests
+```sh
+yarn # or yarn install
+```
 
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+## Main Scripts
 
-Run `nx affected:test` to execute the unit tests affected by a change.
+* `yarn start:client` - Starts Development server for client react app,
+* `yarn start:admin` - Starts Development server for client vue app,
+* `yarn start:server` - Starts Development server for client nest app
 
-## Running end-to-end tests
+## Directory Structure
 
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+- `root`: Project root holds all the flies of the project
+  - `apps`: Holds all the apps
+    - `client`: Directory contains all the React app codes
+    - `admin`: Directory contains all the Vue app codes
+    - `server`: Directory contains all the Nest app codes
+  - `libs`: Holds all the common library and codes you can share between apps
+    - `client`: Holds all the components and services used in react app
+    - `server`: Holds all the components and services used in nest app
+  - `repo-assets`: Holds all the assets for README.
 
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 
-## Understand your workspace
 
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
+<!-- CONTACT -->
+## Contact
 
-## Further help
+Em Ji Madhu - [![LinkedIn][linkedin-shield]][linkedin-url]
 
-Visit the [Nx Documentation](https://nx.dev) to learn more.
+Project Link: [https://github.com/emjimadhu/srts.pw](https://github.com/emjimadhu/srts.pw)
+
+Website Link: [https://srts.pw/](https://srts.pw/)
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[product-screenshot]: repo-assets/screenshot.png
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=1
+[linkedin-url]: https://www.linkedin.com/in/em-ji-madhu-8b007456/
