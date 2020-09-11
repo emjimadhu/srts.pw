@@ -13640,12 +13640,12 @@ metascraper-image@5.14.5:
   dependencies:
     "@metascraper/helpers" "^5.14.5"
 
-metascraper-title@5.14.5:
-  version "5.14.5"
-  resolved "https://registry.yarnpkg.com/metascraper-title/-/metascraper-title-5.14.5.tgz#01069016f6586d48e65100fbb3449543cf5c1957"
-  integrity sha512-6tz7usE/8d1NSdGdgcMjLvTT/YnWjQ2RPQ7BUeooin3AnCrWOQhTlLvOAOtDmH9Kdawk47eMgWvNyTXWHsYM2w==
+metascraper-title@5.14.7:
+  version "5.14.7"
+  resolved "https://registry.yarnpkg.com/metascraper-title/-/metascraper-title-5.14.7.tgz#770411cb162e795b4855bc6d3e841c1cc50de87a"
+  integrity sha512-JI1WE2j39Yh/f1WUjX5wh4ppny9gaHMtwpZB0n4XWaZtS7Wu8vPmYkMM/7ageEVsnLdX1zO78UNRDFXxCVIjxw==
   dependencies:
-    "@metascraper/helpers" "^5.14.5"
+    "@metascraper/helpers" "^5.14.7"
     lodash "~4.17.20"
 
 metascraper@5.14.5:
