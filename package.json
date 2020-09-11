@@ -119,7 +119,7 @@
     "@nestjs/jwt": "7.1.0",
     "@nestjs/passport": "7.1.0",
     "@nestjs/platform-express": "7.4.4",
-    "@nestjs/typeorm": "7.1.1",
+    "@nestjs/typeorm": "7.1.3",
     "@types/cookie-parser": "1.4.2",
     "apollo-server-express": "2.17.0",
     "bcrypt": "5.0.0",
