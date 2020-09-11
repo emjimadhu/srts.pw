@@ -2834,32 +2834,6 @@
     prop-types "^15.7.2"
     react-is "^16.8.0"
 
-"@metascraper/helpers@^5.14.5":
-  version "5.14.5"
-  resolved "https://registry.yarnpkg.com/@metascraper/helpers/-/helpers-5.14.5.tgz#2bae21de7bddd35387922225d8fe581f404fbca0"
-  integrity sha512-8JloYCQ1aHPLbOXCnAsPkk9am6dTFDib+aIjTp/SrC/R2lGy/13zkTf4kjd1Jwl4HJ4V/i+fH6FKlrdKxZFd1w==
-  dependencies:
-    audio-extensions "0.0.0"
-    chrono-node "2.1.8"
-    condense-whitespace "~2.0.0"
-    entities "~2.0.3"
-    file-extension "~4.0.5"
-    has-values "~2.0.1"
-    image-extensions "~1.1.0"
-    is-relative-url "~3.0.0"
-    is-uri "~1.2.0"
-    iso-639-3 "~2.1.0"
-    isostring "0.0.1"
-    lodash "~4.17.20"
-    memoize-one "~5.1.1"
-    mime-types "~2.1.27"
-    normalize-url "~5.1.0"
-    smartquotes "~2.3.1"
-    title "~3.4.2"
-    truncate "~2.1.0"
-    url-regex-safe "~1.0.1"
-    video-extensions "~1.1.0"
-
 "@metascraper/helpers@^5.14.7":
   version "5.14.7"
   resolved "https://registry.yarnpkg.com/@metascraper/helpers/-/helpers-5.14.7.tgz#ef4e42d863a228cf27097e6e0e6d331205198892"
@@ -8511,10 +8485,10 @@ doctypes@^1.1.0:
   resolved "https://registry.yarnpkg.com/doctypes/-/doctypes-1.1.0.tgz#ea80b106a87538774e8a3a4a5afe293de489e0a9"
   integrity sha1-6oCxBqh1OHdOijpKWv4pPeSJ4Kk=
 
-document-register-element@1.14.5:
-  version "1.14.5"
-  resolved "https://registry.yarnpkg.com/document-register-element/-/document-register-element-1.14.5.tgz#489d913a6c9e797a187633fc9768328fa0682fad"
-  integrity sha512-baSvC95X5oaVaZ7e2y9pw7Jww16VrkcNqGacb1HYwG1oHV7gc3X+je1HMj6sytjGgrmPSMHIyR+oNF+7/qwsNA==
+document-register-element@1.14.6:
+  version "1.14.6"
+  resolved "https://registry.yarnpkg.com/document-register-element/-/document-register-element-1.14.6.tgz#38665283d757b463bab5497a73624cf670deab2a"
+  integrity sha512-3ThfLHiWjFf3rYMyBrTycBRcBOUBnL7dLr9aCEtymtEZSTEx0f0rdM+SOZ1ILqLA0ArJVESLmccmQZQCMcCTpQ==
   dependencies:
     lightercollective "^0.3.0"
 
@@ -18453,7 +18427,7 @@ titleize@1.0.0:
   resolved "https://registry.yarnpkg.com/titleize/-/titleize-1.0.0.tgz#7d350722061830ba6617631e0cfd3ea08398d95a"
   integrity sha1-fTUHIgYYMLpmF2MeDP0+oIOY2Vo=
 
-tlds@1.208.0, tlds@^1.208.0:
+tlds@1.208.0:
   version "1.208.0"
   resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.208.0.tgz#f9a85c272aa500e56c92e7d342fbfdfbddaa9757"
   integrity sha512-6kbY7GJpRQXwBddSOAbVUZXjObbCGFXliWWN+kOSEoRWIOyRWLB6zdeKC/Tguwwenl/KsUx016XR50EdHYsxZw==
@@ -19092,15 +19066,6 @@ url-parse@^1.4.3:
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
-
-url-regex-safe@~1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/url-regex-safe/-/url-regex-safe-1.0.1.tgz#c2d530a69aef8673bfa4f9eae37e2506819b14e0"
-  integrity sha512-41pjyt94B/d4p/mtmxlazxZFr5BbYHGShAO2T5ADwaC1g3Pt0bNcEwV50uUOZKZ0F8n64zwtaIGqMKZpj2fvbw==
-  dependencies:
-    ip-regex "^4.1.0"
-    re2 "^1.15.4"
-    tlds "^1.208.0"
 
 url-regex-safe@~1.0.2:
   version "1.0.2"
