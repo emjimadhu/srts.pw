@@ -130,7 +130,7 @@
     "document-register-element": "1.14.6",
     "express": "4.17.1",
     "graphql": "15.3.0",
-    "graphql-tools": "6.2.1",
+    "graphql-tools": "6.2.6",
     "handlebars": "4.7.6",
     "js-cookie": "2.2.1",
     "metascraper": "5.14.8",
