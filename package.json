@@ -114,7 +114,7 @@
     "@material-ui/lab": "4.0.0-alpha.56",
     "@nestjs-modules/mailer": "1.5.1",
     "@nestjs/common": "7.4.4",
-    "@nestjs/core": "7.4.4",
+    "@nestjs/core": "9.0.5",
     "@nestjs/graphql": "7.6.0",
     "@nestjs/jwt": "7.1.0",
     "@nestjs/passport": "7.1.0",
