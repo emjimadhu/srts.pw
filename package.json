@@ -124,7 +124,7 @@
     "apollo-server-express": "2.17.0",
     "bcrypt": "5.0.0",
     "class-transformer": "0.3.1",
-    "class-validator": "0.12.2",
+    "class-validator": "0.14.0",
     "concurrently": "5.3.0",
     "cookie-parser": "1.4.5",
     "document-register-element": "1.14.6",
