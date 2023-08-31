@@ -137,7 +137,7 @@
     "metascraper-description": "5.14.7",
     "metascraper-image": "5.14.7",
     "metascraper-title": "5.14.7",
-    "mongodb": "3.6.2",
+    "mongodb": "3.6.10",
     "nodemailer": "6.4.11",
     "passport": "0.4.1",
     "passport-jwt": "4.0.0",
