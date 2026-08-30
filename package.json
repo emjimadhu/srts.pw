@@ -132,7 +132,7 @@
     "graphql": "15.3.0",
     "graphql-tools": "6.2.1",
     "handlebars": "4.7.6",
-    "js-cookie": "2.2.1",
+    "js-cookie": "3.0.7",
     "metascraper": "5.14.8",
     "metascraper-description": "5.14.7",
     "metascraper-image": "5.14.7",
